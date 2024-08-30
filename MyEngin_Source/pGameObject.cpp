@@ -1,4 +1,6 @@
 #include "pGameObject.h"
+#include "pInput.h"
+
 namespace p {
 	GameObject::GameObject() {
 
@@ -7,16 +9,16 @@ namespace p {
 
 	}
 	void GameObject::Update() {
-		if (GetAsyncKeyState(VK_LEFT) & 0x8000) {
+		if (Input::GetKey(eKeyCode::A)) { //왼쪽
 			mX -= 0.01f;
 		}
-		if (GetAsyncKeyState(VK_RIGHT) & 0x8000) {
+		if (Input::GetKey(eKeyCode::D)) {//오른쪽
 			mX += 0.01f;
 		}
-		if (GetAsyncKeyState(VK_UP) & 0x8000) {
+		if (Input::GetKey(eKeyCode::Up)) {//위
 			mY -= 0.01f;
 		}
-		if (GetAsyncKeyState(VK_DOWN) & 0x8000) {
+		if (Input::GetKey(eKeyCode::Down)) {//아래
 			mY += 0.01f;
 		}
 	}

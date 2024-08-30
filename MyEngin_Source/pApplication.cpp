@@ -1,5 +1,5 @@
 #include "pApplication.h"
-
+#include "pInput.h"
 namespace p {
 	Application::Application():mHwnd(nullptr), mHdc(nullptr)
 	{
@@ -12,6 +12,7 @@ namespace p {
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 		mPlayer.SetPosition(0, 0);
+		Input::Initialize();
 	}
 
 	void p::Application::Run()
@@ -25,6 +26,7 @@ namespace p {
 	{
 		//키보드입력받음
 		//오른쪽 x+ 왼쪽 x-
+		Input::Update();
 		mPlayer.Update();
 
 	}
