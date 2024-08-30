@@ -5,7 +5,7 @@
 #include "Editor_Window.h"
 #include "..\\MyEngin_Source\\pApplication.h"
 
-Application app;
+p::Application application;
 
 #define MAX_LOADSTRING 100
 
@@ -29,7 +29,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 �
     UNREFERENCED_PARAMETER(lpCmdLine);
 
     // TODO: 여기에 코드를 입력합니다.
-	app.test();
+	
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_EDITORWINDOW, szWindowClass, MAX_LOADSTRING);
@@ -63,6 +63,7 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 �
 		else {
 			//메세지가 없을 경우 여기서 처리
 			//게임 로직
+			application.Run();
 		}
 	}
 
@@ -126,6 +127,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 	                                                                           //szTitle이 이름, WS_OVERLAPPEDWINDO는 타입
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);//시작할때 위치xy, 가로세로크기 설정가능
 
+   application.Initialize(hWnd);//내 어플리케이션에 핸들 넣어줌
+
    if (!hWnd) //윈도우에 접근 가능한 핸들 반환
    {
       return FALSE;
@@ -169,7 +172,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)/
         }
         break;
 
-    case WM_PAINT: 
+    case WM_PAINT: //처음 한번만 그림
         {
             PAINTSTRUCT ps;
             HDC hdc = BeginPaint(hWnd, &ps);
@@ -179,25 +182,7 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)/
 			// 화면 출력에 모든 경우는 DC를 통해 작업 진행
             // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
 
-			HBRUSH brush = CreateSolidBrush(RGB(0, 0, 255));//색을 칠할 브러쉬
 			
-
-			HBRUSH oldBrush = (HBRUSH) SelectObject(hdc, brush);//dc가 배경을 brush를 사용하도록 함
-			Rectangle(hdc, 100, 100, 200, 200);//윈도우마다 dc가 있고 여러개일수 있으므로 dc정확하게 넣어줘야함
-
-			SelectObject(hdc, oldBrush); //기존 흰색 배경이 메모리 낭비하게 되므로 새로운 브러쉬 사용하고 다시 흰색으로 바꿔줌
-			DeleteObject(brush);//파랑색 브러쉬 오브젝트 메모리 해제
-			
-			HPEN redPen = CreatePen(PS_SOLID, 2, RGB(255, 0, 0));// 선의 형태, dc, 굵기, 색상
-			HPEN oldPen = (HPEN)SelectObject(hdc, redPen);
-			Ellipse(hdc, 200, 200, 300, 300);
-			SelectObject(hdc, oldPen); 
-			DeleteObject(redPen);
-			//기본으로 자주사용 되는 GDI오브젝트를 미리 DC안에 만들어둠 -> stockObject
-			HBRUSH grayBrush = (HBRUSH) GetStockObject(GRAY_BRUSH); //stockObject사용해 브러쉬 생성
-			HBRUSH oldBrush2 = (HBRUSH)SelectObject(hdc, grayBrush);
-			Rectangle(hdc, 400, 400, 500, 500);
-			SelectObject(hdc, oldBrush2); //default로 돌려두기, delete는 할필요없음
 
             EndPaint(hWnd, &ps);
         }
