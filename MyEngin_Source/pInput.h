@@ -24,15 +24,21 @@ namespace p {
 			bool bPressed; // 눌렸는지
 		};
 		static void Initialize();
+		
 		static void Update();
 
-		static bool GetKeyDown(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Down; }
-		static bool GetKeyUp(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Up; }
-		static bool GetKey(eKeyCode code) { return mKeys[(UINT)code].state == eKeyState::Pressed; }
+		static bool GetKeyDown(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Down; }
+		static bool GetKeyUp(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Up; }
+		static bool GetKey(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Pressed; }
 	private:
 		//eKeyState mState[] = eKeyState::Up;
-		static std::vector<Key> mKeys; //모든 키를 관리하는 vector, input전체가 공유가능하게 static으로 선언
-
+		static std::vector<Key> Keys; //모든 키를 관리하는 vector, input전체가 공유가능하게 static으로 선언
+		static void createKeys();
+		static void updateKeys();
+		static void updateKeyDown(Input::Key & key);
+		static void updateKeyUp(Input::Key & key);
+		static void updateKey(Input::Key& key);
+		static bool isKeyDown(eKeyCode code);
 	};
 }
 

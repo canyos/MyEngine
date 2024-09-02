@@ -122,12 +122,12 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
-
+   const UINT width = 1600, height = 900;
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, //window창을 만들어줌, szWindowClass로 register한 정보 들고와서 설정,
 	                                                                           //szTitle이 이름, WS_OVERLAPPEDWINDO는 타입
       CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);//시작할때 위치xy, 가로세로크기 설정가능
 
-   application.Initialize(hWnd);//내 어플리케이션에 핸들 넣어줌
+   application.Initialize(hWnd,width, height);//내 어플리케이션에 핸들 넣어줌
 
    if (!hWnd) //윈도우에 접근 가능한 핸들 반환
    {

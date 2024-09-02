@@ -1,48 +1,60 @@
 #include "pInput.h"
+#include "pApplication.h"
 
 namespace p {
-	std::vector<Input::Key> Input::mKeys = {};
+	std::vector<Input::Key> Input::Keys = {};
 	int ASCII[(UINT)eKeyCode::END] = {
 		'Q','W','E','R','S','T','U','I','O','P',
 		'A','S','D','F','G','H','J','K','L',
 		'Z','X','C','V','B','N','M',
 		VK_LEFT,VK_RIGHT,VK_DOWN,VK_UP,
 	};
-	void p::Input::Initialize()
+	
+	void Input::Initialize()
 	{
-		
-		for (size_t i = 0; i < (UINT) eKeyCode::END; i++) {
+		createKeys();
+	}
+
+	void Input::Update()
+	{
+		updateKeys();
+	}
+	void Input::createKeys() {
+		for (size_t i = 0; i < (UINT)eKeyCode::END; i++) {
 			Key key = {};
 			key.bPressed = false;
 			key.state = eKeyState::None;
-			key.keyCode = (eKeyCode) i;
-			mKeys.push_back(key);
+			key.keyCode = (eKeyCode)i;
+			Keys.push_back(key);
 		}
 	}
-
-	void p::Input::Update()
-	{
-		for (size_t i = 0; i < mKeys.size(); i++) {
-			//키가 눌렸다.
-			if (GetAsyncKeyState(ASCII[i]) & 0x8000) {
-				if (mKeys[i].bPressed) {//이전 프레임에도 눌려있음
-					mKeys[i].state = eKeyState::Pressed;
-				}
-				else {//지금 누른거임
-					mKeys[i].state = eKeyState::Down;
-				}
-				mKeys[i].bPressed = true;
-			}
-			else {//키가 안눌림
-				if (mKeys[i].bPressed) {//이전 프레임에는 눌려있음
-					mKeys[i].state = eKeyState::Up;
-				}
-				else {//지금 누른거임
-					mKeys[i].state = eKeyState::None;
-				}
-				mKeys[i].bPressed = false;
-			}
+	void Input::updateKeys() {
+		for (Input::Key& key : Keys)
+			updateKey(key);
+	}
+	void Input::updateKey(Input::Key& key) {
+		if (isKeyDown(key.keyCode)) {
+			updateKeyDown(key);
 		}
+		else {
+			updateKeyUp(key);
+		}
+	}
+	bool Input::isKeyDown(eKeyCode code) {
+		return GetAsyncKeyState(ASCII[static_cast<UINT>(code)]) & 0x8000;
+	}
+	void Input::updateKeyDown(Input::Key& key) {//키가 눌렸다.
+		if (key.bPressed == true)//이전 프레임에도 눌려있음
+			key.state = eKeyState::Pressed;
+		else//지금 누른거임
+			key.state = eKeyState::Down;
+		key.bPressed = true;
+	}
+	void Input::updateKeyUp(Input::Key& key) {//키가 안눌림
+		if (key.bPressed == true)//이전 프레임에는 눌려있음
+			key.state = eKeyState::Up;
+		else
+			key.state = eKeyState::None;
+		key.bPressed = false;
 	}
 }
-

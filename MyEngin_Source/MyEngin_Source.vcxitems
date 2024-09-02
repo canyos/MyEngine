@@ -18,11 +18,13 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h" />
   </ItemGroup>
 </Project>

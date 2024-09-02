@@ -1,5 +1,6 @@
 #include "pGameObject.h"
 #include "pInput.h"
+#include "pTime.h"
 
 namespace p {
 	GameObject::GameObject() {
@@ -9,17 +10,18 @@ namespace p {
 
 	}
 	void GameObject::Update() {
+		const int speed = 100.0f;
 		if (Input::GetKey(eKeyCode::A)) { //왼쪽
-			mX -= 0.01f;
+			mX -= speed * Time::DeltaTime();
 		}
 		if (Input::GetKey(eKeyCode::D)) {//오른쪽
-			mX += 0.01f;
+			mX += speed * Time::DeltaTime();
 		}
-		if (Input::GetKey(eKeyCode::Up)) {//위
-			mY -= 0.01f;
+		if (Input::GetKey(eKeyCode::W)) {//위
+			mY -= speed * Time::DeltaTime();
 		}
-		if (Input::GetKey(eKeyCode::Down)) {//아래
-			mY += 0.01f;
+		if (Input::GetKey(eKeyCode::S)) {//아래
+			mY += speed * Time::DeltaTime();
 		}
 	}
 	void GameObject::LateUpdate() {
