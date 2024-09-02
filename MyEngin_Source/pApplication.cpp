@@ -1,6 +1,7 @@
 #include "pApplication.h"
 #include "pInput.h"
 #include "pTime.h"
+#include "pSceneManager.h"
 
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
@@ -9,32 +10,53 @@ namespace p {
 	Application::~Application()
 	{
 	}
-	void p::Application::Initialize(HWND hwnd,UINT width, UINT height)
+	void Application::Initialize(HWND hwnd,UINT width, UINT height)
+	{
+		adjustWindowRect(hwnd, width, height);
+		createBuffer(width, height);
+		InitializeEtc();
+
+		SceneManager::Initialize();
+		
+	}
+	void Application::InitializeEtc()
+	{
+		Input::Initialize();
+		Time::Initialize();
+	}
+	void Application::clearRenderTarget() {
+		Rectangle(mBackHdc, -1, -1, 1601, 901);
+	}
+
+	void Application::copyRenderTarget(HDC source, HDC dest)
+	{
+		BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
+	}
+
+	void Application::adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height)
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
-		RECT rect = { 0,0,width,height };
+		RECT rect = { 0,0, width, height };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
 
 		mWidth = rect.right - rect.left, mHeight = rect.bottom - rect.top;
 
 		SetWindowPos(mHwnd, nullptr, 0, 0, mWidth, mHeight, 0);//윈도우 위치, 크기 설정
 		ShowWindow(mHwnd, true);
+	}
 
+	void Application::createBuffer(const UINT &width, const UINT &height)
+	{
 		//윈도우 해상도에 맞는 백버퍼(도화지) 생성
 		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
-		
+
 		//백버퍼를 가르킬 dc생성
 		mBackHdc = CreateCompatibleDC(mHdc);
 
 		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
 		DeleteObject(oldBitmap);
-
-
-		mPlayer.SetPosition(0, 0);
-		Input::Initialize();
-		Time::Initialize();
 	}
 
 	void p::Application::Run()
@@ -49,9 +71,10 @@ namespace p {
 		//키보드입력받음
 		//오른쪽 x+ 왼쪽 x-
 		Input::Update();
-		mPlayer.Update();
+		
 		
 		Time::Update();
+		SceneManager::Update();
 	}
 
 	void p::Application::LateUpdate()
@@ -64,14 +87,15 @@ namespace p {
 		//window의 크기가 1600,900 이므로 실제 그릴 수 있는 영역은 더 작음
 		//더블 버퍼링으로 해결
 		//dc를 두개 그려 번갈아가면서 화면에 출력
-		Rectangle(mBackHdc, 0, 0, 1600, 900);
 
+		clearRenderTarget();
 
-		mPlayer.Render(mBackHdc);
+		
 		Time::Render(mBackHdc);
+		SceneManager::Render(mBackHdc);
 
 		//backbuffer를 원본 버퍼로 복사
-		BitBlt(mHdc, 0, 0, mWidth, mHeight, mBackHdc, 0, 0, SRCCOPY);
+		copyRenderTarget(mBackHdc, mHdc);
 	}
 }
 

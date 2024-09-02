@@ -1,18 +1,26 @@
 #pragma once
 #include "CommonInclude.h"
 #include "pGameObject.h"
+#include "pSceneManager.h"
 
 namespace p {
 	class Application {
 	public:
 		Application();
 		~Application();
-		void Initialize(HWND hwnd, UINT width, UINT height);//초기화
+		void Initialize(HWND hwnd, UINT width, UINT height);
+		//초기화
 		void Run();
 
 		void Update();
 		void LateUpdate();
 		void Render();//바뀐위치로 다시 그려줌
+	private:
+		void clearRenderTarget();
+		void copyRenderTarget(HDC source, HDC dest);
+		void adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height);
+		void createBuffer(const UINT &width, const UINT &height);
+		void InitializeEtc();
 	private:
 		HWND mHwnd;
 		HDC mHdc;
@@ -25,8 +33,7 @@ namespace p {
 		UINT mWidth;
 		UINT mHeight;
 
-		GameObject mPlayer;
+		//scene이 있고 scene안에 object
+		std::vector<Scene*> mScenes;
 	};
 }
-
-

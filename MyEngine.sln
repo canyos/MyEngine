@@ -11,6 +11,7 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MyEngin_Source", "MyEngin_S
 EndProject
 Global
 	GlobalSection(SharedMSBuildProjectFiles) = preSolution
+		MyEngin_Source\MyEngin_Source.vcxitems*{01d068fb-10eb-41a5-88af-39f1fc3866f3}*SharedItemsImports = 4
 		MyEngin_Source\MyEngin_Source.vcxitems*{315daa29-38f3-4f05-a2b9-2586003b581d}*SharedItemsImports = 9
 		MyEngin_Source\MyEngin_Source.vcxitems*{dc1cd9aa-f660-4758-a08a-fd46eccdb618}*SharedItemsImports = 4
 	EndGlobalSection

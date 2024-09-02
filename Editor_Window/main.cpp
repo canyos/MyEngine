@@ -4,7 +4,7 @@
 #include "framework.h"
 #include "Editor_Window.h"
 #include "..\\MyEngin_Source\\pApplication.h"
-
+#include "../MyEngine_Window/pLoadScene.h"
 p::Application application;
 
 #define MAX_LOADSTRING 100
@@ -136,7 +136,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
-
+   p::LoadScenes();
    return TRUE;
 }
 

@@ -1,2 +1,18 @@
-﻿  main.cpp
+﻿  Entity.cpp
+  Input.cpp
+  pEntity.cpp
+  pGameObject.cpp
+c:\users\45819\documents\github\myengine\myengin_source\pgameobject.cpp(13): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+c:\users\45819\documents\github\myengine\myengin_source\pgameobject.cpp(37): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  pApplication.cpp
+c:\users\45819\documents\github\myengine\myengin_source\papplication.cpp(41): warning C4838: 'const UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+  pInput.cpp
+  pScene.cpp
+  pSceneManager.cpp
+  pTime.cpp
+c:\users\45819\documents\github\myengine\myengin_source\ptime.cpp(35): warning C4267: '초기화 중': 'size_t'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+  Scene.cpp
+  SceneManager.cpp
+  main.cpp
+  코드를 생성하고 있습니다...
   Editor_Window.vcxproj -> C:\Users\45819\Documents\github\MyEngine\x64\Debug\Editor_Window.exe

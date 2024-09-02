@@ -3,7 +3,7 @@
 #include "pTime.h"
 
 namespace p {
-	GameObject::GameObject() {
+	GameObject::GameObject() :mX(0), mY(0){
 
 	}
 	GameObject::~GameObject() {
