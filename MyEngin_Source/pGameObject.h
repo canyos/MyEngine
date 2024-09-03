@@ -39,9 +39,11 @@ namespace p {
 
 			return component;
 		}
-
+	private:
+		void InitializeTransform();
 	private:
 		std::vector<Component*> mComponents;
+
 	};
 }
 

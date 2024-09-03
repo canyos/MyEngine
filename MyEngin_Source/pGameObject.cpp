@@ -1,10 +1,11 @@
 #include "pGameObject.h"
 #include "pInput.h"
 #include "pTime.h"
-
+#include "pTransform.h"
 namespace p {
 	GameObject::GameObject()
 	{
+		InitializeTransform();
 	}
 
 	GameObject::~GameObject()
@@ -47,8 +48,9 @@ namespace p {
 		{
 			comp->Render(hdc);
 		}
-
-
+	}
+	void GameObject::InitializeTransform() {
+		AddComponent<Transform>();
 	}
 
 }

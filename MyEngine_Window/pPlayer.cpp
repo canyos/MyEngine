@@ -22,7 +22,7 @@ namespace p
 			Transform* tr = GetComponent<Transform>();
 			Vector2 pos = tr->GetPosition();
 			pos.x += 100.f*Time::DeltaTime();
-			tr->SetPos(pos);
+			tr->SetPosition(pos);
 		}
 	}
 
