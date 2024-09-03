@@ -16,24 +16,34 @@
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Input.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pResource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Scene.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)SceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTransform.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h" />
   </ItemGroup>
 </Project>

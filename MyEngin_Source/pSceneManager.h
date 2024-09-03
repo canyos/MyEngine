@@ -19,7 +19,7 @@ namespace p {
 				return nullptr;
 			mActiveScene = iter->second;
 			return iter->second;
-		}
+		} 
 		static void Initialize();
 		static void Update();
 		static void LateUpdate();

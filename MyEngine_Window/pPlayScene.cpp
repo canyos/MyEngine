@@ -1,34 +1,47 @@
 #include "pPlayScene.h"
 #include "pGameObject.h"
-namespace p {
+#include "pPlayer.h"
+#include "pTransform.h"
+#include "pSpriteRenderer.h"
+
+namespace p
+{
 	PlayScene::PlayScene()
 	{
 	}
-
 	PlayScene::~PlayScene()
 	{
 	}
-
 	void PlayScene::Initialize()
 	{
-		GameObject* obj = new GameObject();
-		AddGameObject(obj);
+		{
+			Player* bg = new Player();
+			Transform* tr
+				= bg->AddComponent<Transform>();
+			tr->SetPos(Vector2(0, 0));
+
+			tr->SetName(L"TR");
+
+			SpriteRenderer* sr
+				= bg->AddComponent<SpriteRenderer>();
+			sr->SetName(L"SR");
+			sr->ImageLoad(L"C:\\Users\\45819\\Documents\\github\\MyEngine\\Editor_Window\\Resources\\CloudOcean.png");
+
+
+			AddGameObject(bg);
+		}
 	}
 
 	void PlayScene::Update()
 	{
-		Scene::Update();//부모 업데이트 호출
+		Scene::Update();
 	}
-
 	void PlayScene::LateUpdate()
 	{
 		Scene::LateUpdate();
 	}
-
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
 	}
-
 }
-
