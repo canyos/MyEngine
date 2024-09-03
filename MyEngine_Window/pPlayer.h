@@ -1,9 +1,8 @@
 #pragma once
-#include "../MyEngin_Source/pGameObject.h"
+#include "pGameObject.h"
 
 namespace p
 {
-
 	class Player : public GameObject
 	{
 	public:

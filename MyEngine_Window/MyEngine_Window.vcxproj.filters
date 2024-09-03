@@ -23,19 +23,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="Player.cpp">
-      <Filter>Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayScene.cpp">
-      <Filter>Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="pPlayer.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="pPlayScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
     <ClCompile Include="pTitleScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="pPlayer.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayScene.cpp">
       <Filter>Scenes</Filter>
     </ClCompile>
   </ItemGroup>

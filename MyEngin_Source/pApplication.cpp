@@ -59,14 +59,14 @@ namespace p {
 		DeleteObject(oldBitmap);
 	}
 
-	void p::Application::Run()
+	void Application::Run()
 	{
 		Update();
 		LateUpdate();
 		Render();
 	}
 
-	void p::Application::Update()
+	void Application::Update()
 	{
 		//키보드입력받음
 		//오른쪽 x+ 왼쪽 x-
@@ -77,11 +77,12 @@ namespace p {
 		SceneManager::Update();
 	}
 
-	void p::Application::LateUpdate()
+	void Application::LateUpdate()
 	{
+		SceneManager::LateUpdate();
 	}
 
-	void p::Application::Render() //처음만 그리는게 아니라 매번 새로 그림
+	void Application::Render() //처음만 그리는게 아니라 매번 새로 그림
 	{
 		//Rectangle(mHdc, 0, 0, 1600, 900);//매번 배경 새로 그려 잔상 지움-> 깜빡거림(flickering) 문제
 		//window의 크기가 1600,900 이므로 실제 그릴 수 있는 영역은 더 작음

@@ -3,7 +3,9 @@
 #include "pPlayer.h"
 #include "pTransform.h"
 #include "pSpriteRenderer.h"
-
+#include "pInput.h"
+#include "pTitleScene.h"
+#include "pSceneManager.h"
 namespace p
 {
 	PlayScene::PlayScene()
@@ -15,7 +17,7 @@ namespace p
 	void PlayScene::Initialize()
 	{
 		{
-			Player* bg = new Player();
+			bg = new Player();
 			Transform* tr
 				= bg->AddComponent<Transform>();
 			tr->SetPos(Vector2(0, 0));
@@ -28,7 +30,7 @@ namespace p
 			sr->ImageLoad(L"C:\\Users\\45819\\Documents\\github\\MyEngine\\Editor_Window\\Resources\\CloudOcean.png");
 
 
-			AddGameObject(bg);
+			AddGameObject(bg, eLayerType::BackGround);
 		}
 	}
 
@@ -39,9 +41,22 @@ namespace p
 	void PlayScene::LateUpdate()
 	{
 		Scene::LateUpdate();
+		if (Input::GetKeyDown(eKeyCode::N)) {
+			SceneManager::LoadScene(L"TitleScene");
+		}
 	}
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
+		wchar_t str[50] = L"Play  Scene";
+		TextOutW(hdc, 0, 0, str, lstrlenW(str));
+	}
+	void PlayScene::OnEnter()
+	{
+	}
+	void PlayScene::OnExit()
+	{
+		Transform* tr= bg->GetComponent<Transform>();
+		tr->SetPos(Vector2(0, 0));
 	}
 }

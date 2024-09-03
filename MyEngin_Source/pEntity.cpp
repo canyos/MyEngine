@@ -1,7 +1,9 @@
 #include "pEntity.h"
 
-namespace p{
-	Entity::Entity():mName(L"")
+namespace p
+{
+	Entity::Entity()
+		: mName(L"")
 	{
 	}
 

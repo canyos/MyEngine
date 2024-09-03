@@ -5,6 +5,8 @@
 #include <map>
 
 #include "pMath.h"
+#include "pEnum.h"
+
 
 #include <mmsystem.h>
 #include <dinput.h>
@@ -13,3 +15,4 @@
 
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
+

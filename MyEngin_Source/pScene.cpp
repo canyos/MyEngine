@@ -1,33 +1,53 @@
 #include "pScene.h"
 
 namespace p {
-	Scene::Scene()
+	Scene::Scene() :mLayers{}
 	{
+		mLayers.resize((UINT)eLayerType::Max);
+		for (int i = 0; i < (UINT)eLayerType::Max; i++) {
+			mLayers[i] = new Layer();
+		}
 	}
 	Scene::~Scene()
 	{
 	}
 	void Scene::Initialize()
 	{
+		for (Layer* layer : mLayers) {
+			if (layer == nullptr) continue;
+			layer->Initialize();
+		}
+			
 	}
 	void Scene::Update()
 	{
-		for (GameObject* gameObj : mGameObjects)
-			gameObj->Update();
+		for (Layer* layer : mLayers) {
+			if (layer == nullptr) continue;
+			layer->Update();
+		}
 	}
 	void Scene::LateUpdate()
 	{
-		for (GameObject* gameObj : mGameObjects)
-			gameObj->LateUpdate();
+		for (Layer* layer : mLayers) {
+			if (layer == nullptr) continue;
+			layer->LateUpdate();
+		}
 	}
 	void Scene::Render(HDC hdc)
 	{
-		for (GameObject* gameObj : mGameObjects)
-			gameObj->Render(hdc);
+		for (Layer* layer : mLayers) {
+			if (layer == nullptr) continue;
+			layer->Render(hdc);
+		}
 	}
-	void Scene::AddGameObject(GameObject * gameObject)
+
+	void Scene::OnEnter() {
+	}
+	void Scene::OnExit() {
+	}
+	void Scene::AddGameObject(GameObject * gameObject,  eLayerType type)
 	{
-		mGameObjects.push_back(gameObject);
+		mLayers[(UINT)type]->AddGameObject(gameObject);
 	}
 }
 
