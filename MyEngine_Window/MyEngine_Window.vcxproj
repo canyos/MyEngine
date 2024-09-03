@@ -124,6 +124,7 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClInclude Include="LoadResources.h" />
     <ClInclude Include="pLoadScene.h" />
     <ClInclude Include="pPlayer.h" />
     <ClInclude Include="pPlayScene.h" />

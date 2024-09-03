@@ -30,6 +30,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -46,6 +47,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pLayer.h" />

@@ -7,6 +7,8 @@
 #include "pTitleScene.h"
 #include "pSceneManager.h"
 #include "pObject.h"
+#include "pTexture.h"
+#include "pResources.h"
 namespace p
 {
 	PlayScene::PlayScene()
@@ -17,25 +19,14 @@ namespace p
 	}
 	void PlayScene::Initialize()
 	{
-		{
-			//bg = new Player();
-			//Transform* tr
-			//	= bg->AddComponent<Transform>();
-			//tr->SetPosition(Vector2(0, 0));
+		//게임 오브젝트 만들기 전에 리소스들 전부 Load해두면 좋음
 
-			//tr->SetName(L"TR");
+		bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
+		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
+		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
+		sr->SetTexture(bg);
 
-			//SpriteRenderer* sr
-			//	= bg->AddComponent<SpriteRenderer>();
-			//sr->SetName(L"SR");
-			//sr->ImageLoad(L"C:\\Users\\45819\\Documents\\github\\MyEngine\\Editor_Window\\Resources\\CloudOcean.png");
-
-
-			//AddGameObject(bg, enums::eLayerType::BackGround);
-			bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
-			SpriteRenderer* sr	= bg->AddComponent<SpriteRenderer>();
-			sr->ImageLoad(L"C:\\Users\\45819\\Documents\\github\\MyEngine\\Editor_Window\\Resources\\CloudOcean.png");
-		}
+		Scene::Initialize();
 	}
 
 	void PlayScene::Update()

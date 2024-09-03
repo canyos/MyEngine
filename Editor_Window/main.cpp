@@ -5,6 +5,7 @@
 #include "Editor_Window.h"
 #include "..\\MyEngin_Source\\pApplication.h"
 #include "../MyEngine_Window/pLoadScene.h"
+#include "../MyEngine_Window/LoadResources.h"
 p::Application application;
 
 ULONG_PTR gpToken;
@@ -140,6 +141,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
+
+   p::LoadResources();
    p::LoadScenes();
    return TRUE;
 }

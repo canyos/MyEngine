@@ -15,6 +15,7 @@ namespace p {
 		void Update();
 		void LateUpdate();
 		void Render();//바뀐위치로 다시 그려줌
+		HDC GetHdc() { return mHdc; }
 	private:
 		void clearRenderTarget();
 		void copyRenderTarget(HDC source, HDC dest);
