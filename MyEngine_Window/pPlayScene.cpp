@@ -9,6 +9,9 @@
 #include "pObject.h"
 #include "pTexture.h"
 #include "pResources.h"
+#include "pPlayerScript.h"
+#include "pCamera.h"
+#include "pRenderer.h"
 namespace p
 {
 	PlayScene::PlayScene()
@@ -19,13 +22,28 @@ namespace p
 	}
 	void PlayScene::Initialize()
 	{
-		//게임 오브젝트 만들기 전에 리소스들 전부 Load해두면 좋음
+		//main camera
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		renderer::mainCamera = cameraComp;
+		camera->AddComponent<PlayerScript>();
 
-		bg = object::Instantiate<Player>(enums::eLayerType::BackGround, Vector2(100.0f, 100.0f));
-		SpriteRenderer* sr = bg->AddComponent<SpriteRenderer>();
-		graphics::Texture* bg = Resources::Find<graphics::Texture>(L"BG");
-		sr->SetTexture(bg);
 
+		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+		SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
+		sr->SetSize(Vector2(3.0f, 3.0f));
+		mPlayer->AddComponent<PlayerScript>();
+		
+		graphics::Texture* pacman = Resources::Find<graphics::Texture>(L"PACMAN");
+		sr->SetTexture(pacman);
+
+		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
+		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
+		bgSr->SetSize(Vector2(3.0f, 3.0f));
+		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Map");
+		bgSr->SetTexture(bgTexture);
+
+		
 		Scene::Initialize();
 	}
 
@@ -43,15 +61,15 @@ namespace p
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
-		wchar_t str[50] = L"Play  Scene";
-		TextOutW(hdc, 0, 0, str, lstrlenW(str));
+		/*wchar_t str[50] = L"Play  Scene";
+		TextOutW(hdc, 0, 0, str, lstrlenW(str));*/
 	}
 	void PlayScene::OnEnter()
 	{
 	}
 	void PlayScene::OnExit()
 	{
-		Transform* tr= bg->GetComponent<Transform>();
+		Transform* tr= mPlayer->GetComponent<Transform>();
 		tr->SetPosition(Vector2(0, 0));
 	}
 }

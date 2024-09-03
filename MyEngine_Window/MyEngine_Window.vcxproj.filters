@@ -13,6 +13,9 @@
     <ClInclude Include="pTitleScene.h">
       <Filter>Scenes</Filter>
     </ClInclude>
+    <ClInclude Include="pPlayerScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
     <ClInclude Include="LoadResources.h" />
   </ItemGroup>
   <ItemGroup>
@@ -21,6 +24,9 @@
     </Filter>
     <Filter Include="Contents">
       <UniqueIdentifier>{606209ca-6c14-4107-8afa-442ffe002adb}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Scripts">
+      <UniqueIdentifier>{9ecf5f12-6270-4789-a8c5-2452eb42dcc9}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -35,6 +41,12 @@
     </ClCompile>
     <ClCompile Include="PlayScene.cpp">
       <Filter>Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="PlayerScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="pPlayerScript.cpp">
+      <Filter>Scripts</Filter>
     </ClCompile>
   </ItemGroup>
 </Project>

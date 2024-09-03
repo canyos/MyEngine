@@ -13,7 +13,7 @@ namespace p {
 		static T* Instantiate(p::enums::eLayerType type) {
 			T* gameObject = new T();
 			Scene* activeScene = SceneManager::GetActiveScene();
-			Layer* layer = activeScene.GetLayer(type);
+			Layer* layer = activeScene->GetLayer(type);
 			layer->AddGameObject(gameObject);
 			return gameObject;
 		}

@@ -2,7 +2,7 @@
 
 namespace p
 {
-	Transform::Transform()
+	Transform::Transform() :Component(enums::eComponentType::Transform)
 	{
 	}
 	Transform::~Transform()

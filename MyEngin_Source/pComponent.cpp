@@ -3,7 +3,7 @@
 
 namespace p
 {
-	Component::Component()
+	Component::Component(enums::eComponentType type):mType(type)
 	{
 	}
 	Component::~Component()
@@ -12,6 +12,7 @@ namespace p
 
 	void Component::Initialize()
 	{
+		
 
 	}
 

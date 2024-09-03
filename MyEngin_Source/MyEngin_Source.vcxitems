@@ -14,6 +14,7 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Input.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
@@ -31,9 +32,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTransform.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pScript.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h" />
@@ -42,15 +46,16 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResources.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pScript.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pLayer.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)헤더.h" />
   </ItemGroup>
 </Project>

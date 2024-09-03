@@ -23,8 +23,15 @@ namespace p
 			{
 
 			}
-
-
+			Vector2 operator+(Vector2 other) {
+				return Vector2(x + other.x, y + other.y);
+			}
+			Vector2 operator-(Vector2 other) {
+				return Vector2(x - other.x, y - other.y);
+			}
+			Vector2 operator/(float f) {
+				return Vector2(x /f, y/f);
+			}
 		};
 	}
 	

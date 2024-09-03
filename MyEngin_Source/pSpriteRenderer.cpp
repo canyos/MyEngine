@@ -2,10 +2,10 @@
 #include "pGameObject.h"
 #include "pTransform.h"
 #include "pTexture.h"
-
+#include "pRenderer.h"
 namespace p
 {
-	SpriteRenderer::SpriteRenderer(): Component(), mTexture(nullptr), mSize(math::Vector2::One)
+	SpriteRenderer::SpriteRenderer(): Component(enums::eComponentType::SpriteRenderer), mTexture(nullptr), mSize(math::Vector2::One)
 	{
 	}
 	SpriteRenderer::~SpriteRenderer()
@@ -28,7 +28,7 @@ namespace p
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
-
+		pos = renderer::mainCamera->CalculatePosition(pos);
 		if (mTexture->GetTextureType() == graphics::Texture::eTextureType::Bmp) {
 			TransparentBlt(hdc, pos.x, pos.y, 
 				mTexture->GetWidth()*mSize.x, mTexture->GetHeight()*mSize.y, 
