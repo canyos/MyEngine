@@ -12,6 +12,7 @@
 #include "pPlayerScript.h"
 #include "pCamera.h"
 #include "pRenderer.h"
+#include "pAnimator.h"
 namespace p
 {
 	PlayScene::PlayScene()
@@ -26,16 +27,20 @@ namespace p
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
-		camera->AddComponent<PlayerScript>();
+		//camera->AddComponent<PlayerScript>();
 
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
-		SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
-		sr->SetSize(Vector2(3.0f, 3.0f));
+		//SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
+		//sr->SetSize(Vector2(3.0f, 3.0f));
 		mPlayer->AddComponent<PlayerScript>();
 		
 		graphics::Texture* pacman = Resources::Find<graphics::Texture>(L"PACMAN");
-		sr->SetTexture(pacman);
+		Animator* animator = mPlayer->AddComponent<Animator>();
+		//animator->CreateAnimation(L"CAT", pacman, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		//animator->PlayAnimation(L"Cat", true); //애니메이션 집어넣어서 그리기
+
+		//sr->SetTexture(pacman); //spriteRender로 그리기
 
 		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
 		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();

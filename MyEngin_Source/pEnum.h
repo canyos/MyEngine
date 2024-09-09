@@ -17,12 +17,14 @@ namespace p
 			//Mesh
 			//shader
 			Audioclip,
+			Animation,
 			Prefab,
 			End,
 		};
 		enum class eComponentType {
 			Transform,
 			SpriteRenderer,
+			Animator,
 			Script,
 			Camera,
 			End,

@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pScene.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTransform.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pScript.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pApplication.cpp">
+      <Filter>application</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pInput.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pResource.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pResources.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp">
+      <Filter>resource</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Input.cpp">
+      <Filter>util</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Animator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCamera.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pScript.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h">
+      <Filter>application</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pResources.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h">
+      <Filter>resource</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h">
+      <Filter>util</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimation.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="util">
+      <UniqueIdentifier>{731748b7-adc5-46e7-820b-642caa4c35ea}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="application">
+      <UniqueIdentifier>{2ca2ee19-57df-47d4-857b-8fbb72566142}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource">
+      <UniqueIdentifier>{8f87a60b-d456-4c06-87b9-a4b02b292e90}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

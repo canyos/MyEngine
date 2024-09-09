@@ -1,6 +1,8 @@
 #pragma once
 #include "CommonInclude.h"
 
+using namespace p::math;
+
 namespace p {
 	class Entity
 	{

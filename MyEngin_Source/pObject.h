@@ -17,6 +17,7 @@ namespace p {
 			layer->AddGameObject(gameObject);
 			return gameObject;
 		}
+
 		template<typename T>
 		static T* Instantiate(p::enums::eLayerType type,Vector2 pos ) {
 			T* gameObject = new T();
