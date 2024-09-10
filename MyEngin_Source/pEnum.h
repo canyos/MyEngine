@@ -8,7 +8,9 @@ namespace p
 			BackGround,
 			//Tree 
 			//character
+			Animal,
 			Player,
+			Paricle,
 			Max = 16,
 		};
 

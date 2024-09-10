@@ -17,6 +17,13 @@
       <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="LoadResources.h" />
+    <ClInclude Include="pCat.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="resource.h" />
+    <ClInclude Include="pCatScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -48,9 +55,24 @@
     <ClCompile Include="pPlayerScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
+    <ClCompile Include="Cat.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="pCat.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="pCatScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="CatScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngine_Window.rc" />
   </ItemGroup>
 </Project>

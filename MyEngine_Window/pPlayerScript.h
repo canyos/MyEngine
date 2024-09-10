@@ -9,6 +9,7 @@ namespace p {
 			Walk,
 			Sleep,
 			Attack,
+			GiveWater,
 		};
 		PlayerScript();
 		~PlayerScript();

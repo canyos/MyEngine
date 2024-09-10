@@ -126,13 +126,20 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LoadResources.h" />
+    <ClInclude Include="pCat.h" />
+    <ClInclude Include="pCatScript.h" />
     <ClInclude Include="pLoadScene.h" />
     <ClInclude Include="pPlayer.h" />
     <ClInclude Include="pPlayerScript.h" />
     <ClInclude Include="pPlayScene.h" />
     <ClInclude Include="pTitleScene.h" />
+    <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="Cat.cpp" />
+    <ClCompile Include="CatScript.cpp" />
+    <ClCompile Include="pCat.cpp" />
+    <ClCompile Include="pCatScript.cpp" />
     <ClCompile Include="PlayerScript.cpp" />
     <ClCompile Include="PlayScene.cpp" />
     <ClCompile Include="pPlayer.cpp" />
@@ -143,6 +150,9 @@
   <ItemGroup>
     <None Include="ClassDiagram.cd" />
     <None Include="ClassDiagram1.cd" />
+  </ItemGroup>
+  <ItemGroup>
+    <ResourceCompile Include="MyEngine_Window.rc" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

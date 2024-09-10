@@ -9,5 +9,6 @@ namespace p {
 		Resources::Load<graphics::Texture>(L"Effect", L"..\\MyEngine_Window\\Resources\\effect2.png");
 		Resources::Load<graphics::Texture>(L"ocean", L"..\\MyEngine_Window\\Resources\\CloudOcean.png");
 		Resources::Load<graphics::Texture>(L"cat", L"..\\MyEngine_Window\\Resources\\ChickenAlpha.bmp");
+		Resources::Load<graphics::Texture>(L"player", L"..\\MyEngine_Window\\Resources\\Player.bmp");
 	}
 }

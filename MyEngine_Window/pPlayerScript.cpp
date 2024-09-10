@@ -38,6 +38,8 @@ namespace p {
 			break;
 		case p::PlayerScript::eState::Attack:
 			break;
+		case p::PlayerScript::eState::GiveWater:
+			break;
 		default:
 			break;
 		}
