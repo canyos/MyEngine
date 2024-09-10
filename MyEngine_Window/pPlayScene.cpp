@@ -35,20 +35,38 @@ namespace p
 		//sr->SetSize(Vector2(3.0f, 3.0f));
 		mPlayer->AddComponent<PlayerScript>();
 		
-		graphics::Texture* pacman = Resources::Find<graphics::Texture>(L"PACMAN");
-		Animator* animator = mPlayer->AddComponent<Animator>();
-		//animator->CreateAnimation(L"CAT", pacman, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		//animator->PlayAnimation(L"Cat", true); //애니메이션 집어넣어서 그리기
+		//graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"Effect");;
+		//Animator* animator = mPlayer->AddComponent<Animator>();
+		//animator->CreateAnimation(L"CatFrontMove", packmanTexture
+		//	, Vector2(0.0f, 0.0f), Vector2(386.0f, 246.0f), Vector2::Zero, 4, 0.1f);
+		//animator->PlayAnimation(L"CatFrontMove", true);
+		/*sr->SetTexture(packmanTexture);*/
 
-		//sr->SetTexture(pacman); //spriteRender로 그리기
+		graphics::Texture* packmanTexture = Resources::Find<graphics::Texture>(L"cat");;
+		Animator* animator = mPlayer->AddComponent<Animator>();
+		animator->CreateAnimation(L"DownWalk", packmanTexture
+			, Vector2(0.0f, 0.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		animator->CreateAnimation(L"RightWalk", packmanTexture
+			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		animator->CreateAnimation(L"UpWalk", packmanTexture
+			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		animator->CreateAnimation(L"LeftWalk", packmanTexture
+			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		animator->CreateAnimation(L"SitDown", packmanTexture
+			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+		animator->CreateAnimation(L"Grooming", packmanTexture
+			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
+
+		animator->PlayAnimation(L"SitDown", false);
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
+		mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
+		mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 		GameObject* bg = object::Instantiate<GameObject>(enums::eLayerType::BackGround);
 		SpriteRenderer* bgSr = bg->AddComponent<SpriteRenderer>();
-		bgSr->SetSize(Vector2(3.0f, 3.0f));
-		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"Map");
+		graphics::Texture* bgTexture = Resources::Find<graphics::Texture>(L"ocean");
 		bgSr->SetTexture(bgTexture);
 
-		
 		Scene::Initialize();
 	}
 
@@ -66,7 +84,7 @@ namespace p
 	void PlayScene::Render(HDC hdc)
 	{
 		Scene::Render(hdc);
-		/*wchar_t str[50] = L"Play  Scene";
+		/*wchar_t str[50] = L"Play Scene";
 		TextOutW(hdc, 0, 0, str, lstrlenW(str));*/
 	}
 	void PlayScene::OnEnter()

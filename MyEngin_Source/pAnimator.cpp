@@ -32,7 +32,7 @@ namespace p {
 		if (mActiveAnimation)
 			mActiveAnimation->Render(hdc);
 	}
-	void Animator::CreateAnimation(const std::wstring & name, 
+	void Animator::CreateAnimation(const std::wstring& name, 
 		graphics::Texture * spriteSheet, 
 		Vector2 leftTop, 
 		Vector2 size, 
@@ -48,7 +48,8 @@ namespace p {
 			leftTop, size, offset, spriteLength, duration);
 
 		animation->SetAnimator(this);
-		mAnimations.insert({ name,animation });
+		mAnimations.insert({ name, animation });
+
 	}
 	Animation * Animator::FindAnimation(const std::wstring & name)
 	{

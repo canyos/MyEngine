@@ -1,4 +1,4 @@
-#pragma once
+ï»¿#pragma once
 #include "pAnimation.h"
 #include "pTime.h"
 #include "pTransform.h"
@@ -44,13 +44,13 @@ namespace p {
 			return;
 
 		mTime += Time::DeltaTime();
-		if (mAnimationSheet[mIndex].duration < mTime) { //Áö¼Ó½Ã°£ÀÌ Áö³ª¸é
+		if (mAnimationSheet[mIndex].duration < mTime) { //ì§€ì†ì‹œê°„ì´ ì§€ë‚˜ë©´
 			mTime = 0.0f;
-			if (mIndex < mAnimationSheet.size()-1) { //³¡±îÁö Àç»ýÇß´ÂÁö
-				mIndex++; //ÀÎµ¦½º Ãß°¡
+			if (mIndex < mAnimationSheet.size()-1) { //ëê¹Œì§€ ìž¬ìƒí–ˆëŠ”ì§€
+				mIndex++; //ì¸ë±ìŠ¤ ì¶”ê°€
 			}
 			else {
-				mbComplete = true; //¿Ï·áÇß´Ù°í º¯°æ
+				mbComplete = true; //ì™„ë£Œí–ˆë‹¤ê³  ë³€ê²½
 			}
 		}
 
@@ -58,29 +58,70 @@ namespace p {
 
 	void Animation::Render(HDC hdc)
 	{
-		//¾ËÆÄºí·»µå ¾µ ¼ö ÀÖ´Â Á¶°Ç : ¾ËÆÄ Ã¤³ÎÀÌ ÀÖ¾î¾ßÇÔ
+		//ì•ŒíŒŒë¸”ë Œë“œ ì“¸ ìˆ˜ ìžˆëŠ” ì¡°ê±´ : ì•ŒíŒŒ ì±„ë„ì´ ìžˆì–´ì•¼í•¨
 		if (mTexture == nullptr)return;
 
 		GameObject* gameObj = mAnimator->GetOwner();
 		Transform* tr = gameObj->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		float rot = tr->GetRoation();
+		Vector2 scale = tr->GetScale();
 
 		if (renderer::mainCamera) {
 			pos = renderer::mainCamera->CalculatePosition(pos);
 		}
 
-		BLENDFUNCTION func = {};
-		func.BlendOp = AC_SRC_OVER;
-		func.BlendFlags = 0;
-		func.AlphaFormat = AC_SRC_ALPHA;
-		func.SourceConstantAlpha = 255; //(0Åõ¸í~255ºÒÅõ¸í)
-
 		Sprite sprite = mAnimationSheet[mIndex];
-		HDC imgHdc = mTexture->GetHdc();
-		AlphaBlend(hdc, pos.x, pos.y,
-			sprite.size.x, sprite.size.y,
-			imgHdc, sprite.leftTop.x, sprite.leftTop.y,
-			sprite.size.x, sprite.size.y, func);
+		graphics::Texture::eTextureType type = mTexture->GetTextureType();
+
+		
+		if (type == graphics::Texture::eTextureType::Bmp) {
+			BLENDFUNCTION func = {};
+			func.BlendOp = AC_SRC_OVER;
+			func.BlendFlags = 0;
+			func.AlphaFormat = AC_SRC_ALPHA;
+			func.SourceConstantAlpha = 255; //(0íˆ¬ëª…~255ë¶ˆíˆ¬ëª…)
+
+			HDC imgHdc = mTexture->GetHdc();
+
+			AlphaBlend(hdc, 
+				pos.x - (sprite.size.x/2.0f), 
+				pos.y - (sprite.size.y / 2.0f),
+				sprite.size.x*scale.x, 
+				sprite.size.y*scale.y,
+				imgHdc, sprite.leftTop.x, sprite.leftTop.y,
+				sprite.size.x, sprite.size.y, func);
+		}
+
+		if (type == graphics::Texture::eTextureType::Png) {
+			//ë‚´ê°€ ì›í•˜ëŠ” í”½ì…€ì„ íˆ¬ëª…í™” ì‹œí‚¬ ë•Œ
+			Gdiplus::ImageAttributes imgAtt = {};
+
+			//íˆ¬ëª…í™” ì‹œí‚¬ í”½ì…€ì˜ ìƒ‰ ë²”ìœ„
+			imgAtt.SetColorKey(Gdiplus::Color(230, 230, 230), Gdiplus::Color(255, 255, 255));
+			Gdiplus::Graphics graphics(hdc);
+			graphics.TranslateTransform(pos.x, pos.y);
+			graphics.RotateTransform(rot);
+			graphics.TranslateTransform(-pos.x, -pos.y);
+			//ì™¼ìª½ ìœ„ ê¸°ì¤€ìœ¼ë¡œ íšŒì „ì‹œí‚´, ì¤‘ì•™ì„ ê¸°ì¤€ìœ¼ë¡œ íšŒì „ì‹œí‚¤ê³  ì‹¶ìŒ
+
+			graphics.DrawImage(mTexture->GetImage(),
+				Gdiplus::Rect(
+					pos.x - (sprite.size.x / 2.0f),
+					pos.y - (sprite.size.y / 2.0f),
+					sprite.size.x*scale.x,
+					sprite.size.y*scale.y
+				),
+				sprite.leftTop.x, sprite.leftTop.y,
+				sprite.size.x, 
+				sprite.size.y,
+				Gdiplus::UnitPixel,
+				&imgAtt
+				//nullptr
+			);
+		}
+
+		
 	}
 	
 	void Animation::Reset()
