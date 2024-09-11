@@ -1,6 +1,6 @@
 #pragma once
 #include "CommonInclude.h"
-
+#include "pMath.h"
 namespace p {
 	enum class eKeyState {
 		Down, //누름
@@ -13,6 +13,7 @@ namespace p {
 		A,S,D,F,G,H,J,K,L,
 		Z,X,C,V,B,N,M, 
 		Left,Right,Down,Up,
+		LButton, MButton, RButton,
 		END,
 	};
 	class Input
@@ -30,15 +31,20 @@ namespace p {
 		static bool GetKeyDown(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Down; }
 		static bool GetKeyUp(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Up; }
 		static bool GetKey(eKeyCode code) { return Keys[(UINT)code].state == eKeyState::Pressed; }
+		static math::Vector2 GetMousePosition() { return mMousePosition; }
 	private:
 		//eKeyState mState[] = eKeyState::Up;
 		static std::vector<Key> Keys; //모든 키를 관리하는 vector, input전체가 공유가능하게 static으로 선언
+		static math::Vector2 mMousePosition;
+	private:
 		static void createKeys();
 		static void updateKeys();
 		static void updateKeyDown(Input::Key & key);
 		static void updateKeyUp(Input::Key & key);
 		static void updateKey(Input::Key& key);
 		static bool isKeyDown(eKeyCode code);
+		static void clearKeys();
+		static void getMousePositionByWindow();
 	};
 }
 

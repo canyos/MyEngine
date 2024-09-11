@@ -29,7 +29,7 @@ namespace p {
 		switch (mState)
 		{
 		case p::CatScript::eState::SitDown:
-			sitDown();
+			idle();
 			break;
 		case p::CatScript::eState::Walk:
 			move();
@@ -53,7 +53,7 @@ namespace p {
 	{
 	}
 
-	void CatScript::sitDown()
+	void CatScript::idle()
 	{
 		mTime += Time::DeltaTime();
 		if (mTime > 3.0f) {

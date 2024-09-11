@@ -40,19 +40,12 @@ namespace p
 		Animator* playerAnimator = mPlayer->AddComponent<Animator>();
 		playerAnimator->CreateAnimation(L"Idle", playerTex
 			, Vector2(2000.0f, 250.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 4, 0.1f);
-		/*playerAnimator->CreateAnimation(L"RightWalk", playerTex
-			, Vector2(0.0f, 32.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		playerAnimator->CreateAnimation(L"UpWalk", playerTex
-			, Vector2(0.0f, 64.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		playerAnimator->CreateAnimation(L"LeftWalk", playerTex
-			, Vector2(0.0f, 96.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		playerAnimator->CreateAnimation(L"SitDown", playerTex
-			, Vector2(0.0f, 128.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
-		playerAnimator->CreateAnimation(L"Grooming", playerTex
-			, Vector2(0.0f, 160.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);*/
+		playerAnimator->CreateAnimation(L"FrontGiveWater", playerTex
+			, Vector2(0.0f, 2000.0f), Vector2(250.0f, 250.0f), Vector2::Zero, 12, 0.1f);
+
 
 		playerAnimator->PlayAnimation(L"Idle", false);
-		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(100.0f, 100.0f));
+		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 300.0f));
 		mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
 		//mPlayer->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 

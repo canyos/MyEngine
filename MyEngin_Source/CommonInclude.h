@@ -4,6 +4,7 @@
 #include <vector>
 #include <string>
 #include <map>
+#include <functional>
 
 #include "pMath.h"
 #include "pEnum.h"

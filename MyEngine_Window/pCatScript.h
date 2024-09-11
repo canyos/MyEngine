@@ -27,7 +27,7 @@ namespace p {
 		void LateUpdate()override;
 		void Render(HDC hdc)override;
 	private:
-		void sitDown();
+		void idle();
 		void move();
 		void PlayWalkAnimationByDirection(eDirection direction);
 		void translate(Transform* tr);

@@ -6,7 +6,7 @@
 #include "pAnimator.h"
 namespace p {
 	PlayerScript::PlayerScript()
-		: mState(PlayerScript::eState::SitDown)
+		: mState(PlayerScript::eState::Idle)
 		, mAnimator(nullptr)
 	{
 	}
@@ -27,8 +27,8 @@ namespace p {
 
 		switch (mState)
 		{
-		case p::PlayerScript::eState::SitDown:
-			sitDown();
+		case p::PlayerScript::eState::Idle:
+			idle();
 			break;
 		case p::PlayerScript::eState::Walk:
 			move();
@@ -39,6 +39,7 @@ namespace p {
 		case p::PlayerScript::eState::Attack:
 			break;
 		case p::PlayerScript::eState::GiveWater:
+			giveWater();
 			break;
 		default:
 			break;
@@ -52,28 +53,34 @@ namespace p {
 	{
 	}
 
-	void PlayerScript::sitDown()
+	void PlayerScript::idle()
 	{
+		if (Input::GetKey(eKeyCode::LButton)) {
+			mState = PlayerScript::eState::GiveWater;
+			mAnimator->PlayAnimation(L"FrontGiveWater",false);
+			Vector2 mousePos = Input::GetMousePosition();
 
+
+		}
 
 		if (Input::GetKey(eKeyCode::D))
 		{
 			mState = PlayerScript::eState::Walk;
-			mAnimator->PlayAnimation(L"RightWalk");
+			//mAnimator->PlayAnimation(L"RightWalk");
 		}
 		if (Input::GetKey(eKeyCode::A)) {
 			mState = PlayerScript::eState::Walk;
-			mAnimator->PlayAnimation(L"LeftWalk");
+			//mAnimator->PlayAnimation(L"LeftWalk");
 		}
 			
 		if (Input::GetKey(eKeyCode::W)) {
 			mState = PlayerScript::eState::Walk;
-			mAnimator->PlayAnimation(L"UpWalk");
+			//mAnimator->PlayAnimation(L"UpWalk");
 		}
 			
 		if (Input::GetKey(eKeyCode::S)) {
 			mState = PlayerScript::eState::Walk;
-			mAnimator->PlayAnimation(L"DownWalk");
+			//mAnimator->PlayAnimation(L"DownWalk");
 		}
 			
 	}
@@ -106,8 +113,15 @@ namespace p {
 		if (Input::GetKeyUp(eKeyCode::D) || Input::GetKeyUp(eKeyCode::A)
 			|| Input::GetKeyUp(eKeyCode::W) || Input::GetKeyUp(eKeyCode::S))
 		{
-			mState = PlayerScript::eState::SitDown;
+			mState = PlayerScript::eState::Idle;
 			mAnimator->PlayAnimation(L"SitDown", false);
+		}
+	}
+	void PlayerScript::giveWater()
+	{
+		if (mAnimator->IsComplete()) {
+			mState = eState::Idle;
+			mAnimator->PlayAnimation(L"Idle", false);
 		}
 	}
 }

@@ -18,6 +18,7 @@ namespace p {
 		HDC GetHdc() { return mHdc; }
 		UINT GetWidth() { return mWidth; }
 		UINT GetHeight() { return mHeight; }
+		HWND GetHwnd() { return mHwnd; }
 	private:
 		void clearRenderTarget();
 		void copyRenderTarget(HDC source, HDC dest);

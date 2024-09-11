@@ -1,11 +1,12 @@
 #pragma once
 #include "pScript.h"
+
 namespace p {
 	class PlayerScript : public Script
 	{
 	public:
 		enum class eState {
-			SitDown,
+			Idle,
 			Walk,
 			Sleep,
 			Attack,
@@ -19,11 +20,13 @@ namespace p {
 		void LateUpdate()override;
 		void Render(HDC hdc)override;
 	private:
-		void sitDown();
+		void idle();
 		void move();
+		void giveWater();
 	private:
 		eState mState;
 		class Animator* mAnimator;
+
 	};
 }
 
