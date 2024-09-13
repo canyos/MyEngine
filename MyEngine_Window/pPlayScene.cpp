@@ -30,7 +30,7 @@ namespace p
 		Camera* cameraComp = camera->AddComponent<Camera>();
 		renderer::mainCamera = cameraComp;
 		//camera->AddComponent<PlayerScript>();
-
+		
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
@@ -60,7 +60,7 @@ namespace p
 		//Cat
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
 		cat->AddComponent<CatScript>();
-
+		cameraComp->SetTarget(mPlayer);
 		graphics::Texture* catTexture = Resources::Find<graphics::Texture>(L"cat");;
 		Animator* catAnimator = cat->AddComponent<Animator>();
 		catAnimator->CreateAnimation(L"DownWalk", catTexture
