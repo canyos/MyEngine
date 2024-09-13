@@ -2,7 +2,7 @@
 #include "pInput.h"
 #include "pTime.h"
 #include "pSceneManager.h"
-
+#include "pResources.h"
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
 	{
@@ -97,6 +97,10 @@ namespace p {
 
 		//backbuffer를 원본 버퍼로 복사
 		copyRenderTarget(mBackHdc, mHdc);
+	}
+	void Application::Release() {
+		SceneManager::Release();
+		Resources::Release();
 	}
 }
 

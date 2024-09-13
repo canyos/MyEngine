@@ -53,6 +53,10 @@ namespace p {
 	{
 	}
 
+	void PlayerScript::AttackEffect()
+	{
+	}
+
 	void PlayerScript::idle()
 	{
 		if (Input::GetKey(eKeyCode::LButton)) {

@@ -22,6 +22,17 @@ namespace p {
 		static void Update();
 		static void LateUpdate();
 		static void Render(HDC hdc);
+		static void Release();
+
+	//	static SceneManager& GetInst() {
+	//		static SceneManager sceneManager;
+	//		return sceneManager;
+	//	}
+	//private:
+	//	SceneManager();
+	//	~SceneManager();
+	// 싱글톤 패턴 하나의 객체만 만들어서 쓰겠다
+
 	private:
 		//static std::vector<Scene*> mScene;
 		static std::map<const std::wstring, Scene*> mScene;

@@ -11,8 +11,11 @@ namespace p {
 
 	GameObject::~GameObject()
 	{
+		
 		for (Component* comp : mComponents)
 		{
+			if (comp == nullptr)
+				continue;
 			delete comp;
 			comp = nullptr;
 		}
