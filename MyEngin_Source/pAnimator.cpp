@@ -27,7 +27,7 @@ namespace p {
 		if (mActiveAnimation) {
 			mActiveAnimation->Update();
 			Events* events = FindEvents(mActiveAnimation->GetName());
-			if (mActiveAnimation->IsComplete() && mbLoop) { //이미 완료되었고 루프로 실행할때
+			if (mActiveAnimation->IsComplete()) { //이미 완료되었고 루프로 실행할때
 				if(events)
 					events->completeEvent();
 				if(mbLoop)
