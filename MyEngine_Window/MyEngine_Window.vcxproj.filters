@@ -64,9 +64,6 @@
     <ClCompile Include="pCatScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
-    <ClCompile Include="CatScript.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <None Include="ClassDiagram.cd" />

@@ -37,5 +37,6 @@ namespace p {
 		class Animator* mAnimator;
 		float mTime;
 		eDirection mDirection;
+		float mDeathTime;
 	};
 }

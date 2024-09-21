@@ -4,11 +4,15 @@
 #include "pTransform.h"
 #include "pGameObject.h"
 #include "pAnimator.h"
+#include "pObject.h"
+
 namespace p {
 	CatScript::CatScript()
 		: mState(CatScript::eState::SitDown)
 		, mAnimator(nullptr)
 		, mTime(0.0f)
+		, mDirection(eDirection::Down)
+		, mDeathTime(0.0f)
 	{
 	}
 	CatScript::~CatScript()
@@ -21,6 +25,11 @@ namespace p {
 	}
 	void CatScript::Update()
 	{
+		mDeathTime += Time::DeltaTime();
+		if (mDeathTime > 6.0f) {
+			object::Destroy(GetOwner());
+		}
+
 		if (mAnimator == nullptr)
 		{
 			mAnimator = GetOwner()->GetComponent<Animator>();

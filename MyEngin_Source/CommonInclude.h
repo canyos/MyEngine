@@ -5,6 +5,7 @@
 #include <string>
 #include <map>
 #include <functional>
+#include <filesystem>
 
 #include "pMath.h"
 #include "pEnum.h"

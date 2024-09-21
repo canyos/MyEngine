@@ -29,6 +29,12 @@ namespace p {
 			tr->SetPosition(pos);
 			return gameObject;
 		}
+
+		static void Destroy(GameObject* obj) {
+			obj->Death();
+		}
 	}
+
+	
 
 }

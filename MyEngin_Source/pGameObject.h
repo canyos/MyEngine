@@ -7,6 +7,13 @@ namespace p {
 	class GameObject
 	{
 	public:
+		
+		enum class eState {
+			Active,
+			Paused,
+			Dead,
+			End,
+		};
 		GameObject();
 		~GameObject();
 
@@ -40,12 +47,26 @@ namespace p {
 
 			return component;
 		}
+
+		eState GetActive() { return mState; }
+		void SetActive(bool power) {
+			if (power) {
+				mState = eState::Active;
+			}
+			else {
+				mState = eState::Paused;
+			}
+		}
+		void Death() { mState = eState::Dead; }
 	private:
 		void InitializeTransform();
+		
 	private:
+		eState mState;
 		std::vector<Component*> mComponents;
 
 	};
+	typedef std::vector<GameObject*>::iterator GameObjectIter;
 }
 
 
