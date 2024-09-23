@@ -14,6 +14,6 @@ namespace p
 		//void AttackEffect();
 
 	private:
-
+		
 	};
 }

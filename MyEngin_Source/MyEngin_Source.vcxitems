@@ -17,8 +17,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Input.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />

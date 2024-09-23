@@ -35,12 +35,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Entity.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Input.cpp">
-      <Filter>util</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
   </ItemGroup>

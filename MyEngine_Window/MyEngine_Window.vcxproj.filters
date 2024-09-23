@@ -46,17 +46,8 @@
     <ClCompile Include="pPlayer.cpp">
       <Filter>Contents</Filter>
     </ClCompile>
-    <ClCompile Include="PlayScene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
-    <ClCompile Include="PlayerScript.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
     <ClCompile Include="pPlayerScript.cpp">
       <Filter>Scripts</Filter>
-    </ClCompile>
-    <ClCompile Include="Cat.cpp">
-      <Filter>Contents</Filter>
     </ClCompile>
     <ClCompile Include="pCat.cpp">
       <Filter>Contents</Filter>

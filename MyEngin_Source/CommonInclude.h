@@ -6,7 +6,7 @@
 #include <map>
 #include <functional>
 #include <filesystem>
-
+#include <math.h>
 #include "pMath.h"
 #include "pEnum.h"
 
