@@ -27,8 +27,7 @@ namespace p {
 		for (GameObject* gameObj : mGameObjects) {
 			if (gameObj == nullptr)
 				continue;
-			GameObject::eState state = gameObj->GetActive();
-			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
+			if (gameObj->IsActive() == false)
 				continue;
 			gameObj->Update();
 		}
@@ -38,19 +37,18 @@ namespace p {
 		for (GameObject* gameObj : mGameObjects) {
 			if (gameObj == nullptr)
 				continue;
-			GameObject::eState state = gameObj->GetActive();
-			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
+			if (gameObj->IsActive() == false)
 				continue;
 			gameObj->LateUpdate();
 		}
 	}
+
 	void Layer::Render(HDC hdc)
 	{
 		for (GameObject* gameObj : mGameObjects) {
 			if (gameObj == nullptr)
 				continue;
-			GameObject::eState state = gameObj->GetActive();
-			if (state == GameObject::eState::Paused || state == GameObject::eState::Dead)
+			if (gameObj->IsActive() == false)
 				continue;
 			gameObj->Render(hdc);
 		}
@@ -63,7 +61,7 @@ namespace p {
 			; iter != mGameObjects.end()
 			; )
 		{
-			GameObject::eState active = (*iter)->GetActive();
+			GameObject::eState active = (*iter)->GetState();
 			if (active == GameObject::eState::Dead)
 			{
 				GameObject* deathObj = (*iter);

@@ -14,15 +14,13 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="$(MSBuildThisFileDirectory)BoxCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)CircleCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)Collider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
@@ -49,6 +47,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCircleCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollider.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h" />

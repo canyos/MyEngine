@@ -7,6 +7,7 @@
 #include <functional>
 #include <filesystem>
 #include <math.h>
+#include <bitset>
 #include "pMath.h"
 #include "pEnum.h"
 

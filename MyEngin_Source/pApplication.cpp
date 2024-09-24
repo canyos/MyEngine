@@ -3,6 +3,7 @@
 #include "pTime.h"
 #include "pSceneManager.h"
 #include "pResources.h"
+#include "pCollisionManager.h"
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
 	{
@@ -16,6 +17,7 @@ namespace p {
 		createBuffer(width, height);
 		InitializeEtc();
 
+		CollisionManager::Initialize();
 		SceneManager::Initialize();
 		
 	}
@@ -81,11 +83,13 @@ namespace p {
 		
 		
 		Time::Update();
+		CollisionManager::Update();
 		SceneManager::Update();
 	}
 
 	void Application::LateUpdate()
 	{
+		CollisionManager::LateUpdate();
 		SceneManager::LateUpdate();
 	}
 
@@ -100,6 +104,7 @@ namespace p {
 
 		
 		Time::Render(mBackHdc);
+		CollisionManager::Render(mBackHdc);
 		SceneManager::Render(mBackHdc);
 
 		//backbuffer를 원본 버퍼로 복사

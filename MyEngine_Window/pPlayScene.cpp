@@ -16,6 +16,8 @@
 #include "pCat.h"
 #include "pCatScript.h"
 #include "pBoxCollider2D.h"
+#include "pCollisionManager.h"
+
 namespace p
 {
 	PlayScene::PlayScene()
@@ -26,6 +28,8 @@ namespace p
 	}
 	void PlayScene::Initialize()
 	{
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
+
 		//main camera
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();

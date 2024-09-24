@@ -47,12 +47,18 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp">
       <Filter>component</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)Collider.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)BoxCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)CircleCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pBoxCollider2D.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pBoxCollider2D.cpp">
+      <Filter>collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp">
+      <Filter>collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp">
+      <Filter>collider</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp">
+      <Filter>collider</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
@@ -108,9 +114,18 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h">
       <Filter>component</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pCollider.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)pBoxCollider2D.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)pCircleCollider2D.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pBoxCollider2D.h">
+      <Filter>collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCircleCollider2D.h">
+      <Filter>collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCollider.h">
+      <Filter>collider</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pCollisionManager.h">
+      <Filter>collider</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -124,6 +139,9 @@
     </Filter>
     <Filter Include="component">
       <UniqueIdentifier>{86f72f2b-2a23-46a6-8867-3321c4e4a792}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="collider">
+      <UniqueIdentifier>{50e54c3c-a62e-4506-82f9-6a607236f739}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

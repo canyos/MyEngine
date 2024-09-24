@@ -15,6 +15,7 @@ namespace p {
 		virtual void Render(HDC hdc);
 		virtual void Destroy();
 		void AddGameObject(GameObject* gameObject);
+		const std::vector<GameObject*> GetGameObjects() { return mGameObjects; }
 	private:
 		enums::eLayerType mType;
 		std::vector<GameObject*> mGameObjects;
