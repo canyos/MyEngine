@@ -29,7 +29,7 @@ namespace p {
 	{
 		mDeathTime += Time::DeltaTime();
 		if (mDeathTime > 6.0f) {
-			object::Destroy(GetOwner());
+			//object::Destroy(GetOwner());
 		}
 
 		if (mAnimator == nullptr)
@@ -66,20 +66,20 @@ namespace p {
 
 	void CatScript::idle()
 	{
-		mTime += Time::DeltaTime();
+		//mTime += Time::DeltaTime();
 
-		if (mTime > 2.0f) {
-			//object::Destroy(GetOwner());
-		}
-		Transform* tr = GetOwner()->GetComponent<Transform>();
-		Vector2 pos = tr->GetPosition();		
-		
-		//마우스 위치 이동 (뺄셈 활용)
-		Transform* plTr = mPlayer->GetComponent<Transform>();
-		Vector2 dest = mDest - plTr->GetPosition(); // 상대위치
+		//if (mTime > 2.0f) {
+		//	//object::Destroy(GetOwner());
+		//}
+		//Transform* tr = GetOwner()->GetComponent<Transform>();
+		//Vector2 pos = tr->GetPosition();		
+		//
+		////마우스 위치 이동 (뺄셈 활용)
+		//Transform* plTr = mPlayer->GetComponent<Transform>();
+		//Vector2 dest = mDest - plTr->GetPosition(); // 상대위치
 
-		pos += dest.normalize() * (100.0f * Time::DeltaTime());
-		
+		//pos += dest.normalize() * (100.0f * Time::DeltaTime());
+		//tr->SetPosition(pos);
 
 		//삼각함수를 통한 이동
 		//mRadian += 5.0f *  Time::DeltaTime(); //상수로 진동수 조절
@@ -95,7 +95,7 @@ namespace p {
 		//rotDegree = ConvertDegree(rotDegree);
 
 		//pos += dest * (100.0f * Time::DeltaTime());
-		tr->SetPosition(pos);
+		
 	}
 
 	void CatScript::move()

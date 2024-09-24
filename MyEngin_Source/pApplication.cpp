@@ -25,7 +25,12 @@ namespace p {
 		Time::Initialize();
 	}
 	void Application::clearRenderTarget() {
+		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128,128,128));
+		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
+
 		Rectangle(mBackHdc, -1, -1, 1601, 901);
+		(HBRUSH)SelectObject(mBackHdc, oldBrush);
+		DeleteObject(grayBrush);
 	}
 
 	void Application::copyRenderTarget(HDC source, HDC dest)
