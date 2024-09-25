@@ -159,36 +159,27 @@ namespace p {
 	}
 	bool CollisionManager::checkCollideCircleRect(Collider * circle, Collider * rect)
 	{
-		bool result = false;
 		Transform* circleTr = circle->GetOwner()->GetComponent<Transform>();
 		Transform* rectTr = rect->GetOwner()->GetComponent<Transform>();
-
-		Vector2 circlePos = circleTr->GetPosition() + circle->GetOffset();
-		Vector2 rectPos = rectTr->GetPosition() + rect->GetOffset();
 
 		Vector2 circleSize = circle->GetSize() *100.0f;
 		Vector2 rectSize = rect->GetSize() *100.0f;
 
+		Vector2 circlePos = circleTr->GetPosition() + circle->GetOffset();
+		Vector2 rectPos = rectTr->GetPosition() + rect->GetOffset();
 
 		float r = circleSize.x / 2.0f;//¹ÝÁö¸§
+		Vector2 leftTop = Vector2(rectPos.x - rectSize.x / 2.0f, rectPos.y - rectSize.y / 2.0f);
+		Vector2 rightBottom = Vector2(rectPos.x + rectSize.x / 2.0f, rectPos.y + rectSize.y / 2.0f);
 
-		Vector2 rectLeftTop = Vector2(rectPos.x - rectSize.x / 2.0f, rectPos.y - rectSize.y / 2.0f);
-		Vector2 rectRightTop = Vector2(rectPos.x + rectSize.x / 2.0f, rectPos.y - rectSize.y / 2.0f);
-		Vector2 rectLeftBottom = Vector2(rectPos.x - rectSize.x / 2.0f, rectPos.y + rectSize.y / 2.0f);
-		Vector2 rectRightBottom = Vector2(rectPos.x + rectSize.x / 2.0f, rectPos.y + rectSize.y / 2.0f);
+		float closestX = max(leftTop.x, min(circlePos.x, rightBottom.x));
+		float closestY = max(leftTop.y, min(circlePos.y, rightBottom.y));
 		
-		float dist1 = (rectLeftTop - circlePos).length();
-		float dist2 = (rectRightTop - circlePos).length();
-		float dist3 = (rectLeftBottom - circlePos).length();
-		float dist4 = (rectRightBottom - circlePos).length();
+		Vector2 diff = Vector2(circlePos.x - closestX, circlePos.y - closestY);
+		float distance = diff.length();
+		if (distance <= r)
+			return true;
 
-		if (dist1 <= r ||
-			dist2 <= r ||
-			dist3 <= r ||
-			dist4 <= r) {
-			result = true;
-		}
-
-		return result;
+		return false;
 	}
 }

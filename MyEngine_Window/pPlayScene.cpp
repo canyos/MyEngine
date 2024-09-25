@@ -40,7 +40,7 @@ namespace p
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 		CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
-		collider->SetOffset(Vector2(-80.0f, -80.0f));
+		collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"player");;
 		Animator* playerAnimator = mPlayer->AddComponent<Animator>();
