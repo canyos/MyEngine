@@ -61,5 +61,11 @@ namespace p {
 	{
 		mLayers[(UINT)type]->AddGameObject(gameObject);
 	}
+	void Scene::EraseGameObject(GameObject* gameObj)
+	{
+		eLayerType layerType = gameObj->GetLayerType();
+		mLayers[(UINT)layerType]->EraseGameObjects(gameObj);
+
+	}
 }
 

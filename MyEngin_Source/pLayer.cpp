@@ -83,4 +83,14 @@ namespace p {
 			return;
 		mGameObjects.push_back(gameObject);
 	}
+	void Layer::EraseGameObjects(GameObject * eraseGameObj)
+	{
+		mGameObjects.erase(
+			std::remove_if(mGameObjects.begin(), mGameObjects.end(),
+				[=](GameObject* gameObj)
+				{
+					return (gameObj == eraseGameObj);
+				}),
+			mGameObjects.end());
+	}
 }

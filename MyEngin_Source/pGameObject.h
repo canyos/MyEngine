@@ -59,13 +59,15 @@ namespace p {
 		}
 		bool IsActive() { return mState == eState::Active; }
 		void Death() { mState = eState::Dead; }
+		void SetLayerType(eLayerType layerType) { mLayerType = layerType; }
+		eLayerType GetLayerType() { return mLayerType; }
 	private:
 		void InitializeTransform();
 		
 	private:
 		eState mState;
 		std::vector<Component*> mComponents;
-
+		eLayerType mLayerType;
 	};
 	typedef std::vector<GameObject*>::iterator GameObjectIter;
 }

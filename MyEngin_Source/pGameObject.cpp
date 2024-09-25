@@ -3,7 +3,9 @@
 #include "pTime.h"
 #include "pTransform.h"
 namespace p {
-	GameObject::GameObject():mState(eState::Active)
+	GameObject::GameObject()
+		:mState(eState::Active), 
+		 mLayerType(eLayerType::None)
 	{
 		mComponents.resize((UINT)enums::eComponentType::End);
 		InitializeTransform();

@@ -1,6 +1,6 @@
 #pragma once
 #include "pScene.h"
-
+#include "pDontDestroyOnLoad.h"
 namespace p {
 	class SceneManager{
 	public:
@@ -24,7 +24,7 @@ namespace p {
 		static void Render(HDC hdc);
 		static void Destroy();
 		static void Release();
-
+		static Scene* GetDontDestroyOnLoad() { return mDontDestroyOnLoad; }
 	//	static SceneManager& GetInst() {
 	//		static SceneManager sceneManager;
 	//		return sceneManager;
@@ -38,6 +38,7 @@ namespace p {
 		//static std::vector<Scene*> mScene;
 		static std::map<const std::wstring, Scene*> mScene;
 		static Scene* mActiveScene;
+		static Scene* mDontDestroyOnLoad;
 	};
 }
 

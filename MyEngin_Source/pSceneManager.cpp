@@ -3,9 +3,10 @@
 namespace p {
 	std::map<const std::wstring, Scene*> SceneManager::mScene;
 	Scene* SceneManager::mActiveScene = nullptr;
-
+	Scene* SceneManager::mDontDestroyOnLoad = nullptr;
 	void SceneManager::Initialize()
 	{
+		mDontDestroyOnLoad = CreateScene<DontDestroyOnLoad>(L"DontDestroyOnLoad");
 	}
 	Scene* SceneManager::LoadScene(const std::wstring & name)
 	{
@@ -21,18 +22,22 @@ namespace p {
 	void SceneManager::Update()
 	{
 		mActiveScene->Update();
+		mDontDestroyOnLoad->Update();
 	}
 	void SceneManager::LateUpdate()
 	{
 		mActiveScene->LateUpdate();
+		mDontDestroyOnLoad->LateUpdate();
 	}
 	void SceneManager::Render(HDC hdc)
 	{
 		mActiveScene->Render(hdc);
+		mDontDestroyOnLoad->Render(hdc);
 	}
 	void SceneManager::Destroy()
 	{
 		mActiveScene->Destroy();
+		mDontDestroyOnLoad->Destroy();
 	}
 	void SceneManager::Release()
 	{

@@ -59,6 +59,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp">
       <Filter>collider</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
@@ -126,6 +127,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollisionManager.h">
       <Filter>collider</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

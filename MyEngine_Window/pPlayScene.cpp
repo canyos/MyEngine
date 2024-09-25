@@ -38,6 +38,8 @@ namespace p
 
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+		object::DontDestroyOnLoad(mPlayer);
+
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 		CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 		collider->SetOffset(Vector2(-50.0f, -50.0f));

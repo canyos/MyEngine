@@ -21,6 +21,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
@@ -49,6 +50,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
