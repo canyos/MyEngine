@@ -39,7 +39,7 @@ namespace p
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
-		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+		CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 		collider->SetOffset(Vector2(-80.0f, -80.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"player");;

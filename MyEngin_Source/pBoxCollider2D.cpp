@@ -1,10 +1,11 @@
 #include "pBoxCollider2D.h"
 #include "pTransform.h"
 #include "pGameObject.h"
-
+#include "pRenderer.h"
+#include "pCamera.h"
 namespace p {
 	BoxCollider2D::BoxCollider2D()
-		: Collider()
+		: Collider(enums::eColliderType::Rect2D)
 	{
 	}
 	BoxCollider2D::~BoxCollider2D()
@@ -23,6 +24,10 @@ namespace p {
 	{
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition(); 
+
+		if (renderer::mainCamera)
+			pos = renderer::mainCamera->CalculatePosition(pos);
+
 		Vector2 offset = GetOffset();
 
 		HBRUSH transparentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);

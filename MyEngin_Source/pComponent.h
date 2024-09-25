@@ -2,6 +2,7 @@
 #include "pEntity.h"
 
 namespace p {
+	using namespace enums;
 	class GameObject;
 	class Component : public Entity
 	{

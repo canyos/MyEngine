@@ -1,4 +1,5 @@
 #include "pScript.h"
+#include "pCollider.h"
 namespace p {
 	Script::Script():Component(enums::eComponentType::Script)
 	{
@@ -16,6 +17,15 @@ namespace p {
 	{
 	}
 	void Script::Render(HDC hdc)
+	{
+	}
+	void Script::OnCollisionEnter(Collider* other)
+	{
+	}
+	void Script::OnCollisionStay(Collider* other)
+	{
+	}
+	void Script::OnCollisionExit(Collider* other)
 	{
 	}
 }

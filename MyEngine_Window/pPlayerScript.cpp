@@ -8,6 +8,7 @@
 #include "pCatScript.h"
 #include "pObject.h"
 #include "pResources.h"
+#include "pCollider.h"
 namespace p {
 	PlayerScript::PlayerScript()
 		: mState(PlayerScript::eState::Idle)
@@ -60,6 +61,18 @@ namespace p {
 	void PlayerScript::AttackEffect()
 	{
 		
+	}
+
+	void PlayerScript::OnCollisionEnter(Collider * other)
+	{
+	}
+
+	void PlayerScript::OnCollisionStay(Collider * other)
+	{
+	}
+
+	void PlayerScript::OnCollisionExit(Collider * other)
+	{
 	}
 
 	void PlayerScript::idle()
