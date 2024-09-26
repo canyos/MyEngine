@@ -1,4 +1,5 @@
 #include "pSceneManager.h"
+#include "pDontDestroyOnLoad.h"
 
 namespace p {
 	std::map<const std::wstring, Scene*> SceneManager::mScene;

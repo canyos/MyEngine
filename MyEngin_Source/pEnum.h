@@ -8,6 +8,7 @@ namespace p
 			BackGround,
 			//Tree 
 			//character
+			Tile,
 			Animal,
 			Player,
 			Paricle,

@@ -7,6 +7,9 @@
 #include "../MyEngine_Window/pLoadScene.h"
 #include "../MyEngine_Window/LoadResources.h"
 #include "time.h"
+#include "pResources.h"
+#include "pTexture.h"
+#include "../MyEngine_Window/pToolScene.h"
 p::Application application;
 
 ULONG_PTR gpToken;
@@ -20,9 +23,10 @@ WCHAR szTitle[MAX_LOADSTRING];                  // 제목 표시줄 텍스트입
 WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름입니다.
 //wchar 2byte char
 // 이 코드 모듈에 포함된 함수의 선언을 전달합니다:
-ATOM                MyRegisterClass(HINSTANCE hInstance);
+ATOM                MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
+//LRESULT CALLBACK    WndTileProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 핸들 (핸들을 통해서만 윈도우 메모리에 접근)
@@ -39,7 +43,8 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 �
     // 전역 문자열을 초기화합니다.
     LoadStringW(hInstance, IDS_APP_TITLE, szTitle, MAX_LOADSTRING);
     LoadStringW(hInstance, IDC_EDITORWINDOW, szWindowClass, MAX_LOADSTRING);
-    MyRegisterClass(hInstance);//인스턴스 정보를 설정함
+	MyRegisterClass(hInstance, szWindowClass, WndProc);
+	MyRegisterClass(hInstance, L"TILEWINDOW", WndTileProc);//인스턴스 정보를 설정함
 
     // 애플리케이션 초기화를 수행합니다:
     if (!InitInstance (hInstance, nCmdShow))
@@ -95,14 +100,14 @@ int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 �
 //
 //  용도: 창 클래스를 등록합니다.
 //
-ATOM MyRegisterClass(HINSTANCE hInstance)
+ATOM MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc)
 {
     WNDCLASSEXW wcex;
 
     wcex.cbSize = sizeof(WNDCLASSEX);
 
     wcex.style          = CS_HREDRAW | CS_VREDRAW;
-    wcex.lpfnWndProc    = WndProc;
+	wcex.lpfnWndProc	= proc;
     wcex.cbClsExtra     = 0;
     wcex.cbWndExtra     = 0;
     wcex.hInstance      = hInstance;
@@ -110,7 +115,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance)
     wcex.hCursor        = LoadCursor(nullptr, IDC_ARROW);
     wcex.hbrBackground  = (HBRUSH)(COLOR_WINDOW+1);
     wcex.lpszMenuName   = MAKEINTRESOURCEW(IDC_EDITORWINDOW);
-    wcex.lpszClassName  = szWindowClass; //인스턴스 이름 설정
+    wcex.lpszClassName  = name; //인스턴스 이름 설정
     wcex.hIconSm        = LoadIcon(wcex.hInstance, MAKEINTRESOURCE(IDI_SMALL));
 
     return RegisterClassExW(&wcex);
@@ -130,11 +135,14 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
    const UINT width = 672, height = 846;
-   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, //window창을 만들어줌, szWindowClass로 register한 정보 들고와서 설정,
-	                                                                           //szTitle이 이름, WS_OVERLAPPEDWINDO는 타입
-      CW_USEDEFAULT, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);//시작할때 위치xy, 가로세로크기 설정가능
+   HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, //window창을 만들어줌, szWindowClass로 register한 정보 들고와서 설정,                                                                       
+      CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr); //szTitle이 이름, WS_OVERLAPPEDWINDO는 타입
+																			//시작할때 위치xy, 가로세로크기 설정가능
+   
+   HWND ToolHWnd = CreateWindowW(L"TILEWINDOW", L"TileWindow", WS_OVERLAPPEDWINDOW,
+	   0, 0, width, height, nullptr, nullptr, hInstance, nullptr);
 
-   application.Initialize(hWnd,width, height);//내 어플리케이션에 핸들 넣어줌
+   application.Initialize(hWnd, width, height);
 
    if (!hWnd) //윈도우에 접근 가능한 핸들 반환
    {
@@ -143,11 +151,27 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    ShowWindow(hWnd, nCmdShow);
    UpdateWindow(hWnd);
+
+   //ShowWindow(ToolHWnd, nCmdShow);
+   
+
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
    srand(time(NULL));
    p::LoadResources();
    p::LoadScenes();
    
+   //Tile윈도우 크기 조정
+   p::graphics::Texture* texture =
+	   p::Resources::Find<p::graphics::Texture>(L"SpringFloor");
+
+   RECT rect = { 0,0, texture->GetWidth(), texture->GetHeight() };
+   AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
+
+   UINT toolWidth = rect.right - rect.left, toolHeight = rect.bottom - rect.top;
+
+   SetWindowPos(ToolHWnd, nullptr, width, 0, toolWidth, toolHeight, 0);//윈도우 위치, 크기 설정
+   ShowWindow(ToolHWnd, true);
+   UpdateWindow(ToolHWnd);
    return TRUE;
 }
 
@@ -161,57 +185,47 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 //  WM_DESTROY  - 종료 메시지를 게시하고 반환합니다.
 //
 //
-LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)//메세지 처리할 함수포인터
+LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 {
-    switch (message)
-    {
-    case WM_COMMAND:
-        {
-            int wmId = LOWORD(wParam);
-            // 메뉴 선택을 구문 분석합니다:
-            switch (wmId)
-            {
-            case IDM_ABOUT: //파일 도움말 등 선택하면 나오는거
-                DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
-                break;
-            case IDM_EXIT:
-                DestroyWindow(hWnd);
-                break;
-            default:
-                return DefWindowProc(hWnd, message, wParam, lParam);
-            }
-        }
-        break;
+	switch (message)
+	{
+	case WM_COMMAND:
+	{
+		int wmId = LOWORD(wParam);
+		// 메뉴 선택을 구문 분석합니다:
+		switch (wmId)
+		{
+		case IDM_ABOUT:
+			DialogBox(hInst, MAKEINTRESOURCE(IDD_ABOUTBOX), hWnd, About);
+			break;
+		case IDM_EXIT:
+			DestroyWindow(hWnd);
+			break;
+		default:
+			return DefWindowProc(hWnd, message, wParam, lParam);
+		}
+	}
+	break;
+	case WM_PAINT:
+	{
+		PAINTSTRUCT ps;
+		HDC hdc = BeginPaint(hWnd, &ps);
 
-    case WM_PAINT: //처음 한번만 그림
-        {
-            PAINTSTRUCT ps;
-            HDC hdc = BeginPaint(hWnd, &ps);
-			//DC 화면에 출력에 필요한 모든 정보를 가지는 데이터 구조
-			//GDI 모듈에 의해서 관리
-			// 어떤 폰트를 사용할지, 선의 굵기를 정하기, 어떤 색상
-			// 화면 출력에 모든 경우는 DC를 통해 작업 진행
-            // TODO: 여기에 hdc를 사용하는 그리기 코드를 추가합니다...
+		EndPaint(hWnd, &ps);
+	}
+	break;
+	case WM_DESTROY:
+		PostQuitMessage(0);
+		break;
 
-			
-
-            EndPaint(hWnd, &ps);
-        }
-        break;
-	//case WM_MOVE: //윈도우 창이 움직이면
-	//	{
-	//	int a = 0;
-	//	}
-	//	
-	//	break;
-    case WM_DESTROY://윈도우 종료될때 호출
-        PostQuitMessage(0);
-        break;
-    default:
-        return DefWindowProc(hWnd, message, wParam, lParam);
-    }
-    return 0;
+	default:
+		return DefWindowProc(hWnd, message, wParam, lParam);
+	}
+	return 0;
 }
+
+
+
 
 // 정보 대화 상자의 메시지 처리기입니다.
 INT_PTR CALLBACK About(HWND hDlg, UINT message, WPARAM wParam, LPARAM lParam)

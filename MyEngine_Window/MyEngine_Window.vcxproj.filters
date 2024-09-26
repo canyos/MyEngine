@@ -24,6 +24,8 @@
     <ClInclude Include="pCatScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
+    <ClInclude Include="pTile.h" />
+    <ClInclude Include="pToolScene.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -55,10 +57,10 @@
     <ClCompile Include="pCatScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="pTile.cpp" />
+    <ClCompile Include="ToolScene.cpp" />
+    <ClCompile Include="pToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

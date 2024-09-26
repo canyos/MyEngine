@@ -134,7 +134,9 @@
     <ClInclude Include="pPlayer.h" />
     <ClInclude Include="pPlayerScript.h" />
     <ClInclude Include="pPlayScene.h" />
+    <ClInclude Include="pTile.h" />
     <ClInclude Include="pTitleScene.h" />
+    <ClInclude Include="pToolScene.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -143,11 +145,11 @@
     <ClCompile Include="pPlayer.cpp" />
     <ClCompile Include="pPlayerScript.cpp" />
     <ClCompile Include="pPlayScene.cpp" />
+    <ClCompile Include="pTile.cpp" />
     <ClCompile Include="pTitleScene.cpp" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="ClassDiagram.cd" />
-    <None Include="ClassDiagram1.cd" />
+    <ClCompile Include="pToolScene.cpp" />
+    <ClCompile Include="Tile.cpp" />
+    <ClCompile Include="ToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

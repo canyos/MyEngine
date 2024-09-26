@@ -60,6 +60,8 @@
       <Filter>collider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)TilemapRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTilemapRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
@@ -128,6 +130,7 @@
       <Filter>collider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTilemapRenderer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
