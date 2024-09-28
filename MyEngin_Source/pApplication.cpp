@@ -4,6 +4,7 @@
 #include "pSceneManager.h"
 #include "pResources.h"
 #include "pCollisionManager.h"
+
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
 	{

@@ -3,6 +3,7 @@
 
 #include "framework.h"
 #include "Editor_Window.h"
+
 #include "..\\MyEngin_Source\\pApplication.h"
 #include "../MyEngine_Window/pLoadScene.h"
 #include "../MyEngine_Window/LoadResources.h"
@@ -10,6 +11,7 @@
 #include "pResources.h"
 #include "pTexture.h"
 #include "../MyEngine_Window/pToolScene.h"
+
 p::Application application;
 
 ULONG_PTR gpToken;
@@ -26,7 +28,6 @@ WCHAR szWindowClass[MAX_LOADSTRING];            // 기본 창 클래스 이름�
 ATOM                MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc);
 BOOL                InitInstance(HINSTANCE, int);
 LRESULT CALLBACK    WndProc(HWND, UINT, WPARAM, LPARAM);
-//LRESULT CALLBACK    WndTileProc(HWND, UINT, WPARAM, LPARAM);
 INT_PTR CALLBACK    About(HWND, UINT, WPARAM, LPARAM);
 
 int APIENTRY wWinMain(_In_ HINSTANCE hInstance,//프로그램의 인스턴스 핸들 (핸들을 통해서만 윈도우 메모리에 접근)
@@ -167,7 +168,8 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    RECT rect = { 0,0, texture->GetWidth(), texture->GetHeight() };
    AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
 
-   UINT toolWidth = rect.right - rect.left, toolHeight = rect.bottom - rect.top;
+   UINT toolWidth = rect.right - rect.left, 
+	   toolHeight = rect.bottom - rect.top;
 
    SetWindowPos(ToolHWnd, nullptr, width, 0, toolWidth, toolHeight, 0);//윈도우 위치, 크기 설정
    ShowWindow(ToolHWnd, true);

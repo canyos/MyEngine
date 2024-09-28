@@ -7,9 +7,9 @@ namespace p {
 	void LoadScenes() {
 		//SceneManager::CreateScene<TitleScene>(L"TitleScene");
 		//SceneManager::CreateScene<PlayScene>(L"PlayScene");
-		SceneManager::CreateScene<ToolScene>(L"ToolScene");
+		SceneManager::CreateScene<PlayScene>(L"PlayScene");
 		
 		//SceneManager::LoadScene(L"PlayScene");
-		SceneManager::LoadScene(L"ToolScene");
+		SceneManager::LoadScene(L"PlayScene");
 	}
 }

@@ -7,6 +7,8 @@
 namespace p
 {
 	Vector2 TilemapRenderer::TileSize = Vector2::One;
+	Vector2 TilemapRenderer::OriginTileSize = Vector2::One;
+	Vector2 TilemapRenderer::SelectedIndex = Vector2::One;
 
 	TilemapRenderer::TilemapRenderer()
 		: Component(enums::eComponentType::SpriteRenderer)
@@ -16,6 +18,7 @@ namespace p
 		, mTileSize(16.0f, 16.0f)
 	{
 		TileSize = mTileSize * mSize;
+		OriginTileSize = mTileSize;
 	}
 	TilemapRenderer::~TilemapRenderer()
 	{
@@ -37,6 +40,7 @@ namespace p
 		Vector2 pos = tr->GetPosition();
 		float rot = tr->GetRoation();
 		Vector2 scale = tr->GetScale();
+
 		pos = renderer::mainCamera->CalculatePosition(pos);
 		if (mTexture->GetTextureType()
 			== graphics::Texture::eTextureType::Bmp)

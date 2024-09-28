@@ -26,6 +26,7 @@
     </ClInclude>
     <ClInclude Include="pTile.h" />
     <ClInclude Include="pToolScene.h" />
+    <ClInclude Include="pCameraScript.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -61,6 +62,8 @@
     <ClCompile Include="pTile.cpp" />
     <ClCompile Include="ToolScene.cpp" />
     <ClCompile Include="pToolScene.cpp" />
+    <ClCompile Include="CameraScript.cpp" />
+    <ClCompile Include="pCameraScript.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

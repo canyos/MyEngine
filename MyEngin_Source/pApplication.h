@@ -43,5 +43,6 @@ namespace p {
 
 		//scene이 있고 scene안에 object
 		std::vector<Scene*> mScenes;
+
 	};
 }

@@ -68,8 +68,20 @@ namespace p {
 		POINT mousePos = {};
 		GetCursorPos(&mousePos);//전체윈도우의 마우스위치 가져옴
 		ScreenToClient(application.GetHwnd(), &mousePos);//내 윈도우 마우스위치가져옴
-		mMousePosition.x = mousePos.x;
-		mMousePosition.y = mousePos.y;
+		
+		mMousePosition.x = -1.0f;
+		mMousePosition.y = -1.0f;
+
+		UINT width = application.GetWidth(), height = application.GetHeight();
+		if (mousePos.x < width && mousePos.x > 0) {
+			mMousePosition.x = mousePos.x;
+		}
+		if (mousePos.y < height && mousePos.y > 0) {
+			mMousePosition.y = mousePos.y;
+		}
+
+		
+		
 	}
 	void Input::updateKeyDown(Input::Key& key) {//키가 눌렸다.
 		if (key.bPressed == true)//이전 프레임에도 눌려있음
