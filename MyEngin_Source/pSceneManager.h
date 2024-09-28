@@ -22,9 +22,13 @@ namespace p {
 		static void Update();
 		static void LateUpdate();
 		static void Render(HDC hdc);
+
 		static void Destroy();
 		static void Release();
+
 		static Scene* GetDontDestroyOnLoad() { return mDontDestroyOnLoad; }
+		static std::vector<GameObject*> GetGameObjects(eLayerType layer);
+
 	//	static SceneManager& GetInst() {
 	//		static SceneManager sceneManager;
 	//		return sceneManager;

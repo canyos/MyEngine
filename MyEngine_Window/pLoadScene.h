@@ -5,7 +5,7 @@
 #include "pToolScene.h"
 namespace p {
 	void LoadScenes() {
-		//SceneManager::CreateScene<TitleScene>(L"TitleScene");
+		SceneManager::CreateScene<TitleScene>(L"TitleScene");
 		//SceneManager::CreateScene<PlayScene>(L"PlayScene");
 		SceneManager::CreateScene<PlayScene>(L"PlayScene");
 		

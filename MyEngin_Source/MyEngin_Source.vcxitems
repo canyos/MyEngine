@@ -40,7 +40,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pRenderer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)TilemapRenderer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />

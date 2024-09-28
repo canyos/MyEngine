@@ -1,4 +1,5 @@
 #include "pScene.h"
+#include "pCollisionManager.h"
 
 namespace p {
 	Scene::Scene() :mLayers{}
@@ -54,8 +55,10 @@ namespace p {
 	}
 
 	void Scene::OnEnter() {
+
 	}
 	void Scene::OnExit() {
+		CollisionManager::Clear();
 	}
 	void Scene::AddGameObject(GameObject * gameObject,  enums::eLayerType type)
 	{

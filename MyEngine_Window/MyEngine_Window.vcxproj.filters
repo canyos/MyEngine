@@ -16,7 +16,6 @@
     <ClInclude Include="pPlayerScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
-    <ClInclude Include="LoadResources.h" />
     <ClInclude Include="pCat.h">
       <Filter>Contents</Filter>
     </ClInclude>
@@ -24,9 +23,18 @@
     <ClInclude Include="pCatScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
-    <ClInclude Include="pTile.h" />
-    <ClInclude Include="pToolScene.h" />
-    <ClInclude Include="pCameraScript.h" />
+    <ClInclude Include="LoadResources.h">
+      <Filter>Load</Filter>
+    </ClInclude>
+    <ClInclude Include="pCameraScript.h">
+      <Filter>Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="pTile.h">
+      <Filter>Contents</Filter>
+    </ClInclude>
+    <ClInclude Include="pToolScene.h">
+      <Filter>Scenes</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="Scenes">
@@ -37,6 +45,9 @@
     </Filter>
     <Filter Include="Scripts">
       <UniqueIdentifier>{9ecf5f12-6270-4789-a8c5-2452eb42dcc9}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Load">
+      <UniqueIdentifier>{a05821c2-b3f9-4b54-94d6-a25a543d9600}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
@@ -58,12 +69,15 @@
     <ClCompile Include="pCatScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
-    <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="pTile.cpp" />
-    <ClCompile Include="ToolScene.cpp" />
-    <ClCompile Include="pToolScene.cpp" />
-    <ClCompile Include="CameraScript.cpp" />
-    <ClCompile Include="pCameraScript.cpp" />
+    <ClCompile Include="pCameraScript.cpp">
+      <Filter>Scripts</Filter>
+    </ClCompile>
+    <ClCompile Include="pTile.cpp">
+      <Filter>Contents</Filter>
+    </ClCompile>
+    <ClCompile Include="pToolScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

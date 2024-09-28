@@ -2,7 +2,6 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <ItemGroup>
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScript.cpp" />
@@ -31,7 +30,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp">
       <Filter>component</Filter>
     </ClCompile>
@@ -60,11 +58,17 @@
       <Filter>collider</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)TilemapRenderer.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pTilemapRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTilemapRenderer.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
@@ -88,7 +92,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h">
       <Filter>resource</Filter>
     </ClInclude>
@@ -101,7 +104,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h">
       <Filter>component</Filter>
     </ClInclude>
@@ -130,7 +132,18 @@
       <Filter>collider</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)pTilemapRenderer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTilemapRenderer.h">
+      <Filter>component</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h">
+      <Filter>component</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

@@ -141,7 +141,6 @@
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="CameraScript.cpp" />
     <ClCompile Include="pCameraScript.cpp" />
     <ClCompile Include="pCat.cpp" />
     <ClCompile Include="pCatScript.cpp" />
@@ -151,8 +150,6 @@
     <ClCompile Include="pTile.cpp" />
     <ClCompile Include="pTitleScene.cpp" />
     <ClCompile Include="pToolScene.cpp" />
-    <ClCompile Include="Tile.cpp" />
-    <ClCompile Include="ToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />
