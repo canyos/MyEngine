@@ -19,6 +19,10 @@
 #include "pCollisionManager.h"
 #include "pTile.h"
 #include "pTilemapRenderer.h"
+#include "pRigidBody.h"
+#include "pFloor.h"
+#include "pFloorScript.h"
+#include "pUIManager.h"
 
 namespace p
 {
@@ -72,7 +76,8 @@ namespace p
 		object::DontDestroyOnLoad(mPlayer);
 
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
-		CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
+		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
+		//CircleCollider2D* collider = mPlayer->AddComponent<CircleCollider2D>();
 		collider->SetOffset(Vector2(-50.0f, -50.0f));
 
 		graphics::Texture* playerTex = Resources::Find<graphics::Texture>(L"player");;
@@ -89,7 +94,12 @@ namespace p
 		mPlayer->GetComponent<Transform>()->SetPosition(Vector2(300.0f, 250.0f));
 		mPlayer->GetComponent<Transform>()->SetRotation(0.0f);
 		playerAnimator->PlayAnimation(L"Idle", false);
+		mPlayer->AddComponent<RigidBody>();
 
+		Floor* floor = object::Instantiate<Floor>(eLayerType::Floor, Vector2(100.0f, 600.0f));
+		BoxCollider2D* floorCol = floor->AddComponent<BoxCollider2D>();
+		floorCol->SetSize(Vector2(10.0f, 1.0f));
+		floor->AddComponent<FloorScript>();
 
 		///CAT
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
@@ -121,7 +131,7 @@ namespace p
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
 		cat->GetComponent<Transform>()->SetPosition(Vector2(360.0f, 420.0f));
-		cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
+		//cat->GetComponent<Transform>()->SetScale(Vector2(2.0f, 2.0f));
 
 
 
@@ -159,9 +169,14 @@ namespace p
 		Scene::OnEnter();
 
 		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Animal, true);
+		CollisionManager::CollisionLayerCheck(eLayerType::Player, eLayerType::Floor, true);
+	
+		UIManager::Push(eUIType::Button);
 	}
 	void PlayScene::OnExit()
 	{
+		UIManager::Pop(eUIType::Button);
+
 		Scene::OnExit();
 	}
 }

@@ -9,9 +9,10 @@ namespace p
 			//Tree 
 			//character
 			Tile,
+			Floor,
 			Animal,
 			Player,
-			Paricle,
+			Particle,
 			Max = 16,
 		};
 
@@ -27,6 +28,7 @@ namespace p
 		enum class eComponentType {
 			Transform,
 			Collider,
+			RigidBody,
 			Script,
 			SpriteRenderer,
 			Animator,
@@ -37,6 +39,12 @@ namespace p
 		{
 			Circle2D,
 			Rect2D,
+			End,
+		};
+		enum class eUIType {
+			Button,
+			HpBar,
+			
 			End,
 		};
 	}

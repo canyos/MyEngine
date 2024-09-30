@@ -30,16 +30,10 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp">
       <Filter>util</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pTransform.cpp">
       <Filter>component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp">
-      <Filter>component</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp">
       <Filter>component</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp">
@@ -61,12 +55,31 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp">
+      <Filter>component\Renderer</Filter>
+    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pTilemapRenderer.cpp">
-      <Filter>component</Filter>
+      <Filter>component\Renderer</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp">
+      <Filter>component\animation</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIBase.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -104,13 +117,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h">
       <Filter>util</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h">
-      <Filter>component</Filter>
-    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pCamera.h">
-      <Filter>component</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimation.h">
       <Filter>component</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h">
@@ -138,12 +145,27 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h">
+      <Filter>component\Renderer</Filter>
+    </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pTilemapRenderer.h">
-      <Filter>component</Filter>
+      <Filter>component\Renderer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAnimation.h">
+      <Filter>component\animation</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h">
-      <Filter>component</Filter>
+      <Filter>component\animation</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pRigidBody.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIManager.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIButton.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -160,6 +182,15 @@
     </Filter>
     <Filter Include="collider">
       <UniqueIdentifier>{50e54c3c-a62e-4506-82f9-6a607236f739}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\Renderer">
+      <UniqueIdentifier>{56f696f9-0b72-45ed-848b-26f2c4bf1880}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="component\animation">
+      <UniqueIdentifier>{0640b708-c12b-4924-a2a7-2c2fa0b8bc05}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="UI">
+      <UniqueIdentifier>{4c247843-d179-4fa7-8c9d-6bf93ba45842}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

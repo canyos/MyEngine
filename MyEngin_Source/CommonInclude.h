@@ -8,6 +8,8 @@
 #include <filesystem>
 #include <math.h>
 #include <bitset>
+#include <stack>
+#include <queue>
 #include "pMath.h"
 #include "pEnum.h"
 

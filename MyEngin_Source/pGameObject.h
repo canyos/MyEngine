@@ -1,10 +1,10 @@
 #pragma once
 #include "CommonInclude.h"
 #include "pComponent.h"
-
+#include "pEntity.h"
 namespace p {
 	//actor
-	class GameObject
+	class GameObject : public Entity
 	{
 	public:
 		

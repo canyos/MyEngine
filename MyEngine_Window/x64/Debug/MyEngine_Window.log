@@ -1,49 +1,9 @@
-﻿  pApplication.cpp
-  pCamera.cpp
-  pCollisionManager.cpp
-  pInput.cpp
-  pSceneManager.cpp
-  pTexture.cpp
+﻿  pUIManager.cpp
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pinput.cpp(76): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\com100\documents\github\myengine\myengin_source\pinput.cpp(77): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengin_source\pinput.cpp(79): warning C4018: '<': signed 또는 unsigned가 일치하지 않습니다.
-c:\users\com100\documents\github\myengine\myengin_source\pinput.cpp(80): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengin_source\papplication.cpp(49): warning C4838: 'const UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
-c:\users\com100\documents\github\myengine\myengin_source\pcamera.cpp(21): warning C4244: '=': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengin_source\pcamera.cpp(22): warning C4244: '=': 'UINT'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-  pCameraScript.cpp
-  pCatScript.cpp
-  pPlayScene.cpp
-  pPlayerScript.cpp
-  pTitleScene.cpp
-  pToolScene.cpp
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(48): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(49): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(83): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(84): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(94): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(95): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(138): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(140): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(142): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(144): warning C4244: '=': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(188): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(191): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(249): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(250): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(251): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(252): warning C4244: '초기화 중': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(253): warning C4244: '인수': 'int'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+FloorScript.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+Floor.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIManager.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIHUD.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIButton.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+RididBody.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
   MyEngine_Window.vcxproj -> C:\Users\com100\Documents\GitHub\MyEngine\x64\Debug\MyEngine_Window.lib

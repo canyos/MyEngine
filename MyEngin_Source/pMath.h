@@ -52,6 +52,18 @@ namespace p
 			void operator+=(Vector2 other) {
 				x += other.x, y += other.y;
 			}
+			void operator-=(Vector2 other) {
+				x -= other.x, y -= other.y;
+			}
+			void operator*=(Vector2 other) {
+				x *= other.x, y *= other.y;
+			}
+			void operator*=(float f) {
+				x *= f, y *= f;
+			}
+			Vector2 operator-() {
+				return Vector2(-x,-y);
+			}
 			Vector2 operator-(Vector2 other) {
 				return Vector2(x - other.x, y - other.y);
 			}
@@ -63,6 +75,9 @@ namespace p
 			}
 			Vector2 operator/(float f) {
 				return Vector2(x /f, y/f);
+			}
+			bool operator==(Vector2 other) {
+				return x == other.x && y == other.y;
 			}
 			void clear() {
 				x = 0.0f;

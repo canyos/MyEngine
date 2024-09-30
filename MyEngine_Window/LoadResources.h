@@ -11,5 +11,7 @@ namespace p {
 		Resources::Load<graphics::Texture>(L"cat", L"..\\Resources\\ChickenAlpha.bmp");
 		Resources::Load<graphics::Texture>(L"player", L"..\\Resources\\Player.bmp");
 		Resources::Load<graphics::Texture>(L"SpringFloor", L"..\\Resources\\SpringFloor.bmp");
+		Resources::Load<graphics::Texture>(L"HPBAR", L"..\\Resources\\HPBAR.bmp");
+
 	}
 }

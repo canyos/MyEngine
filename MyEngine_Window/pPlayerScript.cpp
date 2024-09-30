@@ -9,6 +9,8 @@
 #include "pObject.h"
 #include "pResources.h"
 #include "pCollider.h"
+#include "pRigidBody.h"
+#include "pUIManager.h"
 namespace p {
 	PlayerScript::PlayerScript()
 		: mState(PlayerScript::eState::Idle)
@@ -131,6 +133,15 @@ namespace p {
 			mState = PlayerScript::eState::Walk;
 			//mAnimator->PlayAnimation(L"DownWalk");
 		}
+		if (Input::GetKeyDown(eKeyCode::I))
+		{
+			UIManager::Push(eUIType::HpBar);
+			//UIManager::Push(eUIType::Button);
+		}
+		if (Input::GetKeyDown(eKeyCode::O))
+		{
+			UIManager::Pop(eUIType::HpBar);
+		}
 			
 	}
 
@@ -139,25 +150,38 @@ namespace p {
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
+		RigidBody* rb = GetOwner()->GetComponent<RigidBody>();
 
 		if (Input::GetKey(eKeyCode::D))
 		{
-			pos.x += 100.0f * Time::DeltaTime();
+			//pos.x += 100.0f * Time::DeltaTime();
+			rb->AddForce(Vector2(200.0f, 0.0f));
 		}
 		if (Input::GetKey(eKeyCode::A))
 		{
-			pos.x -= 100.0f * Time::DeltaTime();
+			//pos.x -= 100.0f * Time::DeltaTime();
+			rb->AddForce(Vector2(-200.0f, 0.0f));
 		}
 		if (Input::GetKey(eKeyCode::W))
 		{
-			pos.y -= 100.0f * Time::DeltaTime();
-		}
-		if (Input::GetKey(eKeyCode::S))
-		{
-			pos.y += 100.0f * Time::DeltaTime();
+			if (rb->GetGround() == true) {
+				//pos.y -= 100.0f * Time::DeltaTime();
+			//rb->AddForce(Vector2(0, -200.0f));
+				Vector2 velocity = rb->GetVelocity();
+				velocity.y = -500.0f;
+				rb->SetVelocity(velocity);
+				rb->SetGround(false);
+			}
+			
 		}
 
-		tr->SetPosition(pos);
+		//if (Input::GetKey(eKeyCode::S))
+		//{
+		//	//pos.y += 100.0f * Time::DeltaTime();
+		//	rb->AddForce(Vector2(0.0f, 200.0f));
+		//}
+
+		//tr->SetPosition(pos);
 
 		if (Input::GetKeyUp(eKeyCode::D) || Input::GetKeyUp(eKeyCode::A)
 			|| Input::GetKeyUp(eKeyCode::W) || Input::GetKeyUp(eKeyCode::S))

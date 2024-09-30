@@ -31,6 +31,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pInput.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pResources.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSceneManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp" />
@@ -40,6 +41,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScript.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pRenderer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -62,6 +71,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResources.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pRigidBody.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScript.h" />
@@ -71,5 +81,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pTime.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTransform.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pLayer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIButton.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIManager.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h" />
   </ItemGroup>
 </Project>
