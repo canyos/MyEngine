@@ -5,6 +5,7 @@
 #include "pResources.h"
 #include "pCollisionManager.h"
 #include "pUIManager.h"
+#include "pFmod.h"
 
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
@@ -19,6 +20,7 @@ namespace p {
 		createBuffer(width, height);
 		InitializeEtc();
 
+		Fmod::Initialize();
 		CollisionManager::Initialize();
 		UIManager::Initialize();
 		SceneManager::Initialize();

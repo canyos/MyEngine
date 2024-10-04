@@ -80,6 +80,20 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp">
+      <Filter>Fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioListener.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -166,6 +180,18 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pFmod.h">
+      <Filter>Fmod</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioClip.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioListener.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioSource.h">
+      <Filter>Audio</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -191,6 +217,12 @@
     </Filter>
     <Filter Include="UI">
       <UniqueIdentifier>{4c247843-d179-4fa7-8c9d-6bf93ba45842}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Fmod">
+      <UniqueIdentifier>{90c094eb-c8ca-4a6b-9f3d-72ebdefea38f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Audio">
+      <UniqueIdentifier>{098b2684-3914-4e33-83c9-e1efb8fca9f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

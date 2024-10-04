@@ -83,6 +83,11 @@
     <Link>
       <SubSystem>Console</SubSystem>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)\External\Library\Fmod\Debug\fmodL.dll" "$(SolutionDir)\x64\Debug\"
+copy "$(SolutionDir)\External\Library\Fmod\Debug\fmodstudioL.dll" "$(SolutionDir)\x64\Debug\"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
     <ClCompile>
@@ -125,6 +130,11 @@
       <EnableCOMDATFolding>true</EnableCOMDATFolding>
       <OptimizeReferences>true</OptimizeReferences>
     </Link>
+    <PostBuildEvent>
+      <Command>copy "$(SolutionDir)\External\Library\Fmod\Release\fmod.dll" "$(SolutionDir)\x64\Release\"
+copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDir)\x64\Release\"
+</Command>
+    </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="LoadResources.h" />

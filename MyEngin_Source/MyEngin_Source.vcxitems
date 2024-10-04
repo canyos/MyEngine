@@ -14,14 +14,20 @@
     <ProjectCapability Include="SourceItemsFromImports" />
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioListener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
@@ -54,6 +60,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pAnimation.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioClip.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioListener.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pAudioSource.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pBoxCollider2D.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCamera.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCircleCollider2D.h" />
@@ -63,6 +72,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pFmod.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
