@@ -33,6 +33,8 @@ namespace p
 			SpriteRenderer,
 			Animator,
 			Camera,
+			AudioListener,
+			AudioSource,
 			End,
 		};
 		enum class eColliderType

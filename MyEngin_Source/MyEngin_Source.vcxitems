@@ -21,6 +21,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioListener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioSource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pBoxCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCamera.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />

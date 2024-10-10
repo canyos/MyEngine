@@ -1,11 +1,16 @@
 #pragma once
+#include "pComponent.h"
+
 namespace p {
-	class AudioListener
+	class AudioListener : public Component
 	{
 	public:
-
-	private:
-
+		AudioListener();
+		~AudioListener();
+		void Initialize() override;
+		void Update() override;
+		void LateUpdate() override;
+		void Render(HDC hdc) override;
 	};
 
 }

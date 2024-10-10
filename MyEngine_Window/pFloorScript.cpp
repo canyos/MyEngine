@@ -2,7 +2,7 @@
 #include "pRigidBody.h"
 #include "pCollider.h"
 #include "pGameObject.h"
-
+#include "pAudioSource.h"
 namespace p {
 	FloorScript::FloorScript()
 	{
@@ -40,6 +40,7 @@ namespace p {
 			playerTr->SetPosition(playerPos);
 		}
 
+		GetOwner()->GetComponent<AudioSource>()->Play();
 		rb->SetGround(true);
 	}
 	void FloorScript::OnCollisionStay(Collider * other)

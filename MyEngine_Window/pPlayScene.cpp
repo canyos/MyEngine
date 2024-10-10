@@ -23,7 +23,9 @@
 #include "pFloor.h"
 #include "pFloorScript.h"
 #include "pUIManager.h"
-
+#include "pAudioClip.h"
+#include "pAudioListener.h"
+#include "pAudioSource.h"
 namespace p
 {
 	PlayScene::PlayScene()
@@ -74,6 +76,7 @@ namespace p
 
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		object::DontDestroyOnLoad(mPlayer);
+		mPlayer->AddComponent<AudioListener>();
 
 		PlayerScript* plScript = mPlayer->AddComponent<PlayerScript>();
 		BoxCollider2D* collider = mPlayer->AddComponent<BoxCollider2D>();
@@ -97,9 +100,16 @@ namespace p
 		mPlayer->AddComponent<RigidBody>();
 
 		Floor* floor = object::Instantiate<Floor>(eLayerType::Floor, Vector2(100.0f, 600.0f));
+		floor->SetName(L"Floor");
+		AudioSource* as = floor->AddComponent<AudioSource>();
+
 		BoxCollider2D* floorCol = floor->AddComponent<BoxCollider2D>();
 		floorCol->SetSize(Vector2(10.0f, 1.0f));
 		floor->AddComponent<FloorScript>();
+
+		AudioClip* ac = Resources::Load<AudioClip>(L"BGSound", L"..\\Resources\\smw_bonus_game_end.wav");
+		as->SetClip(ac);
+		as->Play();
 
 		///CAT
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);

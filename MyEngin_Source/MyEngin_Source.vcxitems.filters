@@ -94,6 +94,8 @@
       <Filter>Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioSource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioListener.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />

@@ -33,14 +33,27 @@ namespace p {
 		//result = mCoreSystem->set3DListenerAttributes(0, &listenerpos, &vel2, &forward, &up);
 		//SoundPlay(sound1, &channel1);
 	}
-	bool Fmod::CreateSound(const std::string & path, FMOD::Sound * sound)
+	bool Fmod::CreateSound(const std::string & path, FMOD::Sound ** sound)
 	{
-		if (FMOD_OK != mCoreSystem->createSound(path.c_str(), FMOD_3D, 0, &sound))
+		if (FMOD_OK != mCoreSystem->createSound(path.c_str(), FMOD_3D, 0, sound))
 			return false;
 		return true;
 	}
 	void Fmod::SoundPlay(FMOD::Sound * sound, FMOD::Channel ** channel)
 	{
 		mCoreSystem->playSound(sound, 0, false, channel);
+	}
+	void Fmod::Set3DListenerAttributes(const Vector2 * pos)
+	{
+		FMOD_VECTOR fmodPos = { 0.0f, 0.0f, 0.3f };
+		FMOD_VECTOR fmodVel = { 0.0f, 0.0f, 0.0f };
+		FMOD_VECTOR fmodForward = { 0.0f, 0.0f, 1.0f };
+		FMOD_VECTOR fmodUp = { 0.0f, 1.0f, 0.0f };
+		mCoreSystem->set3DListenerAttributes(0, &fmodPos, &fmodVel, &fmodForward, &fmodUp);
+	}
+	void Fmod::Release()
+	{
+		mSystem->release();
+		mSystem = nullptr;
 	}
 }
