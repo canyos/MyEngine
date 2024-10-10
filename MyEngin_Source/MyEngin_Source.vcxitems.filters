@@ -67,23 +67,15 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp">
       <Filter>component\animation</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIBase.cpp">
       <Filter>UI</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIManager.cpp">
       <Filter>UI</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp">
       <Filter>Fmod</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
@@ -93,9 +85,39 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp">
       <Filter>Audio</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioSource.cpp" />
-    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioListener.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioListener.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pAudioSource.cpp">
+      <Filter>Audio</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp">
+      <Filter>UI</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp">
+      <Filter>component</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -173,15 +195,12 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pAnimator.h">
       <Filter>component\animation</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pRigidBody.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIManager.h">
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIButton.h">
       <Filter>UI</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h" />
-    <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pFmod.h">
       <Filter>Fmod</Filter>
     </ClInclude>
@@ -193,6 +212,15 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAudioSource.h">
       <Filter>Audio</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h">
+      <Filter>UI</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pRigidBody.h">
+      <Filter>component</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

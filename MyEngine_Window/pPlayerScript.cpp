@@ -51,7 +51,20 @@ namespace p {
 		default:
 			break;
 		}
-
+		Transform* tr = GetOwner()->GetComponent<Transform>();
+		Vector2 pos = tr->GetPosition();
+		COLORREF color = mPixelMap->GetPixel(pos.x, pos.y+50);
+		RigidBody* rb = GetOwner()->GetComponent<RigidBody>();
+		if (color == RGB(255, 0, 0)) {
+		
+			rb->SetGround(true);
+			pos.y -= 1;
+			tr->SetPosition(pos);
+		}
+		else {
+			
+			rb->SetGround(false);
+		}
 	}
 	void PlayerScript::LateUpdate()
 	{

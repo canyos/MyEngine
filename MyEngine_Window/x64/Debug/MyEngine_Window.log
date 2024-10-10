@@ -1,3 +1,16 @@
-﻿  MyEngine_Window.vcxproj -> C:\Users\com100\Documents\GitHub\MyEngine\x64\Debug\MyEngine_Window.lib
+﻿  pPlayerScript.cpp
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\com100\documents\github\myengine\myengine_window\pplayerscript.cpp(56): warning C4244: '인수': 'float'에서 'int'(으)로 변환하면서 데이터가 손실될 수 있습니다.
+FloorScript.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+Floor.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIManager.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIHUD.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+UIButton.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+RididBody.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+Fmod.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+AudioSource.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+AudioListener.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+AudioClip.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+  MyEngine_Window.vcxproj -> C:\Users\com100\Documents\GitHub\MyEngine\x64\Debug\MyEngine_Window.lib
           1개 파일이 복사되었습니다.
           1개 파일이 복사되었습니다.

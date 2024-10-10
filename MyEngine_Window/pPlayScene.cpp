@@ -99,17 +99,22 @@ namespace p
 		playerAnimator->PlayAnimation(L"Idle", false);
 		mPlayer->AddComponent<RigidBody>();
 
-		Floor* floor = object::Instantiate<Floor>(eLayerType::Floor, Vector2(100.0f, 600.0f));
+		Floor* floor = object::Instantiate<Floor>(eLayerType::Floor, Vector2(0.0f, 0.0f));
 		floor->SetName(L"Floor");
+		SpriteRenderer* floorSr = floor->AddComponent<SpriteRenderer>();
+		floorSr->SetTexture(Resources::Find<graphics::Texture>(L"PixelMap"));
+
 		AudioSource* as = floor->AddComponent<AudioSource>();
 
-		BoxCollider2D* floorCol = floor->AddComponent<BoxCollider2D>();
-		floorCol->SetSize(Vector2(10.0f, 1.0f));
-		floor->AddComponent<FloorScript>();
+		//BoxCollider2D* floorCol = floor->AddComponent<BoxCollider2D>();
+		//floorCol->SetSize(Vector2(10.0f, 1.0f));
+		//floor->AddComponent<FloorScript>();
 
 		AudioClip* ac = Resources::Load<AudioClip>(L"BGSound", L"..\\Resources\\smw_bonus_game_end.wav");
 		as->SetClip(ac);
 		as->Play();
+
+		plScript->SetPixelMapTexture(Resources::Find<graphics::Texture>(L"PixelMap"));
 
 		///CAT
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
