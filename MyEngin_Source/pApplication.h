@@ -2,6 +2,7 @@
 #include "CommonInclude.h"
 #include "pGameObject.h"
 #include "pSceneManager.h"
+#include "pGraphicDevice.h"
 
 namespace p {
 	class Application {
@@ -30,6 +31,8 @@ namespace p {
 		void createBuffer(const UINT &width, const UINT &height);
 		void InitializeEtc();
 	private:
+		std::unique_ptr<graphics::GraphicDevice> mGraphicDevice;
+
 		HWND mHwnd;
 		HDC mHdc;
 

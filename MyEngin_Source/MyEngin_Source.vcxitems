@@ -30,6 +30,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pGraphicDevice.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
@@ -77,6 +78,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pFmod.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />

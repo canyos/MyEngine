@@ -20,6 +20,9 @@ namespace p {
 		createBuffer(width, height);
 		InitializeEtc();
 
+		mGraphicDevice = std::make_unique<graphics::GraphicDevice>();
+		mGraphicDevice->Initialize();
+
 		Fmod::Initialize();
 		CollisionManager::Initialize();
 		UIManager::Initialize();
@@ -35,7 +38,7 @@ namespace p {
 		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128,128,128));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
 
-		Rectangle(mBackHdc, -1, -1, 1601, 901);
+		::Rectangle(mBackHdc, -1, -1, 1601, 901);
 		(HBRUSH)SelectObject(mBackHdc, oldBrush);
 		DeleteObject(grayBrush);
 	}
@@ -116,7 +119,8 @@ namespace p {
 		SceneManager::Render(mBackHdc);
 
 		//backbuffer를 원본 버퍼로 복사
-		copyRenderTarget(mBackHdc, mHdc);
+		//copyRenderTarget(mBackHdc, mHdc);
+		mGraphicDevice->Draw();
 	}
 	void Application::Destroy()
 	{

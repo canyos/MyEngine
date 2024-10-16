@@ -141,7 +141,7 @@ namespace p {
 			Vector2 leftCirclePos = leftPos + (leftSize / 2.0f);
 			Vector2 rightCirclePos = rightPos + (rightSize / 2.0f);
 
-			float distance = (leftCirclePos - rightCirclePos).length();
+			float distance = (leftCirclePos - rightCirclePos).Length();
 			if (distance <= (leftSize.x / 2.0f) + (rightSize.x / 2.0f)) {
 				return true;
 			}
@@ -181,7 +181,7 @@ namespace p {
 		float closestY = max(leftTop.y, min(circlePos.y, rightBottom.y));
 		
 		Vector2 diff = Vector2(circlePos.x - closestX, circlePos.y - closestY);
-		float distance = diff.length();
+		float distance = diff.Length();
 		if (distance <= r)
 			return true;
 

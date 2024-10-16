@@ -136,7 +136,7 @@ ATOM MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc)
 BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 {
    hInst = hInstance; // 인스턴스 핸들을 전역 변수에 저장합니다.
-   const UINT width = 672, height = 846;
+   const UINT width = 1600, height = 900;
    HWND hWnd = CreateWindowW(szWindowClass, szTitle, WS_OVERLAPPEDWINDOW, //window창을 만들어줌, szWindowClass로 register한 정보 들고와서 설정,                                                                       
       CW_USEDEFAULT, 0, width, height, nullptr, nullptr, hInstance, nullptr); //szTitle이 이름, WS_OVERLAPPEDWINDO는 타입
 																			//시작할때 위치xy, 가로세로크기 설정가능

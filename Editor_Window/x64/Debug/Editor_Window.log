@@ -1,1 +1,10 @@
-﻿  Editor_Window.vcxproj -> C:\Users\com100\Documents\GitHub\MyEngine\x64\Debug\Editor_Window.exe
+﻿  pApplication.cpp
+  pGraphicDevice.cpp
+c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pApplication.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pApplication.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pGraphicDevice.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pGraphicDevice.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
+c:\users\com100\documents\github\myengine\myengin_source\papplication.cpp(56): warning C4838: 'const UINT'에서 'LONG'(으)로의 변환에는 축소 변환이 필요합니다.
+  Editor_Window.vcxproj -> C:\Users\com100\Documents\GitHub\MyEngine\x64\Debug\Editor_Window.exe

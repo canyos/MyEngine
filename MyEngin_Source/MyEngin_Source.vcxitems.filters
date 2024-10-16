@@ -118,6 +118,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp">
       <Filter>component</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pGraphicDevice.cpp">
+      <Filter>GraphicDevice</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -222,6 +225,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pRigidBody.h">
       <Filter>component</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h">
+      <Filter>GraphicDevice</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -253,6 +259,9 @@
     </Filter>
     <Filter Include="Audio">
       <UniqueIdentifier>{098b2684-3914-4e33-83c9-e1efb8fca9f4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="GraphicDevice">
+      <UniqueIdentifier>{19db6283-0b93-483a-8dd3-071b655f12b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>
