@@ -97,7 +97,9 @@
       <Filter>Contents</Filter>
     </ClCompile>
     <ClCompile Include="LoadingScene.cpp" />
-    <ClCompile Include="pLoadingScene.cpp" />
+    <ClCompile Include="pLoadingScene.cpp">
+      <Filter>Scenes</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

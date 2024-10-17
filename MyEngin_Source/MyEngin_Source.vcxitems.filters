@@ -24,9 +24,6 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pResources.cpp">
       <Filter>resource</Filter>
     </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp">
-      <Filter>resource</Filter>
-    </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp">
       <Filter>util</Filter>
     </ClCompile>
@@ -74,7 +71,7 @@
       <Filter>UI</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp">
-      <Filter>Fmod</Filter>
+      <Filter>resource\Audio\Fmod</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp">
       <Filter>Audio</Filter>
@@ -121,6 +118,12 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pGraphicDevice.cpp">
       <Filter>GraphicDevice</Filter>
     </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pTexture.cpp">
+      <Filter>resource\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Material.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Mesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -150,9 +153,6 @@
       <Filter>resource</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pResources.h">
-      <Filter>resource</Filter>
-    </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h">
       <Filter>resource</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h">
@@ -205,7 +205,7 @@
       <Filter>UI</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pFmod.h">
-      <Filter>Fmod</Filter>
+      <Filter>resource\Audio\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAudioClip.h">
       <Filter>Audio</Filter>
@@ -229,6 +229,18 @@
       <Filter>GraphicDevice</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h">
+      <Filter>resource\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pShader.h">
+      <Filter>resource\Graphics\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMaterial.h">
+      <Filter>resource\Material</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMesh.h">
+      <Filter>resource\Mesh</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -255,14 +267,32 @@
     <Filter Include="UI">
       <UniqueIdentifier>{4c247843-d179-4fa7-8c9d-6bf93ba45842}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Fmod">
-      <UniqueIdentifier>{90c094eb-c8ca-4a6b-9f3d-72ebdefea38f}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Audio">
       <UniqueIdentifier>{098b2684-3914-4e33-83c9-e1efb8fca9f4}</UniqueIdentifier>
     </Filter>
     <Filter Include="GraphicDevice">
       <UniqueIdentifier>{19db6283-0b93-483a-8dd3-071b655f12b4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Audio">
+      <UniqueIdentifier>{24dbccd9-1515-4bf2-8989-362a24fdd695}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Audio\Fmod">
+      <UniqueIdentifier>{90c094eb-c8ca-4a6b-9f3d-72ebdefea38f}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Graphics">
+      <UniqueIdentifier>{c3482790-a4d1-446f-99d4-90889253aced}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Graphics\Shader">
+      <UniqueIdentifier>{df6fb258-7fbc-4fb3-8a4a-911c1fc1563b}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Texture">
+      <UniqueIdentifier>{0a0e752c-d619-4850-a6bd-457d35d981cd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Material">
+      <UniqueIdentifier>{bf98f602-e232-431f-88a7-8949204de41a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Mesh">
+      <UniqueIdentifier>{b9d00bf9-6c6f-4520-aeb4-8c8e95ddc929}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

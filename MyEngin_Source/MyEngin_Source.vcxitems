@@ -18,6 +18,8 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioListener.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Material.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Mesh.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimtation.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp" />
@@ -55,6 +57,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIManager.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIBase.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp" />
@@ -81,7 +84,9 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMaterial.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pMesh.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pResource.h" />
@@ -90,6 +95,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pScene.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSceneManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pScript.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pShader.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pSpriteRenderer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTilemapRenderer.h" />
