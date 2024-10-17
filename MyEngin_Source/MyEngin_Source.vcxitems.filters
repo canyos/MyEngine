@@ -228,6 +228,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h">
       <Filter>GraphicDevice</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

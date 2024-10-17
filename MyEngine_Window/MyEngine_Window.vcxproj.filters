@@ -22,9 +22,6 @@
     <ClInclude Include="pCatScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
-    <ClInclude Include="LoadResources.h">
-      <Filter>Load</Filter>
-    </ClInclude>
     <ClInclude Include="pCameraScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
@@ -42,6 +39,9 @@
     </ClInclude>
     <ClInclude Include="pFloorScript.h">
       <Filter>Scripts</Filter>
+    </ClInclude>
+    <ClInclude Include="pLoadingScene.h">
+      <Filter>Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>
@@ -96,6 +96,8 @@
     <ClCompile Include="Floor.cpp">
       <Filter>Contents</Filter>
     </ClCompile>
+    <ClCompile Include="LoadingScene.cpp" />
+    <ClCompile Include="pLoadingScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

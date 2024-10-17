@@ -11,5 +11,7 @@ namespace p {
 		
 		//SceneManager::LoadScene(L"PlayScene");
 		SceneManager::LoadScene(L"PlayScene");
+
+		SceneManager::LoadScene(L"LoadingScene");
 	}
 }

@@ -6,6 +6,7 @@
 #include "pCollisionManager.h"
 #include "pUIManager.h"
 #include "pFmod.h"
+#include "pRenderer.h"
 
 namespace p {
 	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
@@ -21,6 +22,7 @@ namespace p {
 		InitializeEtc();
 
 		mGraphicDevice = std::make_unique<graphics::GraphicDevice>();
+		renderer::Initialize();
 		mGraphicDevice->Initialize();
 
 		Fmod::Initialize();
@@ -130,6 +132,7 @@ namespace p {
 		SceneManager::Release();
 		UIManager::Release();
 		Resources::Release();
+		renderer::Release();
 	}
 }
 

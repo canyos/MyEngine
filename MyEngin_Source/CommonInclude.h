@@ -12,7 +12,8 @@
 #include <queue>
 #include "pMath.h"
 #include "pEnum.h"
-
+#include <mutex>
+#include <thread>
 
 #include <mmsystem.h>
 #include <wingdi.h>
@@ -22,5 +23,5 @@
 
 #include <gdiplus.h>
 #pragma comment(lib, "gdiplus.lib")
-#include <wrl.h>
+#include "pGraphics.h"
 

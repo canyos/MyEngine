@@ -23,4 +23,7 @@
       <ShaderModel>4.0</ShaderModel>
     </FxCompile>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="$(MSBuildThisFileDirectory)ConstantBuffers.hlsli" />
+  </ItemGroup>
 </Project>

@@ -79,6 +79,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pGameObject.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pObject.h" />

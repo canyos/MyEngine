@@ -137,12 +137,12 @@ copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDi
     </PostBuildEvent>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClInclude Include="LoadResources.h" />
     <ClInclude Include="pCameraScript.h" />
     <ClInclude Include="pCat.h" />
     <ClInclude Include="pCatScript.h" />
     <ClInclude Include="pFloor.h" />
     <ClInclude Include="pFloorScript.h" />
+    <ClInclude Include="pLoadingScene.h" />
     <ClInclude Include="pLoadScene.h" />
     <ClInclude Include="pPlayer.h" />
     <ClInclude Include="pPlayerScript.h" />
@@ -155,11 +155,13 @@ copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDi
   <ItemGroup>
     <ClCompile Include="Floor.cpp" />
     <ClCompile Include="FloorScript.cpp" />
+    <ClCompile Include="LoadingScene.cpp" />
     <ClCompile Include="pCameraScript.cpp" />
     <ClCompile Include="pCat.cpp" />
     <ClCompile Include="pCatScript.cpp" />
     <ClCompile Include="pFloor.cpp" />
     <ClCompile Include="pFloorScript.cpp" />
+    <ClCompile Include="pLoadingScene.cpp" />
     <ClCompile Include="pPlayer.cpp" />
     <ClCompile Include="pPlayerScript.cpp" />
     <ClCompile Include="pPlayScene.cpp" />
