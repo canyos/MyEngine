@@ -1,28 +1,23 @@
 #pragma once
 #include "pCamera.h"
 #include "pGraphicDevice.h"
-
+#include "pVertexBuffer.h"
+#include "pIndexBuffer.h"
+#include "pConstantBuffer.h"
+using namespace p::math;
+using namespace p::graphics;
 namespace p {
 	namespace renderer {
 		extern Camera* mainCamera;
 
-		struct Vertex
-		{
-			Vector3 pos;
-			Vector4 color;
-		};
-
-		extern Vertex vertexes[3];
+		extern std::vector<graphics::Vertex> vertexes;
 		extern std::vector<UINT> indices;
 
-		extern ID3D11Buffer* vertexBuffer;
-		extern ID3D11Buffer* indexBuffer;
-		extern ID3D11Buffer* constantBuffer;
+		extern graphics::VertexBuffer vertexBuffer;
+		extern graphics::IndexBuffer indexBuffer;
+		extern graphics::ConstantBuffer constantBuffers[(UINT)eCBType::End];
 
-		extern ID3DBlob* vsBlob;
-		extern ID3D11VertexShader* vsShader;
-		extern ID3DBlob* psBlob;
-		extern ID3D11PixelShader* psShader;
+		extern ID3D11Buffer* constantBuffer;
 		extern ID3D11InputLayout* inputLayouts;
 
 		void Initialize();

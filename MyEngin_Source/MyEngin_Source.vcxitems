@@ -17,7 +17,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioListener.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)IndexBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Material.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Mesh.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
@@ -30,9 +32,11 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pCircleCollider2D.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollider.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pCollisionManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pGraphicDevice.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pIndexBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
@@ -45,6 +49,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pScene.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSceneManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pShader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pSpriteRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTilemapRenderer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pTime.cpp" />
@@ -55,12 +60,14 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIHUD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pVertexBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)RididBody.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIBase.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIButton.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIHUD.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)UIManager.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)VertexBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)CommonInclude.h" />
@@ -75,6 +82,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollider.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pCollisionManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pComponent.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pConstantBuffer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pDontDestroyOnLoad.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEntity.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pEnum.h" />
@@ -83,6 +91,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pApplication.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pIndexBuffer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMaterial.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
@@ -106,5 +115,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIHUD.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIManager.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pVertexBuffer.h" />
   </ItemGroup>
 </Project>

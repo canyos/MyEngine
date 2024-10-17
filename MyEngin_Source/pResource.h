@@ -1,7 +1,7 @@
 #pragma once
 #include "pEntity.h"
 namespace p {
-	class Resource:public Entity
+	class Resource abstract :public Entity
 	{
 	public:
 		Resource(enums::eResourceType type);

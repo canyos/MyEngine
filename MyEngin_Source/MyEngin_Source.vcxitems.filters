@@ -74,25 +74,22 @@
       <Filter>resource\Audio\Fmod</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioClip.cpp">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioListener.cpp">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)AudioSource.cpp">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioClip.cpp">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioListener.cpp">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pAudioSource.cpp">
-      <Filter>Audio</Filter>
-    </ClCompile>
-    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp">
-      <Filter>UI</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClCompile>
     <ClCompile Include="$(MSBuildThisFileDirectory)pUIButton.cpp">
       <Filter>UI</Filter>
@@ -124,6 +121,20 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)Shader.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Material.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Mesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pShader.cpp">
+      <Filter>resource\Graphics\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)VertexBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp">
+      <Filter>resource\Audio\Fmod</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)pVertexBuffer.cpp">
+      <Filter>resource\Graphics\Buffer</Filter>
+    </ClCompile>
+    <ClCompile Include="$(MSBuildThisFileDirectory)IndexBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pIndexBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)ConstantBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pConstantBuffer.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -208,13 +219,13 @@
       <Filter>resource\Audio\Fmod</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAudioClip.h">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAudioListener.h">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pAudioSource.h">
-      <Filter>Audio</Filter>
+      <Filter>resource\Audio\Audio</Filter>
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pUIBase.h">
       <Filter>UI</Filter>
@@ -228,7 +239,6 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphicDevice.h">
       <Filter>GraphicDevice</Filter>
     </ClInclude>
-    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pTexture.h">
       <Filter>resource\Texture</Filter>
     </ClInclude>
@@ -241,6 +251,14 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pMesh.h">
       <Filter>resource\Mesh</Filter>
     </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pVertexBuffer.h">
+      <Filter>resource\Graphics\Buffer</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h">
+      <Filter>resource\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="$(MSBuildThisFileDirectory)pIndexBuffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pConstantBuffer.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">
@@ -267,9 +285,6 @@
     <Filter Include="UI">
       <UniqueIdentifier>{4c247843-d179-4fa7-8c9d-6bf93ba45842}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Audio">
-      <UniqueIdentifier>{098b2684-3914-4e33-83c9-e1efb8fca9f4}</UniqueIdentifier>
-    </Filter>
     <Filter Include="GraphicDevice">
       <UniqueIdentifier>{19db6283-0b93-483a-8dd3-071b655f12b4}</UniqueIdentifier>
     </Filter>
@@ -293,6 +308,12 @@
     </Filter>
     <Filter Include="resource\Mesh">
       <UniqueIdentifier>{b9d00bf9-6c6f-4520-aeb4-8c8e95ddc929}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Graphics\Buffer">
+      <UniqueIdentifier>{a96ffa2d-572b-460d-8c48-c2141c5c58e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="resource\Audio\Audio">
+      <UniqueIdentifier>{098b2684-3914-4e33-83c9-e1efb8fca9f4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
 </Project>

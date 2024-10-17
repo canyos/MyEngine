@@ -18,8 +18,8 @@ namespace p
 
 		enum class eResourceType {
 			Texture,
-			//Mesh
-			//shader
+			Mesh,
+			Shader,
 			Audioclip,
 			Animation,
 			Prefab,
