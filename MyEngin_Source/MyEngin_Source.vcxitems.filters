@@ -135,6 +135,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pIndexBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)ConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pConstantBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMesh.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />

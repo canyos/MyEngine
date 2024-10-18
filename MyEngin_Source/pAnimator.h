@@ -28,7 +28,7 @@ namespace p {
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
-		void Render(HDC hdc) override;
+		void Render() override;
 
 		void CreateAnimation(const std::wstring& name,
 			graphics::Texture* spriteSheet, //이미지 텍스쳐
@@ -37,9 +37,9 @@ namespace p {
 			Vector2 offset, //중앙을 어디로 설정할 것인지
 			UINT spriteLength, // 연속으로 보여줄 이미지 개수
 			float duration); //한장당 지속시간
-		void CreateAnimationByFolder(const std::wstring& name, 
+		void CreateAnimationByFolder(/*const std::wstring& name, 
 			const std::wstring& path,
-			Vector2 offset, float duration);
+			Vector2 offset, float duration*/);
 
 		Animation* FindAnimation(const std::wstring& name);
 		void PlayAnimation(const std::wstring& name, bool loop = true);

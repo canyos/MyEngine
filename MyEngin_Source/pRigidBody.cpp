@@ -81,7 +81,7 @@ namespace p {
 	void RigidBody::LateUpdate()
 	{
 	}
-	void RigidBody::Render(HDC hdc)
+	void RigidBody::Render()
 	{
 	}
 }

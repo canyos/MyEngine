@@ -55,7 +55,7 @@ namespace p {
 			}
 		}
 	}
-	void UIManager::Render(HDC hdc)
+	void UIManager::Render()
 	{
 		std::stack<UIBase*> uiBases = mUIBases;
 		std::stack<UIBase*> tempStack = {};
@@ -63,7 +63,7 @@ namespace p {
 		while (!uiBases.empty()) { //현재 켜진 UI업데이트하기
 			UIBase* uiBase = uiBases.top();
 			if (uiBase) {
-				//uiBase->Render(hdc);
+				//uiBase->Render();
 				tempStack.push(uiBase);
 				uiBases.pop();
 			}
@@ -71,7 +71,7 @@ namespace p {
 		while (!tempStack.empty()) { //현재 켜진 UI업데이트하기
 			UIBase* uiBase = tempStack.top();
 			if (uiBase) {
-				uiBase->Render(hdc);
+				uiBase->Render();
 				tempStack.pop();
 			}
 		}

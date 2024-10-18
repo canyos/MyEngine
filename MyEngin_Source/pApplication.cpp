@@ -36,18 +36,23 @@ namespace p {
 		Input::Initialize();
 		Time::Initialize();
 	}
-	void Application::clearRenderTarget() {
-		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128,128,128));
+	void Application::clearRenderTarget()
+	{
+		//clear
+		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128, 128, 128));
 		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
 
 		::Rectangle(mBackHdc, -1, -1, 1601, 901);
+
 		(HBRUSH)SelectObject(mBackHdc, oldBrush);
 		DeleteObject(grayBrush);
 	}
 
+
 	void Application::copyRenderTarget(HDC source, HDC dest)
 	{
-		BitBlt(dest, 0, 0, mWidth, mHeight, source, 0, 0, SRCCOPY);
+		BitBlt(dest, 0, 0, mWidth, mHeight
+			, source, 0, 0, SRCCOPY);
 	}
 
 	void Application::adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height)
@@ -55,7 +60,7 @@ namespace p {
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
-		RECT rect = { 0,0, width, height };
+		RECT rect = { 0,0, (LONG)width, (LONG)height };
 		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
 
 		mWidth = rect.right - rect.left, mHeight = rect.bottom - rect.top;
@@ -107,7 +112,7 @@ namespace p {
 
 	void Application::Render() //처음만 그리는게 아니라 매번 새로 그림
 	{
-		//Rectangle(mHdc, 0, 0, 1600, 900);//매번 배경 새로 그려 잔상 지움-> 깜빡거림(flickering) 문제
+		//Rectangle(m, 0, 0, 1600, 900);//매번 배경 새로 그려 잔상 지움-> 깜빡거림(flickering) 문제
 		//window의 크기가 1600,900 이므로 실제 그릴 수 있는 영역은 더 작음
 		//더블 버퍼링으로 해결
 		//dc를 두개 그려 번갈아가면서 화면에 출력
@@ -115,13 +120,13 @@ namespace p {
 		clearRenderTarget();
 
 		
-		Time::Render(mBackHdc);
-		CollisionManager::Render(mBackHdc);
-		UIManager::Render(mBackHdc);
-		SceneManager::Render(mBackHdc);
+		Time::Render();
+		CollisionManager::Render();
+		UIManager::Render();
+		SceneManager::Render();
 
 		//backbuffer를 원본 버퍼로 복사
-		//copyRenderTarget(mBackHdc, mHdc);
+		//copyRenderTarget(mBack, m);
 		mGraphicDevice->Draw();
 	}
 	void Application::Destroy()

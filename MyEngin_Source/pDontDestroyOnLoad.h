@@ -10,7 +10,7 @@ namespace p {
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
-		void Render(HDC hdc) override;
+		void Render() override;
 		
 		void OnEnter()override;//Scene에 들어가거나 
 		void OnExit()override;//나갈때 필요없는거 처리

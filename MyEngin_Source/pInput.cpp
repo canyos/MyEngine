@@ -73,15 +73,11 @@ namespace p {
 		mMousePosition.y = -1.0f;
 
 		UINT width = application.GetWidth(), height = application.GetHeight();
-		if (mousePos.x < width && mousePos.x > 0) {
-			mMousePosition.x = mousePos.x;
-		}
-		if (mousePos.y < height && mousePos.y > 0) {
-			mMousePosition.y = mousePos.y;
-		}
+		if ((UINT)mousePos.x > 0 && (UINT)mousePos.x < width)
+			mMousePosition.x = (float)mousePos.x;
 
-		
-		
+		if ((UINT)mousePos.y > 0 && (UINT)mousePos.y < height)
+			mMousePosition.y = (float)mousePos.y;		
 	}
 	void Input::updateKeyDown(Input::Key& key) {//키가 눌렸다.
 		if (key.bPressed == true)//이전 프레임에도 눌려있음

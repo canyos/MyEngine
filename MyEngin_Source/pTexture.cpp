@@ -17,23 +17,24 @@ namespace p {
 			image->SetWidth(width);
 			image->SetHeight(height);
 
-			HDC hdc = application.GetHdc();
+			/*
+			 = application.Get();
 			HWND hwnd = application.GetHwnd();
 
-			image->mBitmap = CreateCompatibleBitmap(hdc, width, height);
-			image->mHdc = CreateCompatibleDC(hdc);
+			image->mBitmap = CreateCompatibleBitmap(, width, height);
+			image->m = CreateCompatibleDC();
 
 			HBRUSH transparentBrush = (HBRUSH)GetStockObject(NULL_BRUSH);
-			HBRUSH oldBrush = (HBRUSH)SelectObject(hdc, transparentBrush);
+			HBRUSH oldBrush = (HBRUSH)SelectObject(, transparentBrush);
 
-			::Rectangle(image->mHdc,-1,-1,image->GetWidth()+1, image->GetHeight() + 1);
-			SelectObject(hdc, oldBrush);
+			::Rectangle(image->m,-1,-1,image->GetWidth()+1, image->GetHeight() + 1);
+			SelectObject(, oldBrush);
 
-			HBITMAP oldBitmap = (HBITMAP)SelectObject(image->mHdc, image->mBitmap);
+			HBITMAP oldBitmap = (HBITMAP)SelectObject(image->m, image->mBitmap);
 			DeleteObject(oldBitmap);
-
+			*/
 			Resources::Insert(name + L"Image", image);
-
+			
 			return image;
 		}
 		Texture::Texture(): Resource(enums::eResourceType::Texture), mbAlpha(false) {
@@ -42,11 +43,15 @@ namespace p {
 		Texture::~Texture() {
 
 		}
+		HRESULT Texture::Save(const std::wstring& path)
+		{
+			return E_NOTIMPL;
+		}
 		HRESULT Texture::Load(const std::wstring & path)
 		{
 			std::wstring ext
 				= path.substr(path.find_last_of(L".") + 1);
-
+			/*
 			//bmp ÀÏ¶§
 			if (ext == L"bmp")
 			{
@@ -70,10 +75,10 @@ namespace p {
 					mbAlpha = false;
 				}
 
-				HDC mainDC = application.GetHdc();
-				mHdc = CreateCompatibleDC(mainDC);
+				 mainDC = application.Get();
+				m = CreateCompatibleDC(mainDC);
 
-				HBITMAP oldBitmap = (HBITMAP)SelectObject(mHdc, mBitmap);
+				HBITMAP oldBitmap = (HBITMAP)SelectObject(m, mBitmap);
 				DeleteObject(oldBitmap);
 
 			}
@@ -88,14 +93,14 @@ namespace p {
 				mWidth = mImage->GetWidth();
 				mHeight = mImage->GetHeight();
 			}
-
+			*/
 			return S_OK;
 		}
 
-		COLORREF Texture::GetPixel(int x, int y)
+		/*COLORREF Texture::GetPixel(int x, int y)
 		{
-			return ::GetPixel(mHdc, x, y);
-		}
+			return ::GetPixel(m, x, y);
+		}*/
 
 	}
 }

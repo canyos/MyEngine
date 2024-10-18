@@ -44,6 +44,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pGameObject.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pApplication.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pInput.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMesh.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pResource.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pResources.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pRigidBody.cpp" />

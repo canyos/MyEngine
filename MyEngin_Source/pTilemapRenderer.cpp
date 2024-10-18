@@ -32,10 +32,12 @@ namespace p
 	void TilemapRenderer::LateUpdate()
 	{
 	}
-	void TilemapRenderer::Render(HDC hdc)
+	void TilemapRenderer::Render()
 	{
+		/*
 		if (mTexture == nullptr) //텍스처 세팅 해주세요!
 			assert(false);
+		
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
 		float rot = tr->GetRoation();
@@ -52,11 +54,11 @@ namespace p
 				func.BlendFlags = 0;
 				func.AlphaFormat = AC_SRC_ALPHA;
 				func.SourceConstantAlpha = 255; // 0(transparent) ~ 255(Opaque)
-				AlphaBlend(hdc
+				AlphaBlend(
 					, pos.x, pos.y
 					, mTileSize.x * mSize.x * scale.x
 					, mTileSize.y * mSize.y * scale.y
-					, mTexture->GetHdc()
+					, mTexture->Get()
 					, mIndex.x * mTileSize.x, mIndex.y * mTileSize.y
 					, mTileSize.x
 					, mTileSize.y
@@ -65,11 +67,11 @@ namespace p
 			else
 			{
 				//https://blog.naver.com/power2845/50147965306
-				TransparentBlt(hdc
+				TransparentBlt(
 					, pos.x, pos.y
 					, mTileSize.x * mSize.x * scale.x
 					, mTileSize.y * mSize.y * scale.y
-					, mTexture->GetHdc()
+					, mTexture->Get()
 					, mIndex.x * mTileSize.x, mIndex.y * mTileSize.y
 					, mTileSize.x
 					, mTileSize.y
@@ -82,7 +84,7 @@ namespace p
 		//	// 투명화 시킬 픽셀의 색 범위
 		//	Gdiplus::ImageAttributes imgAtt = {};
 		//	imgAtt.SetColorKey(Gdiplus::Color(230, 230, 230), Gdiplus::Color(255, 255, 255));
-		//	Gdiplus::Graphics graphcis(hdc);
+		//	Gdiplus::Graphics graphcis();
 		//	graphcis.TranslateTransform(pos.x, pos.y);
 		//	graphcis.RotateTransform(rot);
 		//	graphcis.TranslateTransform(-pos.x, -pos.y);
@@ -96,7 +98,8 @@ namespace p
 		//		, 0, 0
 		//		, mTexture->GetWidth(), mTexture->GetHeight()
 		//		, Gdiplus::UnitPixel
-		//		, nullptr/*&imgAtt*/);
+		//		, &imgAt/);
 		//}
+		*/
 	}
 }

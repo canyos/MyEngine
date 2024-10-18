@@ -6,8 +6,8 @@ namespace p {
 	class Camera : public Component
 	{
 	public:
-		Vector2 CalculatePosition(Vector2 pos) { return pos - mDistance; };
-		Vector2 CalculateTilePosition(Vector2 pos) {
+		Vector2 CalculatePosition(Vector2 pos) const { return pos - mDistance; };
+		Vector2 CalculateTilePosition(Vector2 pos)const {
 			return pos + mDistance;
 		}
 		Camera();
@@ -16,7 +16,7 @@ namespace p {
 		void Initialize()override;
 		void Update()override;
 		void LateUpdate()override;
-		void Render(HDC hdc)override;
+		void Render()override;
 
 		void SetTarget(GameObject* target) { mTarget = target; };
 

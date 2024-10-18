@@ -21,7 +21,10 @@ namespace p {
 		};
 		Animation();
 		~Animation();
-		HRESULT Load(const std::wstring& path) override;
+		
+		virtual HRESULT Save(const std::wstring& path) override;
+		virtual HRESULT Load(const std::wstring& path) override;
+
 		void CreateAnimation(const std::wstring& name,
 			graphics::Texture* spriteSheet, //이미지 텍스쳐
 			Vector2 leftTop, // 이미지 시작 위치
@@ -31,10 +34,10 @@ namespace p {
 			float duration); //한장당 지속시간
 
 		void Update();
-		void Render(HDC hdc);
+		void Render();
 		void Reset();
 
-		bool IsComplete() {	return mbComplete;	}
+		bool IsComplete() const { return mbComplete;	}
 		void SetAnimator(class Animator* animator) { mAnimator = animator; }
 
 	private:

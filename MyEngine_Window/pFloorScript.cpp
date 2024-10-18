@@ -19,7 +19,7 @@ namespace p {
 	void FloorScript::LateUpdate()
 	{
 	}
-	void FloorScript::Render(HDC hdc)
+	void FloorScript::Render()
 	{
 	}
 	void FloorScript::OnCollisionEnter(Collider * other)

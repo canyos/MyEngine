@@ -23,6 +23,11 @@ namespace p {
     {
     }
 
+	HRESULT Animation::Save(const std::wstring& path)
+	{
+		return E_NOTIMPL;
+	}
+
     HRESULT Animation::Load(const std::wstring& path)
     {
         return E_NOTIMPL;
@@ -45,7 +50,7 @@ namespace p {
         }
     }
 
-    void Animation::Render(HDC hdc)
+    /*void Animation::Render()
     {
         // 알파블렌드를 쓸수 있는 조건 : 해당이미지 알파채널이 있어야한다.
         //AlphaBlend(125, );
@@ -70,7 +75,7 @@ namespace p {
             
 
             //
-            HDC imgHdc = mTexture->GetHdc();
+             img = mTexture->Get();
 
             if (mTexture->IsAlpha()) { // 알파값이 있으면 알파블렌드
                 BLENDFUNCTION func = {};
@@ -78,12 +83,12 @@ namespace p {
                 func.BlendFlags = 0;
                 func.AlphaFormat = AC_SRC_ALPHA;
                 func.SourceConstantAlpha = 255; // 0(transparent) ~ 255(Opaque)
-                AlphaBlend(hdc
+                AlphaBlend(
                     , pos.x - (sprite.size.x / 2.0f) + sprite.offset.x
                     , pos.y - (sprite.size.y / 2.0f) + sprite.offset.y
                     , sprite.size.x * scale.x
                     , sprite.size.y * scale.y
-                    , imgHdc
+                    , img
                     , sprite.leftTop.x
                     , sprite.leftTop.y
                     , sprite.size.x
@@ -91,19 +96,19 @@ namespace p {
                     , func);
             }
             else {
-                TransparentBlt(hdc
+                TransparentBlt(
                     , pos.x - (sprite.size.x / 2.0f) + sprite.offset.x
                     , pos.y - (sprite.size.y / 2.0f) + sprite.offset.y
                     , sprite.size.x * scale.x
                     , sprite.size.y * scale.y
-                    , imgHdc
+                    , img
                     , sprite.leftTop.x
                     , sprite.leftTop.y
                     , sprite.size.x
                     , sprite.size.y
                     , RGB(255, 0, 255));
             }
-			::Rectangle(hdc, pos.x, pos.y, pos.x + 10, pos.y + 10);
+			::Rectangle(, pos.x, pos.y, pos.x + 10, pos.y + 10);
             
         }
         else if (type == graphics::Texture::eTextureType::Png)
@@ -114,7 +119,7 @@ namespace p {
             // 투명화 시킬 픽셀의 색 범위
             imgAtt.SetColorKey(Gdiplus::Color(230, 230, 230), Gdiplus::Color(255, 255, 255));
 
-            Gdiplus::Graphics graphics(hdc);
+            Gdiplus::Graphics graphics();
 
             graphics.TranslateTransform(pos.x, pos.y);
             graphics.RotateTransform(rot);
@@ -133,14 +138,21 @@ namespace p {
                 , sprite.size.x
                 , sprite.size.y
                 , Gdiplus::UnitPixel
-                , /*&imgAtt*/nullptr
+                , &imgAtt ornullptr
             );
         }
-    }
+    }*/
+
+	void Animation::Render()
+	{
+		if (mTexture == nullptr)
+			return;
+	}
 
     void Animation::CreateAnimation(const std::wstring& name, graphics::Texture* spriteSheet
         , Vector2 leftTop, Vector2 size, Vector2 offset, UINT spriteLegth, float duration)
     {
+		SetName(name);
         mTexture = spriteSheet;
         for (size_t i = 0; i < spriteLegth; i++)
         {

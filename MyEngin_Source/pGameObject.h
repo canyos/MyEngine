@@ -20,7 +20,7 @@ namespace p {
 		virtual void Initialize();
 		virtual void Update();
 		virtual void LateUpdate();
-		virtual void Render(HDC hdc);
+		virtual void Render();
 
 		template <typename T>
 		T* AddComponent()
@@ -48,7 +48,7 @@ namespace p {
 			return component;
 		}
 
-		eState GetState() { return mState; }
+		eState GetState() const { return mState; }
 		void SetActive(bool power) {
 			if (power) {
 				mState = eState::Active;
@@ -57,10 +57,11 @@ namespace p {
 				mState = eState::Paused;
 			}
 		}
-		bool IsActive() { return mState == eState::Active; }
+		bool IsActive() const { return mState == eState::Active; }
+		bool IsDead() const { return mState == eState::Dead; }
 		void Death() { mState = eState::Dead; }
 		void SetLayerType(eLayerType layerType) { mLayerType = layerType; }
-		eLayerType GetLayerType() { return mLayerType; }
+		eLayerType GetLayerType() const { return mLayerType; }
 	private:
 		void InitializeTransform();
 		

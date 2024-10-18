@@ -11,18 +11,19 @@ namespace p {
 		virtual void Initialize();
 		virtual void Update();
 		virtual void LateUpdate();
-		virtual void Render(HDC hdc);
+		virtual void Render();
 
 		virtual void OnCollisionEnter(Collider* other);
 		virtual void OnCollisionStay(Collider* other);
 		virtual void OnCollisionExit(Collider* other);
 
-		Vector2 GetOffset() { return mOffset; }
+		Vector2 GetOffset() const { return mOffset; }
 		void SetOffset(Vector2 offset) { mOffset = offset; }
-		UINT32 GetID() { return mID; }
-		Vector2 GetSize() { return mSize; }
+		UINT32 GetID() const { return mID; }
+		Vector2 GetSize() const { return mSize; }
 		void SetSize(Vector2 size) { mSize = size; }
-		eColliderType GetColliderType() { return mType; }
+		eColliderType GetColliderType() const { return mType; }
+
 	private:
 		Vector2 mOffset;
 		static UINT32 mCollisionID;

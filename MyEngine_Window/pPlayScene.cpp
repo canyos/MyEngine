@@ -29,6 +29,7 @@
 namespace p
 {
 	PlayScene::PlayScene()
+		:mPlayer(nullptr)
 	{
 	}
 	PlayScene::~PlayScene()
@@ -66,7 +67,7 @@ namespace p
 			//fclose(pFile);
 		}
 
-
+		/*
 		//main camera
 		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector2(344.0f, 442.0f));
 		Camera* cameraComp = camera->AddComponent<Camera>();
@@ -114,7 +115,7 @@ namespace p
 		as->SetClip(ac);
 		as->Play();
 
-		plScript->SetPixelMapTexture(Resources::Find<graphics::Texture>(L"PixelMap"));
+		
 
 		///CAT
 		Cat* cat = object::Instantiate<Cat>(enums::eLayerType::Animal);
@@ -141,7 +142,7 @@ namespace p
 		//	, Vector2(0.0f, 192.0f), Vector2(32.0f, 32.0f), Vector2::Zero, 4, 0.1f);
 
 		//catAnimator->PlayAnimation(L"SitDown", false);
-		catAnimator->CreateAnimationByFolder(L"MushroomIdle", L"..\\Resources\\Mushroom", Vector2::Zero, 0.1f);
+		//catAnimator->CreateAnimationByFolder(L"MushroomIdle", L"..\\Resources\\Mushroom", Vector2::Zero, 0.1f);
 
 		catAnimator->PlayAnimation(L"MushroomIdle", true);
 
@@ -160,6 +161,10 @@ namespace p
 
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();
+		*/
+		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
+		object::DontDestroyOnLoad(mPlayer);
+		Scene::Initialize();
 	}
 
 	void PlayScene::Update()
@@ -173,11 +178,11 @@ namespace p
 			SceneManager::LoadScene(L"TitleScene");
 		}
 	}
-	void PlayScene::Render(HDC hdc)
+	void PlayScene::Render()
 	{
-		Scene::Render(hdc);
+		Scene::Render();
 		/*wchar_t str[50] = L"Play Scene";
-		TextOutW(hdc, 0, 0, str, lstrlenW(str));*/
+		TextOutW(, 0, 0, str, lstrlenW(str));*/
 	}
 	void PlayScene::OnEnter()
 	{

@@ -10,7 +10,7 @@ namespace p {
 		virtual void Initialize();
 		virtual void Update();
 		virtual void LateUpdate();
-		virtual void Render(HDC hdc);
+		virtual void Render();
 		virtual void Destroy();
 
 		virtual void OnEnter();//Scene에 들어가거나 

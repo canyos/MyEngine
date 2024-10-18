@@ -53,10 +53,10 @@ namespace p {
 	{
 	}
 
-	void Animator::Render(HDC hdc)
+	void Animator::Render()
 	{
-		if (mActiveAnimation)
-			mActiveAnimation->Render(hdc);
+		//if (mActiveAnimation)
+		//	mActiveAnimation->Render();
 	}
 
 	void Animator::CreateAnimation(const std::wstring& name
@@ -83,6 +83,7 @@ namespace p {
 		mAnimations.insert(std::make_pair(name, animation));
 	}
 
+	/*
 	void Animator::CreateAnimationByFolder(const std::wstring& name, const std::wstring& path, Vector2 offset, float duration)
 	{
 		Animation* animation = nullptr;
@@ -112,14 +113,20 @@ namespace p {
 		UINT imageHeight = images[0]->GetHeight();
 		for (size_t i = 0; i < images.size(); i++)
 		{
-			BitBlt(spriteSheet->GetHdc(), i * imageWidth, 0
+			BitBlt(spriteSheet->Get(), i * imageWidth, 0
 				, imageWidth, imageHeight
-				, images[i]->GetHdc(), 0, 0, SRCCOPY);
+				, images[i]->Get(), 0, 0, SRCCOPY);
 		}
 
 		CreateAnimation(name, spriteSheet
 			, Vector2(0.0f, 0.0f), Vector2(imageWidth, imageHeight)
 			, offset, fileCount, duration);
+	}*/
+	void Animator::CreateAnimationByFolder(/*const std::wstring& name
+		, const std::wstring& path
+		, Vector2 offset
+		, float duration*/){
+
 	}
 
 

@@ -15,11 +15,12 @@ namespace p {
 	}
 	void CollisionManager::Update()
 	{
-		Scene* scene = SceneManager::GetActiveScene();
+		//Scene* scene = SceneManager::GetActiveScene();
 		for (UINT row = 0; row < (UINT)eLayerType::Max; row++) {
 			for (UINT col = 0; col < (UINT)eLayerType::Max; col++) {
 				if (mCollisionLayerMatrix[row][col]) {
-					LayerCollision(scene, (eLayerType)row, (eLayerType)col);
+					//LayerCollision(scene, (eLayerType)row, (eLayerType)col);
+					LayerCollision((eLayerType)row, (eLayerType)col);
 				}
 			}
 		}
@@ -27,7 +28,7 @@ namespace p {
 	void CollisionManager::LateUpdate()
 	{
 	}
-	void CollisionManager::Render(HDC hdc)
+	void CollisionManager::Render()
 	{
 	}
 	void CollisionManager::Clear()
@@ -49,6 +50,7 @@ namespace p {
 		mCollisionLayerMatrix[row][col] = enable;
 	}
 
+	/*
 	void CollisionManager::LayerCollision(Scene * scene, eLayerType left, eLayerType right)
 	{
 		const std::vector<GameObject*>& lefts = SceneManager::GetGameObjects(left);
@@ -77,7 +79,35 @@ namespace p {
 				ColliderCollision(leftCol, rightCol);
 			}
 		}
+	}*/
+
+	void CollisionManager::LayerCollision(eLayerType left, eLayerType right) {
+		const std::vector<GameObject*>& leftObjs = SceneManager::GetGameObjects(left);//scene->GetLayer(left)->GetGameObjects();
+		const std::vector<GameObject*>& rightObjs = SceneManager::GetGameObjects(right); // scene->GetLayer(right)->GetGameObjects();
+
+		for (GameObject* leftObj : leftObjs) {
+			if (leftObj->IsActive() == false)
+				continue;
+			Collider* leftCol = leftObj->GetComponent<Collider>();
+			if (leftCol == nullptr)
+				continue;
+
+			for (GameObject* rightObj : rightObjs) {
+				if (rightObj->IsActive() == false)
+					continue;
+				Collider* rightCol = rightObj->GetComponent<Collider>();
+
+				if (rightCol == NULL) 
+					continue;
+				
+				if (leftObj == rightObj)
+					continue;
+
+				ColliderCollision(leftCol, rightCol);
+			}
+		}
 	}
+
 	void CollisionManager::ColliderCollision(Collider * left, Collider * right)
 	{
 		//충돌체크 로직 

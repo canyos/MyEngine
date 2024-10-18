@@ -28,11 +28,12 @@ namespace p::graphics {
 		creationFlags |= D3D11_CREATE_DEVICE_DEBUG;
 #endif
 
-		bool hr = D3D11CreateDevice(0, D3D_DRIVER_TYPE_HARDWARE,
+		if (FAILED(D3D11CreateDevice(0, D3D_DRIVER_TYPE_HARDWARE,
 			0, creationFlags,
 			featureLevels, ARRAYSIZE(featureLevels),
 			D3D11_SDK_VERSION, mDevice.GetAddressOf(),
-			0, mContext.GetAddressOf());
+			0, mContext.GetAddressOf())))
+			return false;
 
 		return true;
 	}
@@ -166,6 +167,11 @@ namespace p::graphics {
 		mContext->Map(buffer, 0, D3D11_MAP::D3D11_MAP_WRITE_DISCARD, 0, &sub);
 		memcpy(sub.pData, data, size);
 		mContext->Unmap(buffer, 0);
+	}
+
+	void GraphicDevice::BindPrimitiveTopology(const D3D11_PRIMITIVE_TOPOLOGY topology)
+	{
+		mContext->IASetPrimitiveTopology(topology);
 	}
 
 	void GraphicDevice::BindVS(ID3D11VertexShader* pVertexShader)
@@ -313,12 +319,6 @@ namespace p::graphics {
 			, triangle->GetVSBlob()->GetBufferSize()
 			, &renderer::inputLayouts)))
 			assert(NULL && "Create input layout failed!");
-
-		//vertexBuffer생성
-		renderer::vertexBuffer.Create(renderer::vertexes);
-
-		//index buffer초기화
-		renderer::indexBuffer.Create(renderer::indices);
 	}
 
 	void GraphicDevice::Draw()
@@ -331,7 +331,8 @@ namespace p::graphics {
 		//뷰포트 만들어주기
 		D3D11_VIEWPORT viewPort =
 		{
-			0, 0, application.GetWidth(), application.GetHeight(),
+			0, 0,
+			(float)application.GetWidth(), (float)application.GetHeight(),
 			0.0f, 1.0f
 		};
 		//render target한개만 사용해서 묶어주기
@@ -342,10 +343,8 @@ namespace p::graphics {
 
 		//어떤 방식으로 연결해서 그려줄거냐
 		mContext->IASetInputLayout(renderer::inputLayouts);
-		mContext->IASetPrimitiveTopology(D3D11_PRIMITIVE_TOPOLOGY::D3D11_PRIMITIVE_TOPOLOGY_TRIANGLELIST);
+		renderer::mesh->Bind();
 
-		renderer::vertexBuffer.Bind();
-		renderer::indexBuffer.Bind();
 		Vector4 pos(0.5f, 0.0f, 0.0f, 1.0f);
 		renderer::constantBuffers[(UINT)eCBType::Transform].SetData(&pos);
 		renderer::constantBuffers[(UINT)eCBType::Transform].Bind(eShaderStage::VS);

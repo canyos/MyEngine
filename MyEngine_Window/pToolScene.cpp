@@ -69,11 +69,11 @@ namespace p
 			Load();
 		}
 	}
-	void ToolScene::Render(HDC hdc)
+	void ToolScene::Render()
 	{
-		Scene::Render(hdc);
+		Scene::Render();
 		
-		for (int i = 0; i < 50; i++)
+		/*for (int i = 0; i < 50; i++)
 		{
 			Vector2 pos = renderer::mainCamera->CalculatePosition
 			(
@@ -93,7 +93,7 @@ namespace p
 
 			MoveToEx(hdc, 0, (int)pos.y, NULL);
 			LineTo(hdc, 1000, (int)pos.y);
-		}
+		}*/
 	}
 	void ToolScene::OnEnter()
 	{
@@ -231,17 +231,17 @@ LRESULT CALLBACK WndTileProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lPar
 		PAINTSTRUCT ps;
 		HDC hdc = BeginPaint(hWnd, &ps);
 
-		p::graphics::Texture* texture =
+		/*p::graphics::Texture* texture =
 			p::Resources::Find<p::graphics::Texture>(L"SpringFloor");
-		TransparentBlt(hdc
+		TransparentBlt(
 			, 0, 0
 			, texture->GetWidth()
 			, texture->GetHeight()
-			, texture->GetHdc()
+			, texture->Get()
 			, 0, 0
 			, texture->GetWidth()
 			, texture->GetHeight()
-			, RGB(255, 0, 255));
+			, RGB(255, 0, 255));*/
 
 		EndPaint(hWnd, &ps);
 	}

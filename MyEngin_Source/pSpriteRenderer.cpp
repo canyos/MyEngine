@@ -24,11 +24,11 @@ namespace p
 	{
 	}
 
-	void SpriteRenderer::Render(HDC hdc)
+	void SpriteRenderer::Render()
 	{
 		if (mTexture == nullptr) //텍스처 세팅 해주세요!
 			assert(false);
-
+		/*
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
 		float rot = tr->GetRoation();
@@ -44,22 +44,22 @@ namespace p
 				func.BlendFlags = 0;
 				func.AlphaFormat = AC_SRC_ALPHA;
 				func.SourceConstantAlpha = 255; // 0(transparent) ~ 255(Opaque)
-				AlphaBlend(hdc
+				AlphaBlend(
 					, pos.x
 					, pos.y 
 					, mTexture->GetWidth() * mSize.x * scale.x
 					, mTexture->GetHeight() * mSize.y * scale.y
-					, mTexture->GetHdc()
+					, mTexture->Get()
 					, 0, 0
 					, mTexture->GetWidth(), mTexture->GetHeight()
 					, func);
 			}
 			else {
 				//https://blog.naver.com/power2845/50147965306
-				TransparentBlt(hdc, pos.x, pos.y
+				TransparentBlt(, pos.x, pos.y
 					, mTexture->GetWidth() * mSize.x * scale.x
 					, mTexture->GetHeight() * mSize.y * scale.y
-					, mTexture->GetHdc()
+					, mTexture->Get()
 					, 0, 0
 					, mTexture->GetWidth(), mTexture->GetHeight()
 					, RGB(255, 0, 255));
@@ -71,7 +71,7 @@ namespace p
 			Gdiplus::ImageAttributes imgAtt = {};
 			imgAtt.SetColorKey(Gdiplus::Color(230, 230, 230), Gdiplus::Color(255, 255, 255));
 
-			Gdiplus::Graphics graphcis(hdc);
+			Gdiplus::Graphics graphcis();
 
 			graphcis.TranslateTransform(pos.x, pos.y);
 			graphcis.RotateTransform(rot);
@@ -87,8 +87,8 @@ namespace p
 				, 0, 0
 				, mTexture->GetWidth(), mTexture->GetHeight()
 				, Gdiplus::UnitPixel
-				, nullptr/*&imgAtt*/);
-		}
+				, &imgAtt); 
+		}*/ //winapi//winapi
 
 	}
 

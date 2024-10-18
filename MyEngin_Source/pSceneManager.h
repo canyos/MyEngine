@@ -21,7 +21,7 @@ namespace p {
 		static void Initialize();
 		static void Update();
 		static void LateUpdate();
-		static void Render(HDC hdc);
+		static void Render();
 
 		static void Destroy();
 		static void Release();

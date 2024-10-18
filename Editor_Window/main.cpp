@@ -123,6 +123,29 @@ ATOM MyRegisterClass(HINSTANCE hInstance, const wchar_t* name, WNDPROC proc)
     return RegisterClassExW(&wcex);
 }
 
+BOOL InitToolScene(HINSTANCE hInstance) {
+	p::Scene* activeScene = p::SceneManager::GetActiveScene();
+	std::wstring name = activeScene->GetName();
+	if (name == L"ToolScene") {
+		HWND ToolHWnd = CreateWindowW(L"TILEWINDOW", L"TileWindow", WS_OVERLAPPEDWINDOW,
+			0, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
+		//Tile윈도우 크기 조정 -- tool
+		p::graphics::Texture* texture =
+			p::Resources::Find<p::graphics::Texture>(L"SpringFloor");
+
+		RECT rect = { 0, 0, (LONG)texture->GetWidth(), (LONG)texture->GetHeight() };
+		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
+
+		UINT toolWidth = rect.right - rect.left,
+			toolHeight = rect.bottom - rect.top;
+
+		SetWindowPos(ToolHWnd, nullptr, 672, 0, toolWidth, toolHeight, 0);//윈도우 위치, 크기 설정
+		ShowWindow(ToolHWnd, true);
+		UpdateWindow(ToolHWnd);
+	}
+	return TRUE;
+}
+
 //
 //   함수: InitInstance(HINSTANCE, int)
 //
@@ -167,27 +190,7 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
    return TRUE;
 }
 
-void InitToolScene(HINSTANCE hInstance) {
-	p::Scene* activeScene = p::SceneManager::GetActiveScene();
-	std::wstring name = activeScene->GetName();
-	if (name == L"ToolScene") {
-		HWND ToolHWnd = CreateWindowW(L"TILEWINDOW", L"TileWindow", WS_OVERLAPPEDWINDOW,
-			0, 0, CW_USEDEFAULT, 0, nullptr, nullptr, hInstance, nullptr);
-		//Tile윈도우 크기 조정 -- tool
-		p::graphics::Texture* texture =
-			p::Resources::Find<p::graphics::Texture>(L"SpringFloor");
 
-		RECT rect = { 0, 0, (LONG)texture->GetWidth(), (LONG)texture->GetHeight() };
-		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
-
-		UINT toolWidth = rect.right - rect.left,
-			toolHeight = rect.bottom - rect.top;
-
-		SetWindowPos(ToolHWnd, nullptr, 672, 0, toolWidth, toolHeight, 0);//윈도우 위치, 크기 설정
-		ShowWindow(ToolHWnd, true);
-		UpdateWindow(ToolHWnd);
-	}
-}
 
 //
 //  함수: WndProc(HWND, UINT, WPARAM, LPARAM)
@@ -223,8 +226,8 @@ LRESULT CALLBACK WndProc(HWND hWnd, UINT message, WPARAM wParam, LPARAM lParam)
 	case WM_PAINT:
 	{
 		PAINTSTRUCT ps;
-		HDC hdc = NULL;
-		hdc = BeginPaint(hWnd, &ps);
+		 HDC hdc = NULL;
+		 hdc = BeginPaint(hWnd, &ps);
 
 		EndPaint(hWnd, &ps);
 	}

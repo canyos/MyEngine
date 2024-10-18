@@ -8,7 +8,7 @@ namespace p {
 		void Initialize() override;
 		void Update() override;
 		void LateUpdate() override;
-		void Render(HDC hdc) override;
+		void Render() override;
 
 		void SetIndexPosition(int x, int y);
 	private:

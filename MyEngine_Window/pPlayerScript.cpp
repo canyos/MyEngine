@@ -27,7 +27,7 @@ namespace p {
 	}
 	void PlayerScript::Update()
 	{
-		if (mAnimator == nullptr)
+		/*if (mAnimator == nullptr)
 		{
 			mAnimator = GetOwner()->GetComponent<Animator>();
 		}
@@ -64,12 +64,12 @@ namespace p {
 		else {
 			
 			rb->SetGround(false);
-		}
+		}*/
 	}
 	void PlayerScript::LateUpdate()
 	{
 	}
-	void PlayerScript::Render(HDC hdc)
+	void PlayerScript::Render()
 	{
 	}
 
@@ -92,6 +92,7 @@ namespace p {
 
 	void PlayerScript::idle()
 	{
+		/*
 		if (Input::GetKey(eKeyCode::LButton)) {
 			//mState = PlayerScript::eState::GiveWater;
 			//mAnimator->PlayAnimation(L"FrontGiveWater",false);
@@ -155,7 +156,7 @@ namespace p {
 		{
 			UIManager::Pop(eUIType::HpBar);
 		}
-			
+		*/
 	}
 
 	void PlayerScript::move()

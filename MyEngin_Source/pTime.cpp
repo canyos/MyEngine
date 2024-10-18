@@ -24,7 +24,7 @@ namespace p {
 		//현재 진동수를 과거 진동수로 업데이트
 		PrevFrequency.QuadPart = CurrentFrequency.QuadPart;
 	}
-	void Time::Render(HDC hdc)
+	void Time::Render()
 	{
 		static float time = 0.0f;
 		time += DeltaTimeValue;
@@ -36,6 +36,6 @@ namespace p {
 
 		
 
-		TextOutW(hdc, 0, 0, str, len);
+		//TextOutW(, 0, 0, str, len);
 	}
 }

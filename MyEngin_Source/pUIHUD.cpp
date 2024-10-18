@@ -27,17 +27,18 @@ namespace p
 	void UIHUD::OnLateUpdate()
 	{
 	}
-	void UIHUD::OnRender(HDC hdc)
+	void UIHUD::OnRender()
 	{
-		TransparentBlt(hdc
+		/*
+		TransparentBlt(
 			, 0, 0
 			, mTexture->GetWidth()
 			, mTexture->GetHeight()
-			, mTexture->GetHdc()
+			, mTexture->Get()
 			, 0, 0
 			, mTexture->GetWidth() / 1.0f
 			, mTexture->GetHeight()
-			, RGB(255, 0, 255));
+			, RGB(255, 0, 255));*/
 	}
 	void UIHUD::OnClear()
 	{

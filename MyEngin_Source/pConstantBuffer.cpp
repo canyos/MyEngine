@@ -25,14 +25,14 @@ namespace p::graphics
 		else
 			succes = GetDevice()->CreateBuffer(&desc, &sub, buffer.GetAddressOf());
 		if (!succes)
-			assert(NULL, "Create constant buffer failed!");
+			assert(NULL/*, "Create constant buffer failed!"*/);
 		return true;
 	}
-	void ConstantBuffer::SetData(void* data)
+	void ConstantBuffer::SetData(void* data)const
 	{
 		GetDevice()->SetDataBuffer(buffer.Get(), data, mSize);
 	}
-	void ConstantBuffer::Bind(eShaderStage stage)
+	void ConstantBuffer::Bind(eShaderStage stage)const
 	{
 		GetDevice()->BindConstantBuffer(stage, mType, buffer.Get());
 	}

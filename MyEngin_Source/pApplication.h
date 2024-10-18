@@ -20,10 +20,10 @@ namespace p {
 		void Release();
 		
 
-		HDC GetHdc() { return mHdc; }
-		UINT GetWidth() { return mWidth; }
-		UINT GetHeight() { return mHeight; }
-		HWND GetHwnd() { return mHwnd; }
+		HDC GetHdc() const { return mHdc; }
+		UINT GetWidth()const { return mWidth; }
+		UINT GetHeight()const { return mHeight; }
+		HWND GetHwnd()const { return mHwnd; }
 	private:
 		void clearRenderTarget();
 		void copyRenderTarget(HDC source, HDC dest);

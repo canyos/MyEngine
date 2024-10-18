@@ -28,10 +28,10 @@ namespace p
 			SceneManager::LoadScene(L"PlayScene");
 		}
 	}
-	void TitleScene::Render(HDC hdc)
+	void TitleScene::Render()
 	{
-		Scene::Render(hdc);
+		Scene::Render();
 		wchar_t str[50] = L"Title  Scene";
-		TextOutW(hdc, 0, 0, str, lstrlenW(str));
+		//TextOutW(hdc, 0, 0, str, lstrlenW(str));
 	}
 }

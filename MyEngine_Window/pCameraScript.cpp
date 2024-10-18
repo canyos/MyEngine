@@ -47,7 +47,7 @@ namespace p {
 	void CameraScript::LateUpdate()
 	{
 	}
-	void CameraScript::Render(HDC hdc)
+	void CameraScript::Render()
 	{
 	}
 }
