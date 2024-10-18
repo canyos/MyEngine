@@ -24,10 +24,12 @@
     <FxCompile Include="C:\Users\com100\Documents\GitHub\MyEngine\Shaders_SOURCE\SpriteVS.hlsl">
       <Filter>VS</Filter>
     </FxCompile>
+    <FxCompile Include="$(MSBuildThisFileDirectory)Samplers.hlsli" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)ConstantBuffers.hlsli">
       <Filter>LIB</Filter>
     </None>
+    <None Include="$(MSBuildThisFileDirectory)Textures.hlsli" />
   </ItemGroup>
 </Project>

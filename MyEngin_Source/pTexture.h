@@ -10,13 +10,13 @@ namespace p {
 		class Texture:public Resource
 		{
 		public:
-			enum class eTextureType {
+			/*enum class eTextureType {
 				Bmp,
 				Png,
 				None,
 			};
 			static Texture* Create(const std::wstring& name,UINT width, UINT height);
-
+*/
 			Texture();
 			~Texture();
 
