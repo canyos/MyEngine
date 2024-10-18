@@ -9,7 +9,14 @@
 #include "pRenderer.h"
 
 namespace p {
-	Application::Application() :mHwnd(nullptr), mHdc(nullptr), mHeight(0), mWidth(0), mBackHdc(NULL), mBackBitmap(NULL)
+	Application::Application() 
+		:mHwnd(nullptr)
+		, mHdc(nullptr)
+		, mHeight(0)
+		, mWidth(0)
+		, mBackHdc(NULL)
+		, mBackBitmap(NULL)
+		, mbLoaded(false)
 	{
 	}
 	Application::~Application()
@@ -17,8 +24,7 @@ namespace p {
 	}
 	void Application::Initialize(HWND hwnd,UINT width, UINT height)
 	{
-		adjustWindowRect(hwnd, width, height);
-		createBuffer(width, height);
+		AdjustWindowRect(hwnd, width, height);
 		InitializeEtc();
 
 		mGraphicDevice = std::make_unique<graphics::GraphicDevice>();
@@ -31,37 +37,13 @@ namespace p {
 		SceneManager::Initialize();
 		
 	}
-	void Application::InitializeEtc()
-	{
-		Input::Initialize();
-		Time::Initialize();
-	}
-	void Application::clearRenderTarget()
-	{
-		//clear
-		HBRUSH grayBrush = (HBRUSH)CreateSolidBrush(RGB(128, 128, 128));
-		HBRUSH oldBrush = (HBRUSH)SelectObject(mBackHdc, grayBrush);
-
-		::Rectangle(mBackHdc, -1, -1, 1601, 901);
-
-		(HBRUSH)SelectObject(mBackHdc, oldBrush);
-		DeleteObject(grayBrush);
-	}
-
-
-	void Application::copyRenderTarget(HDC source, HDC dest)
-	{
-		BitBlt(dest, 0, 0, mWidth, mHeight
-			, source, 0, 0, SRCCOPY);
-	}
-
-	void Application::adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height)
+	void Application::AdjustWindowRect(HWND hwnd, UINT width, UINT height)
 	{
 		mHwnd = hwnd;
 		mHdc = GetDC(hwnd);
 
 		RECT rect = { 0,0, (LONG)width, (LONG)height };
-		AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
+		::AdjustWindowRect(&rect, WS_OVERLAPPEDWINDOW, false);//윈도우 설정해줌
 
 		mWidth = rect.right - rect.left, mHeight = rect.bottom - rect.top;
 
@@ -69,20 +51,18 @@ namespace p {
 		ShowWindow(mHwnd, true);
 	}
 
-	void Application::createBuffer(const UINT &width, const UINT &height)
+	void Application::InitializeEtc()
 	{
-		//윈도우 해상도에 맞는 백버퍼(도화지) 생성
-		mBackBitmap = CreateCompatibleBitmap(mHdc, width, height);
-
-		//백버퍼를 가르킬 dc생성
-		mBackHdc = CreateCompatibleDC(mHdc);
-
-		HBITMAP oldBitmap = (HBITMAP)SelectObject(mBackHdc, mBackBitmap);
-		DeleteObject(oldBitmap);
+		Input::Initialize();
+		Time::Initialize();
 	}
+
 
 	void Application::Run()
 	{
+		if (mbLoaded == false)
+			mbLoaded = true;
+
 		Update();
 		LateUpdate();
 		Render();
@@ -95,9 +75,8 @@ namespace p {
 		//키보드입력받음
 		//오른쪽 x+ 왼쪽 x-
 		Input::Update();
-		
-		
 		Time::Update();
+
 		CollisionManager::Update();
 		UIManager::Update();
 		SceneManager::Update();
@@ -116,18 +95,12 @@ namespace p {
 		//window의 크기가 1600,900 이므로 실제 그릴 수 있는 영역은 더 작음
 		//더블 버퍼링으로 해결
 		//dc를 두개 그려 번갈아가면서 화면에 출력
-
-		clearRenderTarget();
-
 		
 		Time::Render();
 		CollisionManager::Render();
 		UIManager::Render();
 		SceneManager::Render();
 
-		//backbuffer를 원본 버퍼로 복사
-		//copyRenderTarget(mBack, m);
-		mGraphicDevice->Draw();
 	}
 	void Application::Destroy()
 	{

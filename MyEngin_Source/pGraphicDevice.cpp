@@ -3,6 +3,7 @@
 #include "pRenderer.h"
 #include "pShader.h"
 #include "pResources.h"
+#include "pTexture.h"
 
 extern p::Application application;
 
@@ -161,12 +162,35 @@ namespace p::graphics {
 		return true;
 	}
 
-	void GraphicDevice::SetDataBuffer(ID3D11Buffer * buffer, void * data, UINT size)
+	bool GraphicDevice::CreateShaderResourceView(ID3D11Resource * pResource, const D3D11_SHADER_RESOURCE_VIEW_DESC * pDesc, ID3D11ShaderResourceView ** ppSRView)
+	{
+		if (FAILED(mDevice->CreateShaderResourceView(pResource, pDesc, ppSRView)))
+			return false;
+		return true;
+	}
+
+	void GraphicDevice::SetDataGpuBuffer(ID3D11Buffer * buffer, void * data, UINT size)
 	{
 		D3D11_MAPPED_SUBRESOURCE sub = {};
 		mContext->Map(buffer, 0, D3D11_MAP::D3D11_MAP_WRITE_DISCARD, 0, &sub);
 		memcpy(sub.pData, data, size);
 		mContext->Unmap(buffer, 0);
+	}
+
+	void GraphicDevice::SetShaderResource(eShaderStage stage, UINT startSlot, ID3D11ShaderResourceView ** ppSRV)
+	{
+		if ((UINT)eShaderStage::VS & (UINT)stage)
+			mContext->VSSetShaderResources(startSlot, 1, ppSRV);
+		if ((UINT)eShaderStage::HS & (UINT)stage)
+			mContext->HSSetShaderResources(startSlot, 1, ppSRV);
+		if ((UINT)eShaderStage::DS & (UINT)stage)
+			mContext->DSSetShaderResources(startSlot, 1, ppSRV);
+		if ((UINT)eShaderStage::GS & (UINT)stage)
+			mContext->GSSetShaderResources(startSlot, 1, ppSRV);
+		if ((UINT)eShaderStage::PS & (UINT)stage)
+			mContext->PSSetShaderResources(startSlot, 1, ppSRV);
+		if ((UINT)eShaderStage::CS & (UINT)stage)
+			mContext->CSSetShaderResources(startSlot, 1, ppSRV);
 	}
 
 	void GraphicDevice::BindPrimitiveTopology(const D3D11_PRIMITIVE_TOPOLOGY topology)
@@ -295,7 +319,7 @@ namespace p::graphics {
 			assert(NULL && "Create depthstencilview failed!");
 
 #pragma region inputLayout Desc
-		D3D11_INPUT_ELEMENT_DESC inputLayoutDesces[2] = {};
+		D3D11_INPUT_ELEMENT_DESC inputLayoutDesces[3] = {};
 		inputLayoutDesces[0].AlignedByteOffset = 0;//어디서부터 시작할지
 		inputLayoutDesces[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;//3개
 		//x,y,z, r,g,b,a 중 x,y,z를 읽어라
@@ -310,13 +334,26 @@ namespace p::graphics {
 		inputLayoutDesces[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
 		inputLayoutDesces[1].SemanticName = "COLOR";
 		inputLayoutDesces[1].SemanticIndex = 0;
+
+		inputLayoutDesces[2].AlignedByteOffset = 28; //12 + 16
+		inputLayoutDesces[2].Format = DXGI_FORMAT_R32G32_FLOAT;
+		inputLayoutDesces[2].InputSlot = 0;
+		inputLayoutDesces[2].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[2].SemanticName = "TEXCOORD";
+		inputLayoutDesces[2].SemanticIndex = 0;
 #pragma endregion
 
 		graphics::Shader* triangle = Resources::Find<graphics::Shader>(L"TriangleShader");
-
 		if (FAILED(CreateInputLayout(inputLayoutDesces, 2
 			, triangle->GetVSBlob()->GetBufferPointer()
 			, triangle->GetVSBlob()->GetBufferSize()
+			, &renderer::inputLayouts)))
+			assert(NULL && "Create input layout failed!");
+
+		graphics::Shader* sprite = Resources::Find<graphics::Shader>(L"SpriteShader");
+		if (FAILED(CreateInputLayout(inputLayoutDesces, 3
+			, sprite->GetVSBlob()->GetBufferPointer()
+			, sprite->GetVSBlob()->GetBufferSize()
 			, &renderer::inputLayouts)))
 			assert(NULL && "Create input layout failed!");
 	}
@@ -345,15 +382,18 @@ namespace p::graphics {
 		mContext->IASetInputLayout(renderer::inputLayouts);
 		renderer::mesh->Bind();
 
-		Vector4 pos(0.5f, 0.0f, 0.0f, 1.0f);
+		Vector4 pos(0.0f, 0.0f, 0.0f, 1.0f);
 		renderer::constantBuffers[(UINT)eCBType::Transform].SetData(&pos);
 		renderer::constantBuffers[(UINT)eCBType::Transform].Bind(eShaderStage::VS);
 
-		graphics::Shader* triangle = Resources::Find<graphics::Shader>(L"TriangleShader");
+		graphics::Shader* triangle = Resources::Find<graphics::Shader>(L"SpriteShader");
 		triangle->Bind();
 
 		//파이프라인 그려줌
-		mContext->Draw(3, 0);
+		graphics::Texture* texture = Resources::Find<graphics::Texture>(L"ocean");
+		if (texture)
+			texture->Bind(eShaderStage::PS, 0);
+		mContext->DrawIndexed(6, 0, 0);
 
 		mSwapChain->Present(1, 0);
 	}

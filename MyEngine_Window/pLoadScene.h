@@ -3,6 +3,7 @@
 #include "pPlayScene.h"
 #include "pTitleScene.h"
 #include "pToolScene.h"
+#include "pLoadingScene.h"
 namespace p {
 	void LoadScenes() {
 		SceneManager::CreateScene<TitleScene>(L"TitleScene");
@@ -11,7 +12,7 @@ namespace p {
 		
 		//SceneManager::LoadScene(L"PlayScene");
 		SceneManager::LoadScene(L"PlayScene");
-
+		SceneManager::CreateScene<LoadingScene>(L"LoadingScene");
 		SceneManager::LoadScene(L"LoadingScene");
 	}
 }

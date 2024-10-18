@@ -26,6 +26,8 @@
 #include "pAudioClip.h"
 #include "pAudioListener.h"
 #include "pAudioSource.h"
+#include "pGraphicDevice.h"
+
 namespace p
 {
 	PlayScene::PlayScene()
@@ -181,6 +183,8 @@ namespace p
 	void PlayScene::Render()
 	{
 		Scene::Render();
+
+		graphics::GetDevice()->Draw();
 		/*wchar_t str[50] = L"Play Scene";
 		TextOutW(, 0, 0, str, lstrlenW(str));*/
 	}

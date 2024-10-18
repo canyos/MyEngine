@@ -10,6 +10,8 @@ namespace p {
 		Application();
 		~Application();
 		void Initialize(HWND hwnd, UINT width, UINT height);
+		void AdjustWindowRect(HWND hwnd, UINT width, UINT height);
+		void InitializeEtc();
 		//√ ±‚»≠
 		void Run();
 
@@ -24,13 +26,17 @@ namespace p {
 		UINT GetWidth()const { return mWidth; }
 		UINT GetHeight()const { return mHeight; }
 		HWND GetHwnd()const { return mHwnd; }
+
+		bool IsLoaded() const { return mbLoaded; }
+		void IsLoaded(bool load) { mbLoaded = load; }
+	//private:
+	//	void clearRenderTarget();
+	//	void copyRenderTarget(HDC source, HDC dest);
+	//	void adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height);
+	//	void createBuffer(const UINT &width, const UINT &height);
+	//	void InitializeEtc();
 	private:
-		void clearRenderTarget();
-		void copyRenderTarget(HDC source, HDC dest);
-		void adjustWindowRect(const HWND &hwnd, const UINT &width, const UINT &height);
-		void createBuffer(const UINT &width, const UINT &height);
-		void InitializeEtc();
-	private:
+		bool mbLoaded;
 		std::unique_ptr<graphics::GraphicDevice> mGraphicDevice;
 
 		HWND mHwnd;
