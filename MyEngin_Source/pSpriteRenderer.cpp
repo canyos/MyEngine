@@ -3,12 +3,14 @@
 #include "pTransform.h"
 #include "pTexture.h"
 #include "pRenderer.h"
+#include "pResources.h"
 namespace p
 {
 	SpriteRenderer::SpriteRenderer()
-		: Component(enums::eComponentType::SpriteRenderer), 
-		mTexture(nullptr), 
-		mSize(math::Vector2::One)
+		: Component(enums::eComponentType::SpriteRenderer)
+		, mSprite(nullptr)
+		, mMaterial(nullptr)
+		, mMesh(nullptr)
 	{
 	}
 	SpriteRenderer::~SpriteRenderer()
@@ -16,7 +18,9 @@ namespace p
 	}
 	void SpriteRenderer::Initialize()
 	{
+		mMesh = Resources::Find<Mesh>(L"RectMesh");
 
+		mMaterial = Resources::Find<Material>(L"SpriteMaterial");
 	}
 	void SpriteRenderer::Update()
 	{
@@ -27,8 +31,7 @@ namespace p
 
 	void SpriteRenderer::Render()
 	{
-		if (mTexture == nullptr) //텍스처 세팅 해주세요!
-			assert(false);
+
 		/*
 		Transform* tr = GetOwner()->GetComponent<Transform>();
 		Vector2 pos = tr->GetPosition();
@@ -90,7 +93,17 @@ namespace p
 				, Gdiplus::UnitPixel
 				, &imgAtt); 
 		}*/ //winapi//winapi
+		if (mMesh)
+			mMesh->Bind();
 
+		if (mMaterial)
+			mMaterial->BindShader();
+
+		if (mSprite)
+			mSprite->Bind(eShaderStage::PS, (UINT)eTextureType::Albedo);
+
+		if (mMesh)
+			graphics::GetDevice()->DrawIndexed(mMesh->GetIndexCount(), 0, 0);
 	}
 
 }

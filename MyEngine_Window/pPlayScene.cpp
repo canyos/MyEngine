@@ -27,6 +27,8 @@
 #include "pAudioListener.h"
 #include "pAudioSource.h"
 #include "pGraphicDevice.h"
+#include "pSpriteRenderer.h"
+#include "pMaterial.h"
 
 namespace p
 {
@@ -166,6 +168,10 @@ namespace p
 		*/
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		object::DontDestroyOnLoad(mPlayer);
+
+		SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
+		sr->SetSprite(Resources::Find<graphics::Texture>(L"ocean"));
+
 		Scene::Initialize();
 	}
 
@@ -184,7 +190,6 @@ namespace p
 	{
 		Scene::Render();
 
-		graphics::GetDevice()->Draw();
 		/*wchar_t str[50] = L"Play Scene";
 		TextOutW(, 0, 0, str, lstrlenW(str));*/
 	}

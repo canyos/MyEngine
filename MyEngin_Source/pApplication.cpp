@@ -95,12 +95,17 @@ namespace p {
 		//window의 크기가 1600,900 이므로 실제 그릴 수 있는 영역은 더 작음
 		//더블 버퍼링으로 해결
 		//dc를 두개 그려 번갈아가면서 화면에 출력
-		
+		graphics::GetDevice()->ClearRenderTargetView();
+		graphics::GetDevice()->ClearDepthStencilView();
+		graphics::GetDevice()->BindViewPort();
+		graphics::GetDevice()->BindDefaultRenderTarget();
+
 		Time::Render();
 		CollisionManager::Render();
 		UIManager::Render();
 		SceneManager::Render();
 
+		graphics::GetDevice()->Present();
 	}
 	void Application::Destroy()
 	{

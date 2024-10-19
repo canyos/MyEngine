@@ -5,6 +5,9 @@
 #include "pTexture.h"
 #include "pApplication.h"
 #include "pRenderer.h"
+#include "pTitleScene.h"
+#include "pPlayScene.h"
+
 extern p::Application application;
 namespace p {
 	LoadingScene::LoadingScene()
@@ -67,6 +70,10 @@ namespace p {
 			//Resources::Load<graphics::Texture>(L"HPBAR", L"..\\Resources\\HPBAR.bmp");
 			//Resources::Load<graphics::Texture>(L"PixelMap", L"..\\Resources\\pixelMap.bmp");
 			renderer::Initialize();
+
+			SceneManager::CreateScene<TitleScene>(L"TitleScene");
+			SceneManager::CreateScene<PlayScene>(L"PlayScene");
+			
 		}
 		m.unlock();
 		// complete

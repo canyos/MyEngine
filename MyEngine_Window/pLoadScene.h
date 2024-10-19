@@ -6,12 +6,6 @@
 #include "pLoadingScene.h"
 namespace p {
 	void LoadScenes() {
-		SceneManager::CreateScene<TitleScene>(L"TitleScene");
-		//SceneManager::CreateScene<PlayScene>(L"PlayScene");
-		SceneManager::CreateScene<PlayScene>(L"PlayScene");
-		
-		//SceneManager::LoadScene(L"PlayScene");
-		SceneManager::LoadScene(L"PlayScene");
 		SceneManager::CreateScene<LoadingScene>(L"LoadingScene");
 		SceneManager::LoadScene(L"LoadingScene");
 	}

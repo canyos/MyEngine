@@ -16,7 +16,11 @@ namespace p {
 		virtual ~Material();
 		virtual HRESULT Save(const std::wstring& path) override;
 		virtual HRESULT Load(const std::wstring& path) override;
+
 		void Bind();
+		void BindShader();
+		void BindTextures();
+
 		void SetShader(graphics::Shader* shader) { mShader = shader; }
 		void SetAlbedoTexture(graphics::Texture* texture) { mAlbedoTexture = texture; mData.albedo = texture->GetName(); }
 	private:

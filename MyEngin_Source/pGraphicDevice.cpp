@@ -291,6 +291,39 @@ namespace p::graphics {
 		BindSampler(eShaderStage::PS, StartSlot, NumSamplers, ppSamplers);
 	}
 
+	void GraphicDevice::BindViewPort()
+	{	//뷰포트 만들어주기
+		D3D11_VIEWPORT viewPort =
+		{
+			0, 0,
+			(float)application.GetWidth(), (float)application.GetHeight(),
+			0.0f, 1.0f
+		};
+		mContext->RSSetViewports(1, &viewPort);
+	}
+
+	void GraphicDevice::BindRenderTargets(UINT NumViews, ID3D11RenderTargetView * const * ppRenderTargetViews, ID3D11DepthStencilView * pDepthStencilView)
+	{
+		mContext->OMSetRenderTargets(NumViews, ppRenderTargetViews, pDepthStencilView);
+	}
+
+	void GraphicDevice::BindDefaultRenderTarget()
+	{
+		mContext->OMSetRenderTargets(1, mRenderTargetView.GetAddressOf(), mDepthStencilView.Get());
+	}
+
+	void GraphicDevice::ClearRenderTargetView()
+	{
+		FLOAT backgroundColor[4] = { 0.2f, 0.2f, 0.2f, 1.0f };
+		mContext->ClearRenderTargetView(mRenderTargetView.Get(), backgroundColor);
+	}
+
+	void GraphicDevice::ClearDepthStencilView()
+	{
+		//depth stencil view 초기화
+		mContext->ClearDepthStencilView(mDepthStencilView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.0f, 0);
+	}
+
 	void GraphicDevice::Initialize()
 	{
 #pragma region swapchain desc
@@ -359,22 +392,6 @@ namespace p::graphics {
 
 	void GraphicDevice::Draw()
 	{
-		FLOAT backgroundColor[4] = { 0.2f, 0.2f, 0.2f, 1.0f };
-		mContext->ClearRenderTargetView(mRenderTargetView.Get(), backgroundColor);
-		//depth stencil view 초기화
-		mContext->ClearDepthStencilView(mDepthStencilView.Get(), D3D11_CLEAR_DEPTH | D3D11_CLEAR_STENCIL, 1.f, 0);
-
-		//뷰포트 만들어주기
-		D3D11_VIEWPORT viewPort =
-		{
-			0, 0,
-			(float)application.GetWidth(), (float)application.GetHeight(),
-			0.0f, 1.0f
-		};
-		//render target한개만 사용해서 묶어주기
-		mContext->RSSetViewports(1, &viewPort);
-		mContext->OMSetRenderTargets(1, mRenderTargetView.GetAddressOf(), mDepthStencilView.Get());
-
 		Mesh* mesh = Resources::Find<Mesh>(L"RectMesh");
 		mesh->Bind();
 
@@ -401,6 +418,15 @@ namespace p::graphics {
 		material->Bind();
 		mContext->DrawIndexed(3, 0, 0);
 
+	}
+
+	void GraphicDevice::DrawIndexed(UINT IndexCount, UINT StartIndexLocation, INT BaseVertexLocation)
+	{
+		mContext->DrawIndexed(IndexCount, StartIndexLocation, BaseVertexLocation);
+	}
+
+	void GraphicDevice::Present()
+	{
 		// Present the backbuffer
 		mSwapChain->Present(1, 0);
 	}
