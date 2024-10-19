@@ -136,6 +136,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMesh.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMaterial.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)InputLayout.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pInputLayout.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="$(MSBuildThisFileDirectory)pRenderer.h" />
@@ -260,6 +263,7 @@
     </ClInclude>
     <ClInclude Include="$(MSBuildThisFileDirectory)pIndexBuffer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pConstantBuffer.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pInputLayout.h" />
   </ItemGroup>
   <ItemGroup>
     <Filter Include="util">

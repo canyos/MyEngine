@@ -18,13 +18,9 @@
     <FxCompile Include="$(MSBuildThisFileDirectory)TriangleVS.hlsl">
       <Filter>VS</Filter>
     </FxCompile>
-    <FxCompile Include="C:\Users\com100\Documents\GitHub\MyEngine\Shaders_SOURCE\SpritePS.hlsl">
-      <Filter>PS</Filter>
-    </FxCompile>
-    <FxCompile Include="C:\Users\com100\Documents\GitHub\MyEngine\Shaders_SOURCE\SpriteVS.hlsl">
-      <Filter>VS</Filter>
-    </FxCompile>
     <FxCompile Include="$(MSBuildThisFileDirectory)Samplers.hlsli" />
+    <FxCompile Include="$(MSBuildThisFileDirectory)SpriteVS.hlsl" />
+    <FxCompile Include="$(MSBuildThisFileDirectory)SpritePS.hlsl" />
   </ItemGroup>
   <ItemGroup>
     <None Include="$(MSBuildThisFileDirectory)ConstantBuffers.hlsli">

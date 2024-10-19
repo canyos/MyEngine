@@ -20,6 +20,7 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)ConstantBuffer.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Fmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)IndexBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)InputLayout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Material.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)Mesh.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pAnimator.cpp" />
@@ -37,7 +38,9 @@
     <ClCompile Include="$(MSBuildThisFileDirectory)pFmod.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pGraphicDevice.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pIndexBuffer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pInputLayout.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pLayer.cpp" />
+    <ClCompile Include="$(MSBuildThisFileDirectory)pMaterial.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pMath.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pComponent.cpp" />
     <ClCompile Include="$(MSBuildThisFileDirectory)pEntity.cpp" />
@@ -94,6 +97,7 @@
     <ClInclude Include="$(MSBuildThisFileDirectory)pGraphics.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pIndexBuffer.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pInput.h" />
+    <ClInclude Include="$(MSBuildThisFileDirectory)pInputLayout.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMaterial.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMath.h" />
     <ClInclude Include="$(MSBuildThisFileDirectory)pMesh.h" />

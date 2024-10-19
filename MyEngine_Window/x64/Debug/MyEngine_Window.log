@@ -1,141 +1,7 @@
-﻿  ConstantBuffer.cpp
-  IndexBuffer.cpp
-  Mesh.cpp
-  Shader.cpp
-  UIButton.cpp
-  UIHUD.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\Shader.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\Shader.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\UIHUD.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\UIHUD.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\Mesh.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\Mesh.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\UIButton.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\UIButton.cpp)
+﻿  pInputLayout.cpp
+c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오.
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\IndexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\IndexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\ConstantBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\ConstantBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  VertexBuffer.cpp
-  pAnimator.cpp
-  pAnimtation.cpp
-  pApplication.cpp
-  pBoxCollider2D.cpp
-  pCamera.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pApplication.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pApplication.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pAnimtation.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pAnimtation.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pAnimator.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pAnimator.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pBoxCollider2D.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pBoxCollider2D.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pCamera.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pCamera.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\VertexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\VertexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  pCircleCollider2D.cpp
-  pConstantBuffer.cpp
-  pGraphicDevice.cpp
-  pIndexBuffer.cpp
-  pInput.cpp
-  pMesh.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pCircleCollider2D.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pCircleCollider2D.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pInput.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pInput.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pConstantBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pConstantBuffer.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pMesh.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pMesh.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pGraphicDevice.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pGraphicDevice.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pIndexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pIndexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  pRenderer.cpp
-  pShader.cpp
-  pSpriteRenderer.cpp
-  pTexture.cpp
-  pTilemapRenderer.cpp
-  pUIButton.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pShader.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pShader.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pSpriteRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pSpriteRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pTilemapRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pTilemapRenderer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pTexture.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pTexture.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIButton.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIButton.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  pUIHUD.cpp
-  pUIManager.cpp
-  pVertexBuffer.cpp
-  pCameraScript.cpp
-  pCatScript.cpp
-  pLoadingScene.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIHUD.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIHUD.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIManager.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pUIManager.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pCatScript.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pCatScript.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pCameraScript.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pCameraScript.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pVertexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 C:\Users\com100\Documents\GitHub\MyEngine\MyEngin_Source\pVertexBuffer.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pLoadingScene.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pLoadingScene.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  pPlayScene.cpp
-  pPlayerScript.cpp
-  pTile.cpp
-  pToolScene.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pPlayScene.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pPlayScene.cpp)
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pPlayerScript.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pPlayerScript.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pTile.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pTile.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pToolScene.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pToolScene.cpp)
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(259): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
-c:\users\com100\documents\github\myengine\myengine_window\ptoolscene.cpp(260): warning C4244: '=': 'LONG'에서 'float'(으)로 변환하면서 데이터가 손실될 수 있습니다.
 LoadingScene.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 FloorScript.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 Floor.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
@@ -146,6 +12,8 @@ UIButton.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않�
 Shader.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 RididBody.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 Mesh.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+Material.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
+InputLayout.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 IndexBuffer.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 Fmod.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 ConstantBuffer.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.

@@ -2,16 +2,14 @@
 #include "pCamera.h"
 #include "pResources.h"
 #include "pShader.h"
+#include "pMesh.h"
+#include "pMaterial.h"
 
 namespace p::renderer{
 	Camera* mainCamera = nullptr;
 
-	Mesh* mesh = nullptr;
 	ConstantBuffer constantBuffers[(UINT)eCBType::End] = {};
 	Microsoft::WRL::ComPtr<ID3D11SamplerState> samplerStates[(UINT)eSamplerType::End] = {};
-
-	ID3D11Buffer* constantBuffer = nullptr;
-	ID3D11InputLayout* inputLayouts = nullptr;
 
 	void LoadStates()
 	{
@@ -61,7 +59,7 @@ namespace p::renderer{
 
 	void LoadTriangleMesh()
 	{
-		mesh = new Mesh();
+		Mesh* mesh = new Mesh();
 		std::vector<graphics::Vertex> vertexes = {};
 		std::vector<UINT> indices = {};
 
@@ -80,12 +78,31 @@ namespace p::renderer{
 		indices.push_back(1);
 		indices.push_back(2);
 
+		D3D11_INPUT_ELEMENT_DESC inputLayoutDesces[2] = {};
+		inputLayoutDesces[0].AlignedByteOffset = 0;
+		inputLayoutDesces[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+		inputLayoutDesces[0].InputSlot = 0;
+		inputLayoutDesces[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[0].SemanticName = "POSITION";
+		inputLayoutDesces[0].SemanticIndex = 0;
+
+		inputLayoutDesces[1].AlignedByteOffset = 12;
+		inputLayoutDesces[1].Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+		inputLayoutDesces[1].InputSlot = 0;
+		inputLayoutDesces[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[1].SemanticName = "COLOR";
+		inputLayoutDesces[1].SemanticIndex = 0;
+		graphics::Shader* triangleShader = Resources::Find<graphics::Shader>(L"TriangleShader");
+		mesh->SetVertexBufferParams(2, inputLayoutDesces, triangleShader->GetVSBlob()->GetBufferPointer(), triangleShader->GetVSBlob()->GetBufferSize());
+
 		mesh->CreateVB(vertexes);
 		mesh->CreateIB(indices);
+
+		p::Resources::Insert(L"TriangleMesh", mesh);
 	}
 	void LoadRectMesh()
 	{
-		mesh = new Mesh();
+		Mesh* mesh = new Mesh();
 		std::vector<graphics::Vertex> vertexes = {};
 		std::vector<UINT> indices = {};
 		vertexes.resize(4);
@@ -110,6 +127,32 @@ namespace p::renderer{
 		indices.push_back(2);
 		mesh->CreateVB(vertexes);
 		mesh->CreateIB(indices);
+
+		D3D11_INPUT_ELEMENT_DESC inputLayoutDesces[3] = {};
+		inputLayoutDesces[0].AlignedByteOffset = 0;
+		inputLayoutDesces[0].Format = DXGI_FORMAT_R32G32B32_FLOAT;
+		inputLayoutDesces[0].InputSlot = 0;
+		inputLayoutDesces[0].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[0].SemanticName = "POSITION";
+		inputLayoutDesces[0].SemanticIndex = 0;
+
+		inputLayoutDesces[1].AlignedByteOffset = 12;
+		inputLayoutDesces[1].Format = DXGI_FORMAT_R32G32B32A32_FLOAT;
+		inputLayoutDesces[1].InputSlot = 0;
+		inputLayoutDesces[1].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[1].SemanticName = "COLOR";
+		inputLayoutDesces[1].SemanticIndex = 0;
+
+		inputLayoutDesces[2].AlignedByteOffset = 28;
+		inputLayoutDesces[2].Format = DXGI_FORMAT_R32G32_FLOAT;
+		inputLayoutDesces[2].InputSlot = 0;
+		inputLayoutDesces[2].InputSlotClass = D3D11_INPUT_PER_VERTEX_DATA;
+		inputLayoutDesces[2].SemanticName = "TEXCOORD";
+		inputLayoutDesces[2].SemanticIndex = 0;
+		graphics::Shader* spriteShader = Resources::Find<graphics::Shader>(L"SpriteShader");
+		mesh->SetVertexBufferParams(3, inputLayoutDesces, spriteShader->GetVSBlob()->GetBufferPointer(), spriteShader->GetVSBlob()->GetBufferSize());
+
+		p::Resources::Insert(L"RectMesh", mesh);
 	}
 	void LoadMeshes()
 	{
@@ -117,18 +160,30 @@ namespace p::renderer{
 		LoadRectMesh();
 	}
 
+	void LoadMaterials()
+	{
+		Material* triangleMaterial = new Material();
+		p::Resources::Insert(L"TriangleMaterial", triangleMaterial);
+		triangleMaterial->SetShader(p::Resources::Find<graphics::Shader>(L"TriangleShader"));
+
+		Material* spriteMaterial = new Material();
+		p::Resources::Insert(L"SpriteMaterial", spriteMaterial);
+		spriteMaterial->SetShader(p::Resources::Find<graphics::Shader>(L"SpriteShader"));
+		//ya::Resources::Load<graphics::Material>(L"SpriteMaterial", L"..\\Materials\\SpriteMaterial")
+	}
+
 	void Initialize()
 	{
 		LoadStates();
-		LoadMeshes();
 		LoadShaders();
+		LoadMeshes();
+		LoadMaterials();
 		LoadConstantBuffers();
 	}
 
 	void Release()
 	{
-		inputLayouts->Release();
-		delete mesh;
+
 	}
 
 }

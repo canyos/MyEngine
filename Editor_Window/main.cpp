@@ -177,6 +177,9 @@ BOOL InitInstance(HINSTANCE hInstance, int nCmdShow)
 
    //ShowWindow(ToolHWnd, nCmdShow);
    
+   HRESULT hr = CoInitializeEx(nullptr, COINIT_MULTITHREADED);
+   if (FAILED(hr))
+	   assert(false);
 
    Gdiplus::GdiplusStartup(&gpToken, &gpsi, NULL);
    //srand(time(NULL));
