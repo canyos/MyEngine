@@ -28,7 +28,7 @@ namespace p {
 		InitializeEtc();
 
 		mGraphicDevice = std::make_unique<graphics::GraphicDevice>();
-		renderer::Initialize();
+		//renderer::Initialize();
 		mGraphicDevice->Initialize();
 
 		Fmod::Initialize();

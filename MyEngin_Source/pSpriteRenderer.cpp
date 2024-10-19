@@ -16,6 +16,7 @@ namespace p
 	}
 	void SpriteRenderer::Initialize()
 	{
+
 	}
 	void SpriteRenderer::Update()
 	{

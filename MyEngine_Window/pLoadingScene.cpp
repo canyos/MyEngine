@@ -4,6 +4,7 @@
 #include "pResources.h"
 #include "pTexture.h"
 #include "pApplication.h"
+#include "pRenderer.h"
 extern p::Application application;
 namespace p {
 	LoadingScene::LoadingScene()
@@ -65,6 +66,7 @@ namespace p {
 			//Resources::Load<graphics::Texture>(L"SpringFloor", L"..\\Resources\\SpringFloor.bmp");
 			//Resources::Load<graphics::Texture>(L"HPBAR", L"..\\Resources\\HPBAR.bmp");
 			//Resources::Load<graphics::Texture>(L"PixelMap", L"..\\Resources\\pixelMap.bmp");
+			renderer::Initialize();
 		}
 		m.unlock();
 		// complete

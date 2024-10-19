@@ -4,6 +4,8 @@ namespace p {
 	Material::Material()
 		: Resource(enums::eResourceType::Material)
 		, mMode(graphics::eRenderingMode::Opaque)
+		, mAlbedoTexture(nullptr)
+		, mShader(nullptr)
 	{
 	}
 	Material::~Material()
@@ -20,6 +22,12 @@ namespace p {
 	void Material::Bind()
 	{
 		//mTexture->Bind(eShaderStage::All, 0);
-		mShader->Bind();
+		//mShader->Bind();
+		if (mShader)
+			mShader->Bind();
+
+		if (mAlbedoTexture)
+			mAlbedoTexture->Bind(graphics::eShaderStage::PS, (UINT)graphics::eTextureType::Albedo);
+
 	}
 }

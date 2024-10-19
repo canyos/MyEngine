@@ -386,9 +386,9 @@ namespace p::graphics {
 		material->Bind();
 
 		//파이프라인 그려줌
-		graphics::Texture* texture = Resources::Find<graphics::Texture>(L"ocean");
-		if (texture)
-			texture->Bind(eShaderStage::PS, 0);
+		//graphics::Texture* texture = Resources::Find<graphics::Texture>(L"ocean");
+		//if (texture)
+		//	texture->Bind(eShaderStage::PS, 0);
 		mContext->DrawIndexed(6, 0, 0);
 
 		// Draw Triangle

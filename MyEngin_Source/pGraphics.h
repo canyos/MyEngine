@@ -32,6 +32,15 @@ namespace p::graphics
 		All,
 		End,
 	};
+	enum class eTextureType
+	{
+		Albedo,
+		Normal,
+		Specular,
+		Smoothness,
+		Metallic,
+		End,
+	};
 	enum class eCBType
 	{
 		Transform,
