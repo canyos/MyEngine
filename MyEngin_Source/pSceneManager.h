@@ -7,6 +7,7 @@ namespace p {
 		template <typename T>
 		static Scene* CreateScene(std::wstring name) {
 			T* scene = new T();
+			mScene.insert(std::make_pair(name, scene));
 			scene->SetName(name);
 			scene->Initialize();
 			mScene.insert({ name, scene });
@@ -14,6 +15,7 @@ namespace p {
 			return scene;
 		}
 
+		static bool SetActiveScene(const std::wstring& name);
 		static Scene* LoadScene(const std::wstring& name);
 
 		static Scene* GetActiveScene() { return mActiveScene; }
@@ -27,15 +29,6 @@ namespace p {
 
 		static Scene* GetDontDestroyOnLoad() { return mDontDestroyOnLoad; }
 		static std::vector<GameObject*> GetGameObjects(eLayerType layer);
-
-	//	static SceneManager& GetInst() {
-	//		static SceneManager sceneManager;
-	//		return sceneManager;
-	//	}
-	//private:
-	//	SceneManager();
-	//	~SceneManager();
-	// 싱글톤 패턴 하나의 객체만 만들어서 쓰겠다
 
 	private:
 		//static std::vector<Scene*> mScene;

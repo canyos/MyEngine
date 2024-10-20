@@ -163,7 +163,7 @@ namespace p {
 	{
 
 		Transform* tr = GetOwner()->GetComponent<Transform>();
-		Vector2 pos = tr->GetPosition();
+		Vector3 pos = tr->GetPosition();
 		RigidBody* rb = GetOwner()->GetComponent<RigidBody>();
 
 		if (Input::GetKey(eKeyCode::D))

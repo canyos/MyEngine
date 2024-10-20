@@ -10,7 +10,6 @@ namespace p {
 		void LateUpdate() override;
 		void Render() override;
 
-		void SetIndexPosition(int x, int y);
 	private:
 	};
 }

@@ -19,26 +19,17 @@
     <ClInclude Include="pCat.h">
       <Filter>Contents</Filter>
     </ClInclude>
-    <ClInclude Include="pCatScript.h">
-      <Filter>Scripts</Filter>
-    </ClInclude>
     <ClInclude Include="pCameraScript.h">
       <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="pTile.h">
       <Filter>Contents</Filter>
     </ClInclude>
-    <ClInclude Include="pToolScene.h">
-      <Filter>Scenes</Filter>
-    </ClInclude>
     <ClInclude Include="pFloor.h">
       <Filter>Contents</Filter>
     </ClInclude>
     <ClInclude Include="resource.h">
       <Filter>Contents</Filter>
-    </ClInclude>
-    <ClInclude Include="pFloorScript.h">
-      <Filter>Scripts</Filter>
     </ClInclude>
     <ClInclude Include="pLoadingScene.h">
       <Filter>Scenes</Filter>
@@ -74,24 +65,15 @@
     <ClCompile Include="pCat.cpp">
       <Filter>Contents</Filter>
     </ClCompile>
-    <ClCompile Include="pCatScript.cpp">
-      <Filter>Scripts</Filter>
-    </ClCompile>
     <ClCompile Include="pCameraScript.cpp">
       <Filter>Scripts</Filter>
     </ClCompile>
     <ClCompile Include="pTile.cpp">
       <Filter>Contents</Filter>
     </ClCompile>
-    <ClCompile Include="pToolScene.cpp">
-      <Filter>Scenes</Filter>
-    </ClCompile>
     <ClCompile Include="FloorScript.cpp" />
     <ClCompile Include="pFloor.cpp">
       <Filter>Contents</Filter>
-    </ClCompile>
-    <ClCompile Include="pFloorScript.cpp">
-      <Filter>Scripts</Filter>
     </ClCompile>
     <ClCompile Include="Floor.cpp">
       <Filter>Contents</Filter>

@@ -20,7 +20,7 @@ namespace p {
 		}
 
 		template<typename T>
-		static T* Instantiate(p::enums::eLayerType type,Vector2 pos ) {
+		static T* Instantiate(p::enums::eLayerType type,Vector3 pos ) {
 			T* gameObject = new T();
 			gameObject->SetLayerType(type);
 			Scene* activeScene = SceneManager::GetActiveScene();

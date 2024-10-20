@@ -6,6 +6,10 @@
 #pragma comment(lib, "d3dcompiler.lib")
 #include "CommonInclude.h"
 
+#define CB_GETBINDSLOT(name) __CBUFFERBINDSLOT__##name##__
+#define CBUFFER(name, slot) static const int CB_GETBINDSLOT(name) = slot; struct alignas(16) name 
+#define CBSLOT_TRANSFORM 0
+
 namespace p::graphics
 {
 	struct Vertex
@@ -39,6 +43,7 @@ namespace p::graphics
 		Specular,
 		Smoothness,
 		Metallic,
+		Sprite,
 		End,
 	};
 	enum class eCBType
@@ -55,11 +60,38 @@ namespace p::graphics
 		PostProcess,
 		End,
 	};
+	enum class eRasterizerState
+	{
+		SolidBack,
+		SolidFront,
+		SolidNone,
+		WireFrame,
+		End,
+	};
+	enum class eBlendState
+	{
+		AlphaBlend,
+		OneOne,
+		End,
+	};
+	enum class eDepthStencilState
+	{
+		DepthNone,
+		LessEqual,
+		End,
+	};
 	struct GpuBuffer
 	{
 		Microsoft::WRL::ComPtr<ID3D11Buffer> buffer=nullptr;
 		D3D11_BUFFER_DESC desc = {};
 		GpuBuffer() = default;
 		virtual ~GpuBuffer() = default;
+	};
+	//Constant Buffer
+	CBUFFER(TransformCB, CBSLOT_TRANSFORM)
+	{
+		math::Matrix world;
+		math::Matrix view;
+		math::Matrix projection;
 	};
 }

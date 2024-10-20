@@ -139,9 +139,7 @@ copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDi
   <ItemGroup>
     <ClInclude Include="pCameraScript.h" />
     <ClInclude Include="pCat.h" />
-    <ClInclude Include="pCatScript.h" />
     <ClInclude Include="pFloor.h" />
-    <ClInclude Include="pFloorScript.h" />
     <ClInclude Include="pLoadingScene.h" />
     <ClInclude Include="pLoadScene.h" />
     <ClInclude Include="pPlayer.h" />
@@ -149,7 +147,6 @@ copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDi
     <ClInclude Include="pPlayScene.h" />
     <ClInclude Include="pTile.h" />
     <ClInclude Include="pTitleScene.h" />
-    <ClInclude Include="pToolScene.h" />
     <ClInclude Include="resource.h" />
   </ItemGroup>
   <ItemGroup>
@@ -158,16 +155,13 @@ copy "$(SolutionDir)\External\Library\Fmod\Release\fmodstudio.dll" "$(SolutionDi
     <ClCompile Include="LoadingScene.cpp" />
     <ClCompile Include="pCameraScript.cpp" />
     <ClCompile Include="pCat.cpp" />
-    <ClCompile Include="pCatScript.cpp" />
     <ClCompile Include="pFloor.cpp" />
-    <ClCompile Include="pFloorScript.cpp" />
     <ClCompile Include="pLoadingScene.cpp" />
     <ClCompile Include="pPlayer.cpp" />
     <ClCompile Include="pPlayerScript.cpp" />
     <ClCompile Include="pPlayScene.cpp" />
     <ClCompile Include="pTile.cpp" />
     <ClCompile Include="pTitleScene.cpp" />
-    <ClCompile Include="pToolScene.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ResourceCompile Include="MyEngine_Window.rc" />

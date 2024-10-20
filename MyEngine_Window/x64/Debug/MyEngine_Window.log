@@ -1,6 +1,10 @@
-﻿  pLoadingScene.cpp
-c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의
-  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오.
+﻿  pPlayScene.cpp
+  pTile.cpp
+c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pTile.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pTile.cpp)
+c:\users\com100\documents\github\myengine\myengin_source\pmath.h(21): warning C4005: 'XM_CONSTEXPR': 매크로 재정의 (소스 파일 컴파일 중 pPlayScene.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\directxmath.h(34): note: 'XM_CONSTEXPR'의 이전 정의를 참조하십시오. (소스 파일 컴파일 중 pPlayScene.cpp)
+  c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
   c:\program files (x86)\windows kits\10\include\10.0.17763.0\um\dinput.h: DIRECTINPUT_VERSION undefined. Defaulting to version 0x0800
 LoadingScene.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.
 FloorScript.obj : warning LNK4221: 이 개체 파일은 이전에 정의되지 않은 공용 기호를 정의하지 않으므로 이 라이브러리를 사용하는 어떠한 링크 작업에도 사용되지 않습니다.

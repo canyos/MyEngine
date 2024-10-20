@@ -71,7 +71,7 @@ namespace p {
 			}
 		}
 		Transform* tr = GetOwner()->GetComponent<Transform>();
-		Vector2 pos = tr->GetPosition();
+		Vector3 pos = tr->GetPosition();
 
 		pos = pos + mVelocity * Time::DeltaTime();
 		tr->SetPosition(pos);

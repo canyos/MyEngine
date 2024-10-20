@@ -28,6 +28,7 @@
 #include "pAudioSource.h"
 #include "pGraphicDevice.h"
 #include "pSpriteRenderer.h"
+#include "pCameraScript.h"
 #include "pMaterial.h"
 
 namespace p
@@ -166,13 +167,21 @@ namespace p
 		// 게임 오브젝트 생성후에 레이어와 게임오브젝트들의 init함수를 호출
 		Scene::Initialize();
 		*/
+		Scene::Initialize();
+		// main camera
+		GameObject* camera = object::Instantiate<GameObject>(enums::eLayerType::None, Vector3(0.0f, 0.0f, -10.0f));
+		Camera* cameraComp = camera->AddComponent<Camera>();
+		cameraComp->SetProjectionType(Camera::eProjectionType::Orthographic);
+		cameraComp->SetSize(200.0f);
+		CameraScript* cameraScript = camera->AddComponent<CameraScript>();
+		renderer::mainCamera = cameraComp;
+
 		mPlayer = object::Instantiate<Player>(enums::eLayerType::Player);
 		object::DontDestroyOnLoad(mPlayer);
 
 		SpriteRenderer* sr = mPlayer->AddComponent<SpriteRenderer>();
 		sr->SetSprite(Resources::Find<graphics::Texture>(L"ocean"));
 
-		Scene::Initialize();
 	}
 
 	void PlayScene::Update()

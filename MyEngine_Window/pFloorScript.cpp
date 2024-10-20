@@ -35,7 +35,7 @@ namespace p {
 		float scale = fabs(playerCol->GetSize().y * 100 - floorCol->GetSize().y * 100 / 2.0f);
 
 		if (len < scale) {
-			Vector2 playerPos = playerTr->GetPosition();
+			Vector3 playerPos = playerTr->GetPosition();
 			playerPos.y -= (scale - len) -1.0f;
 			playerTr->SetPosition(playerPos);
 		}

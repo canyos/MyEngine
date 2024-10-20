@@ -1,5 +1,6 @@
 #include "pScene.h"
 #include "pCollisionManager.h"
+#include "pSceneManager.h"
 
 namespace p {
 	Scene::Scene() :mLayers{}
@@ -18,11 +19,8 @@ namespace p {
 	}
 	void Scene::Initialize()
 	{
-		for (Layer* layer : mLayers) {
-			if (layer == nullptr) continue;
-			layer->Initialize();
-		}
-			
+		const std::wstring& sceneName = GetName();
+		SceneManager::SetActiveScene(sceneName);
 	}
 	void Scene::Update()
 	{
